@@ -1,0 +1,9 @@
+html {
+    height: 100%;
+}
+
+.home-image {
+    background-image: url("/media/shopping-cart.webp");
+    background-size: cover;
+    min-width: -webkit-fill-available;
+}
