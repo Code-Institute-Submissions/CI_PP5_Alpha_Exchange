@@ -1,9 +1,92 @@
+/* Light Mode Theme */
+:root.light {
+    --headertext: 'Inter', 'sans-serif';
+    --bodytext: 'Quicksand', 'sans-serif';
+    --menu-color: #0dcaf0;
+    --background-color: #dee2e6;
+    --recipe-background: #bebebe;
+    --font-color: #000;
+    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    
+}
+
+/* Dark Mode Theme */
+:root:not(.light) {
+    --headertext: 'Inter', 'sans-serif';
+    --bodytext: 'Quicksand', 'sans-serif';
+    --menu-color: #084298;
+    --background-color: #41464b;
+    --recipe-background: #646464;
+    --font-color: #fff;
+    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 html {
     height: 100%;
 }
 
 .home-image {
-    background-image: url("/media/shopping-cart.webp");
+    background-image: url('/media/shopping-cart.webp');
     background-size: cover;
     min-width: -webkit-fill-available;
+}
+
+/* Theme Switch Styles */
+.switch {
+    width: 60px;
+    height: 30px;
+    margin-top: 3px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: black;
+    text-indent: -200px
+}
+
+:root:not(.light) .switch span {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+:root:not(.light) .switch input, #theme {
+    display: none;
+}
+
+:root:not(.light) .slider {
+    transition: 0.4s;
+    height: 30px;
+    width: 30px;
+    display: inline;
+    position: relative;
+    background: white;
+}
+
+:root:not(.light) .slider {
+    transform: translateX(0px);
+}
+
+:root.light .slider {
+    transform: translateX(30px);
+}
+
+:root.light .switch span {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+:root.light .switch input, #theme {
+    display: none;
+}
+
+:root.light .slider {
+    transition: 0.4s;
+    height: 30px;
+    width: 30px;
+    display: inline;
+    position: relative;
+    background: white;
 }
