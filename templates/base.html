@@ -43,6 +43,50 @@
         <div class="row">
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid list-inline-item">
+                    <img class="navbar-brand order-first py-0" src="/media/shopping-cart.svg" alt="Website Branding">
+                    <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <!-- Navigation Links -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Disabled</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="all-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Products
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="all-products">
+                                    <a href="" class="dropdown-item">Sort By Price</a>
+                                    <a href="" class="dropdown-item ">Sort By Rating</a>
+                                    <a href="" class="dropdown-item ">Sort By Category</a>
+                                    <a href="" class="dropdown-item">All Products</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-3">
+                            <!-- Search box form -->
+                            <form method="GET" action="" class="d-flex py-1">
+                                <div class="input-group w-100">
+                                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search ...">
+                                    <div class="input-group-append">
+                                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                            <span class="icon">
+                                                <i class="fas fa-search"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <!-- User administration -->
                     <li class="nav-item dropdown list-inline-item text-center my-0">
                         <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,7 +110,7 @@
                             {% endif %}
                         </ul>
                         <!-- Shopping cart -->
-                        <li class="list-inline-item">
+                        <li class="list-inline-item mx-3">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -81,46 +125,13 @@
                             </a>
                         </li>
                     </li>
-                    <img class="navbar-brand order-first py-0" src="/media/shopping-cart.svg" alt="Website Branding">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <!-- Navigation Links -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Disabled</a>
-                            </li>
-                        </ul>
-                        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-3">
-                            <!-- Search box form -->
-                            <form method="GET" action="" class="d-flex">
-                                <div class="input-group w-100">
-                                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search ...">
-                                    <div class="input-group-append">
-                                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                            <span class="icon">
-                                                <i class="fas fa-search"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Theme switch toggle -->
-                        <input id="theme"  type="checkbox" name="theme">
-                        <label for="theme" class="switch">Theme Switch
-                            <span>
-                                <span class="slider"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <!-- Theme switch toggle -->
+                <input id="theme"  type="checkbox" name="theme" class="mx-3">
+                <label for="theme" class="switch">Theme Switch
+                    <span>
+                        <span class="slider"></span>
+                    </span>
+                </label>
                 </div>
             </nav>
         </div>
