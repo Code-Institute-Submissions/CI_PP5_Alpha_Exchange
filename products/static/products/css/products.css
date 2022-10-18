@@ -1,0 +1,52 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    padding: 1.5em;
+    background: linear-gradient(
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
+    color: white;
+}
+
+.card-bottom-rule::after {
+    transition: transform 1000ms ease;
+    display:block;
+    content: '';
+    border-bottom: solid 3px #019fb6;
+}
+
+.card:hover .card-bottom-rule::after, 
+.card:focus-within .card-bottom-rule::after {
+    transform: scaleX(1);
+}
+
+.card:hover, .card:focus-within {
+    transform: scale(1.05);
+}
+
+@media (hover) {
+    .card-content {
+        transition: transform 500ms ease;
+        transform: translateY(200%);
+    }
+
+    .card:hover .card-content, 
+    .card:focus-within .card-content {
+        transform: translateY(0);
+    }
+
+    .card-bottom-rule::after {
+        transform: scaleX(0);
+    }
+
+    
+}
