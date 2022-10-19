@@ -33,6 +33,10 @@
     transform: scale(1.05);
 }
 
+.product-rule {
+    border-bottom: solid 3px #019fb6;
+}
+
 @media (hover) {
     .card-content {
         transition: transform 500ms ease;
