@@ -481,3 +481,12 @@ database model list
 </details>
 <br>
 
+### Create Product
+- The create product option features in the staff and admin account options.
+- The create product option allows staff and admins to create new products for the store.
+- User stories covered: 18, 19
+<details><summary>Create Product</summary>
+<img src="documentation/features/create-product.jpg">
+</details>
+<br>
+
