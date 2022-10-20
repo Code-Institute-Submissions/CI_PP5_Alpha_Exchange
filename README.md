@@ -184,3 +184,30 @@ For the color scheme I have opted to implement a dark and light theme while usin
 ![Dark Mode Theme](documentation/features/colour-palette-dark.jpg)
 #### Light Mode
 ![Light Mode Theme](documentation/features/colour-palette-light.jpg)
+
+### Fonts
+ I am using xxxxxx font with a backup of xxxxxx across the website for the title and headers. This is used to maintain a Consistent and professional look with an easily readable format.
+
+For the Secondary font for the body text the owners decided to use xxxxxx with a backup of xxxxxx, this will help to maintain the consistent theme across the website.
+
+### Structure
+The website has been built using a template engine so that all pages follow the same design to maintain the feel across the website.
+
+The Pages are structured in a Regularly used, user friendly and well-known format. This makes each page easy to navigate, coupled with a responsive navbar and footer this gives the user many options for navigating around the website.
+
+The website consists of 15 pages.
+1. Home page
+2. All products
+3. Product details
+4. Product categories
+5. Log in
+6. Log out
+7. Register
+8. Profile page
+9. Basket
+10. Contact us
+11. About us
+12. Admin
+13. Add products page
+14. Edit products page
+15. Error page
