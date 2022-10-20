@@ -404,3 +404,13 @@ database model list
 </details>
 <br>
 
+### About Us
+- The about us link is featured across the whole website within the footer.
+- The about us page features a description of the website and the business to entice users into buying the products available.
+- The about us page also features a FAQ section to answer any regularly asked questions without the need to fill out the contact form.
+- User stories covered: 32
+<details><summary>About Us</summary>
+<img src="documentation/features/about-us.jpg">
+</details>
+<br>
+
