@@ -436,3 +436,12 @@ database model list
 </details>
 <br>
 
+### Categories
+- The categories are shown on separate a navbar allowing users to filter the products by what category are looking for.
+- The categories navbar displays a list of only the current categories, if any are added or removed the list will update.
+- User stories covered: 5, 6, 23, 26
+<details><summary>Categories</summary>
+<img src="documentation/features/categories.jpg">
+</details>
+<br>
+
