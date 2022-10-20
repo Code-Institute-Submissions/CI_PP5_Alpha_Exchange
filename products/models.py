@@ -42,5 +42,8 @@ class Product(models.Model):
     recommended_use = models.CharField(max_length=254)
     featured = models.BooleanField(default=False, null=True, blank=True)
 
+    class Meta:
+        ordering = ['-rating']
+
     def __str__(self):
         return self.name
