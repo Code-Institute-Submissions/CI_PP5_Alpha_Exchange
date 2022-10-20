@@ -454,3 +454,12 @@ database model list
 </details>
 <br>
 
+### All Products
+- The product page is used to display all products that the website has available.
+- The product page can be navigate to from the header and is ordered by rating as a default.
+- User stories covered: 3, 5, 6, 7
+<details><summary>All Products</summary>
+<img src="documentation/features/all-products.jpg">
+</details>
+<br>
+
