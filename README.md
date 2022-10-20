@@ -53,3 +53,17 @@ user information
 10. [Deployment](#deployment)
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
+
+## Project Goals
+### Website User Goals
+- As a website user, I want to be able to have easy options to navigate around the website.
+- As a website user, I want to be able to view the products available on the website.
+- As a website user, I want to be able to apply filters to the products.
+- As a website user, I want to be able to search for specific products.
+- As a website user, I want to be able to contact the site owner if I have any questions.
+- As a website user, I want to be able to add items to a basket and checkout my order.
+- As a website user, I want to be able to register for an account.
+- As a website user, I want to be able to log in and out of my existing account.
+- As a website user, I want to be able to review past orders I have made from my account.
+- As a website user, I want to be able to sign up to a newsletter.
+- As a website user, I want to be able to view and edit my profile.
