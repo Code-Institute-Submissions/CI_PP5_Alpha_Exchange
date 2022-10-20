@@ -18,7 +18,7 @@ user information
 
 ## Table of Content
 1. [Project Goals](#project-goals)
-    1. [Website User Goals](#website-user-goals)s
+    1. [Website User Goals](#website-user-goals)
     2. [Website Owner Goals](#website-owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
@@ -29,7 +29,7 @@ user information
 3. [User Stories](#user-stories)
 4. [Design](#design)
     1. [Design Choices](#design-choices)
-    2. [Colour](#color)
+    2. [Colour](#colour)
     3. [Fonts](#fonts)
     4. [Structure](#structure)
     5. [Database](#database)
@@ -177,7 +177,7 @@ All functionality and development of this project were managed using GitHub whic
 ### Design Choices
 The aim of the design of the website is to create an easy to navigate, clean, modern and responsive design. Any imagery featured on the website is used in a way that promotes the business values and creates a positive response from the user.
 
-### Color
+### Colour
 For the color scheme I have opted to implement a dark and light theme while using colours that compliment the goals and ambitions of the website. To narrow down the choice of colours I used [coolors](https://coolors.co/) an example of both the dark and light theme are shown below.
 
 #### Dark Mode
@@ -319,5 +319,39 @@ database model list
 </details>
 </details>
 <br>
+
+[Back to Table Of Content](#table-of-content)
+
+## Technologies Used
+### Languages
+- [HTML](https://www.w3schools.com/html/default.asp)
+- [CSS](https://www.w3schools.com/css/default.asp)
+- [JavaScript](https://www.w3schools.com/js/default.asp)
+- [Python](https://www.w3schools.com/python/default.asp)
+
+### Frameworks and Tools
+- [GitHub](https://github.com/) was used to maintain the version control and store the project remotely
+- [Gitpod](https://gitpod.io/) was used to write all the code and to link up with Github to maintain the version control.
+- [Balsamiq](https://balsamiq.com/) was use to create the wireframes for the website.
+- [Google Fonts](https://fonts.google.com/) was used to pick out the fonts in use across the website.
+- [Feather Icons](https://feathericons.com/) was used to create the favicon.
+- [Coolors](https://coolors.co/) was used to generate a colour pallette.
+- [Am I Responsive?](https://ui.dev/amiresponsive) was used to test the responsive nature of the website design.
+- [Bootstrap](https://getbootstrap.com/) was used for the pre-defined components and responsive nature of the layout.
+- [Heroku](https://dashboard.heroku.com/) was used to host the website for the additional back-end functionality.
+- [Font Awesome](https://fontawesome.com/) - Font awesome was used for the icons on the website social media links.
+- [JQuery](https://jquery.com) - JQuery was used in some javascript files for DOM manipulation.
+- [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS.
+- [WAVE](https://wave.webaim.org/) was used to validate the accessibility of the website.
+- [JShint](https://jshint.com/) was used to validate the Javascript.
+- [PEP8 Online](http://pep8online.com/) was used to validate the Python.
+- [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to validate the website performance, best practice and SEO.
+- [Facebook](https://www.facebook.com) - was used to make a social media marketing page.
+- [Stripe](https://stripe.com/gb) - was used to take payments for the website.
+- [Amazon Web Services](https://aws.amazon.com/) - was used to host the static files.
+
+### Libraries
+
 
 [Back to Table Of Content](#table-of-content)
