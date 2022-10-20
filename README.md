@@ -472,3 +472,12 @@ database model list
 </details>
 <br>
 
+### Page Ordering
+- The product pages used to display all products that the website has available can be re-ordered by the user to help them find what they are looking for.
+- The product pages can be re-ordered from the dropdown box located on the products page.
+- User stories covered: 6, 7
+<details><summary>Page Ordering</summary>
+<img src="documentation/features/page-ordering.jpg">
+</details>
+<br>
+
