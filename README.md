@@ -88,3 +88,14 @@ user information
 - This website is targets people are looking to buy gifts for friends and family.
 - This website is targets people are looking to sign up to the newsletter.
 - This website is targets people are looking to discover what we currently have to offer.
+
+### User Requirements and Expectations
+- The user can expect an intuitive and accessible navigation system.
+- The user can expect to easily find the products available.
+- The user can expect to easily find specific products they are looking for through filtering and the search function.
+- The user can expect all links work as expected and functions perform their tasks correctly.
+- The user can expect presentation is in line with the website guidelines and the website is visually appealing on all screen sizes.
+- The user can expect easy to read headings to tell the users at a glance what they are looking at.
+- The user can expect accessibility features to be clearly defined.
+- The user can expect to be able to complete any purchase made and track previous orders through their account.
+- The user can expect to be able to contact the business for further queries.
