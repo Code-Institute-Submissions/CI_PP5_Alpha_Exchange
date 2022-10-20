@@ -425,3 +425,14 @@ database model list
 </details>
 <br>
 
+### User Login
+- The user login form allows users to login to an existing account to interact with the community.
+- When a user login for an account they are able to view and edit their profile information.
+- When a user login for an account they are able to view previous orders and the items attached to the order.
+- The user login form is fully responsive down to mobile size devices.
+- User stories covered: 13
+<details><summary>User Login</summary>
+<img src="documentation/features/user-login.jpg">
+</details>
+<br>
+
