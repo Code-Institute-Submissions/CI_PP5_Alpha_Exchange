@@ -126,3 +126,21 @@ The website includes a sign up form to a newsletter so the business can keep in 
 ![Email-success]()
 
 [Back to Table Of Content](#table-of-content)
+
+## User Stories
+### Unauthenticated Users
+1. As a unauthenticated user, I would like to be able to navigate through the website easily so that it is easy to find the information I am looking for.
+2. As a unauthenticated user, I would like to be able to sign up for an account so that I can view my profile and track my orders.
+3. As a unauthenticated user, I would like to see the available products that are listed on the website so that I can see what is currently in available.
+4. As a unauthenticated user, I would like to know how to find social media links so that I can find out about new products and news.
+5. As a unauthenticated user, I would like to be able to search or filter the website for specific products and brands so that I can find exactly what i am looking.
+6. As a unauthenticated user, I would like to be able to sort and view products by category so that I can find specific products easily.
+7. As a unauthenticated user, I would like to be able to order the products on a page a variety of ways so that I can find what I am looking for easier.
+8. As a unauthenticated user, I would like to be able to see detailed description of the products available so that i can make an informed purchase.
+9. As a unauthenticated user, I would like to be able to add a product to my basket so that I can purchase them.
+10. As a unauthenticated user, I would like to be able to see the products that are in my basket so that I don't spend too much.
+11. As a unauthenticated user, I would like to be able to increase quantities and remove items from my basket so that I don't have to navigate to the store and add the item again each time.
+12. As a unauthenticated user, I would like to be able to purchase the items in my basket so that I can complete my order.
+13. As a unauthenticated user, I would like to be able to log in to / sign out of an existing account so that I can get updated on my orders.
+14. As a unauthenticated user, I would like to be able contact the business so that I can ask any questions.
+15. As a unauthenticated user, I would like to be able to sign up to the newsletter so that I can receive news and updates from the business.
