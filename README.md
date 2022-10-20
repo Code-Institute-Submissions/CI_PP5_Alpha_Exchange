@@ -153,3 +153,15 @@ The website includes a sign up form to a newsletter so the business can keep in 
 20. As a website staff user, I would like to be able to view and update product categories so that the product range is up to date.
 21. As a website staff user, I would like to be able to add product categories so that new products are available on the website.
 22. As a website staff user, I would like to be able to delete product categories so that products that are no longer available are removed.
+### Website Owner
+23. As the website owner, I want the products divided into categories so that users looking for something specific can navigate easier.
+24. As the website owner, I want the website to act responsively to all device sizes so that the website can be viewed across all devices.
+25. As the website owner, I want users to get redirected to custom error pages so that they understand when when something has gone wrong and can be redirected back to the main website.
+26. As the website owner, I want users to be able to navigate the website quickly and easily so that they are able to find what they are looking for.
+27. As the website owner, I want users to be sign up to a newsletter to capture user information and bring users back to the website.
+28. As the website owner, I want users to be able to view the business social media so that users are made aware of the products on offer and kept up to date with any news.
+### All Users
+29. As a user, I would like to have a confirmation message that my order has been successful so that I am made aware once the transaction has taken place successfully.
+30. As a user, I would like to be shown descriptive messages telling me that my actions have been successful or unsuccessful when I preform an action so that I can act accordingly.
+31. As a user, I would like to be able to navigate back to the main website structure if an error occurs and I end up on the 404 page so that i can continue shopping without issues.
+32. As a user, I would like to be able to find a description of the business and an FAQ section so that I can find the answers I need.
