@@ -463,3 +463,12 @@ database model list
 </details>
 <br>
 
+### Product Details
+- The product details page is used to display the product details for a specific item.
+- The product details page can be navigate to from any item on the store by selecting it.
+- User stories covered: 3, 8
+<details><summary>Product Details</summary>
+<img src="documentation/features/product-details.jpg">
+</details>
+<br>
+
