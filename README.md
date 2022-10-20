@@ -414,3 +414,14 @@ database model list
 </details>
 <br>
 
+### User Registration
+- The user registration form allows users to create an account to interact with the community.
+- When a user registers for an account they are able to view and edit their profile information.
+- When a user registers for an account they are able to view previous orders and the items attached to the order.
+- The user registration form is fully responsive down to mobile size devices.
+- User stories covered: 2
+<details><summary>User Registration</summary>
+<img src="documentation/features/user-registration.jpg">
+</details>
+<br>
+
