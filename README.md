@@ -144,3 +144,12 @@ The website includes a sign up form to a newsletter so the business can keep in 
 13. As a unauthenticated user, I would like to be able to log in to / sign out of an existing account so that I can get updated on my orders.
 14. As a unauthenticated user, I would like to be able contact the business so that I can ask any questions.
 15. As a unauthenticated user, I would like to be able to sign up to the newsletter so that I can receive news and updates from the business.
+### Authenticated Users
+16. As a authenticated user, I would like to be able to view and update my personal information so that I do not have to fill it out each time I make an order.
+17. As a authenticated user, I would like to be able to view my order history so that i can find products i have ordered before and would order again.
+### Website Staff
+18. As a website staff user, I would like to be able to use full CRUD functionality so that I can update the product range available.
+19. As a website staff user, I would like to be able to manage product inventory so that I can adjust the available products.
+20. As a website staff user, I would like to be able to view and update product categories so that the product range is up to date.
+21. As a website staff user, I would like to be able to add product categories so that new products are available on the website.
+22. As a website staff user, I would like to be able to delete product categories so that products that are no longer available are removed.
