@@ -80,3 +80,11 @@ user information
 - As the website owner, I want to be able to add, edit and delete items from the website myself.
 
 [Back to Table Of Content](#table-of-content)
+
+## User Experience
+### Target Audience
+- This website is targets people are looking to buy clothing.
+- This website is targets people are looking to buy accessories.
+- This website is targets people are looking to buy gifts for friends and family.
+- This website is targets people are looking to sign up to the newsletter.
+- This website is targets people are looking to discover what we currently have to offer.
