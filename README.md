@@ -165,3 +165,10 @@ The website includes a sign up form to a newsletter so the business can keep in 
 30. As a user, I would like to be shown descriptive messages telling me that my actions have been successful or unsuccessful when I preform an action so that I can act accordingly.
 31. As a user, I would like to be able to navigate back to the main website structure if an error occurs and I end up on the 404 page so that i can continue shopping without issues.
 32. As a user, I would like to be able to find a description of the business and an FAQ section so that I can find the answers I need.
+
+### Agile Methodology
+
+All functionality and development of this project were managed using GitHub which Projects can be found
+[here]()
+
+[Back to Table Of Content](#table-of-content)
