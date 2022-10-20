@@ -99,3 +99,9 @@ user information
 - The user can expect accessibility features to be clearly defined.
 - The user can expect to be able to complete any purchase made and track previous orders through their account.
 - The user can expect to be able to contact the business for further queries.
+
+### Business Model
+This website is primarily aimed at selling to consumers, for this I have chosen a B2C business model. To make the website more consumer friendly I have made sure that all design decisions, pictures, navigation and ease of purchase is made with the end user in mind.
+The business model would be that this website is able to be used as a dropshipping website where the website owner does not need to handle inventory and the products can be sent straight from the supplier.
+As an alternative the website owner could buy the product and arrange the shipping of orders themselves, this does mean any returns also get handled by the website owner.
+For This project I have chosen for the stock to be handled by a third party.
