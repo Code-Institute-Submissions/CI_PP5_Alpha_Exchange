@@ -29,7 +29,7 @@ user information
 3. [User Stories](#user-stories)
 4. [Design](#design)
     1. [Design Choices](#design-choices)
-    2. [Colour](#colour)
+    2. [Colour](#color)
     3. [Fonts](#fonts)
     4. [Structure](#structure)
     5. [Database](#database)
@@ -172,3 +172,15 @@ All functionality and development of this project were managed using GitHub whic
 [here]()
 
 [Back to Table Of Content](#table-of-content)
+
+## Design
+### Design Choices
+The aim of the design of the website is to create an easy to navigate, clean, modern and responsive design. Any imagery featured on the website is used in a way that promotes the business values and creates a positive response from the user.
+
+### Color
+For the color scheme I have opted to implement a dark and light theme while using colours that compliment the goals and ambitions of the website. To narrow down the choice of colours I used [coolors](https://coolors.co/) an example of both the dark and light theme are shown below.
+
+#### Dark Mode
+![Dark Mode Theme](documentation/features/colour-palette-dark.jpg)
+#### Light Mode
+![Light Mode Theme](documentation/features/colour-palette-light.jpg)
