@@ -105,3 +105,24 @@ This website is primarily aimed at selling to consumers, for this I have chosen 
 The business model would be that this website is able to be used as a dropshipping website where the website owner does not need to handle inventory and the products can be sent straight from the supplier.
 As an alternative the website owner could buy the product and arrange the shipping of orders themselves, this does mean any returns also get handled by the website owner.
 For This project I have chosen for the stock to be handled by a third party.
+
+### SEO
+Long tag keywords and short tag keywords were searched for in regards to SEO using Google tools and other online resources. These tags are included within the main HTML head and in the appropriate places within the project to name images and within main body text.
+
+![SEO keywords HTML]()
+
+### Marketing
+#### Facebook Page
+To help market the website, the website includes a like to its own social media page in the footer where new products and announcements are made.
+the Facebook page can be viewed [here](). 
+
+![Facebook Screenshot]()
+
+#### Newsletter Sign up
+The website includes a sign up form to a newsletter so the business can keep in touch with anyone who want more information.
+
+![Sign-up]()
+
+![Email-success]()
+
+[Back to Table Of Content](#table-of-content)
