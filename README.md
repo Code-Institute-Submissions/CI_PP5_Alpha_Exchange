@@ -445,3 +445,12 @@ database model list
 </details>
 <br>
 
+### Category Management
+- The category management option features in the staff and admin account options.
+- The category management allows staff and admins to edit the current categories, add or remove new or old ones.
+- User stories covered: 20, 21, 22
+<details><summary>Categories</summary>
+<img src="documentation/features/category-management.jpg">
+</details>
+<br>
+
