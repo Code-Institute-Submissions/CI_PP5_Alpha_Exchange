@@ -67,3 +67,16 @@ user information
 - As a website user, I want to be able to review past orders I have made from my account.
 - As a website user, I want to be able to sign up to a newsletter.
 - As a website user, I want to be able to view and edit my profile.
+
+### Website Owner Goals
+- As the website owner, I want to allow users to navigate the website with ease.
+- As the website owner, I want to allow users to view the product details.
+- As the website owner, I want to allow users to be able to add items to the basket and purchase items.
+- As the website owner, I want to allow users to create an account.
+- As the website owner, I want to allow users to sign in and out when they return to the website.
+- As the website owner, I want to promote the website to new and existing users.
+- As the website owner, I want to allow users to see their order history.
+- As the website owner, I want to allow users to sign up for a news letter.
+- As the website owner, I want to be able to add, edit and delete items from the website myself.
+
+[Back to Table Of Content](#table-of-content)
