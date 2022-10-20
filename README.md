@@ -355,3 +355,22 @@ database model list
 
 
 [Back to Table Of Content](#table-of-content)
+
+## Features
+### Navbar / Dropdown Menu
+- Featured on all pages across the website.
+- The navbar / dropdown menu is fully responsive and changes to a hamburger style button for smaller screen sizes.
+- The navbar / dropdown menu has a link to login or sign up for an account.
+- The navbar / dropdown menu includes links to allow users to navigate around the website easily.
+- The navbar / dropdown menu includes the dark theme switch toggler option for users that prefer to use a lighter of darker theme.
+- user stories covered: 1, 24, 26
+<details><summary>Navbar / Dropdown Menu</summary>
+<img src="documentation/features/hamburger.jpg">
+</details>
+<details><summary>Navbar / Dropdown Menu Light</summary>
+<img src="documentation/features/menu-light.jpg">
+</details>
+<details><summary>Navbar / Dropdown Menu Dark</summary>
+<img src="documentation/features/menu-dark.jpg">
+</details>
+<br>
