@@ -3,7 +3,7 @@
 
 ![Mock-up image](documentation/wireframes/am-i-responsive.jpg)
 
- [Live webpage]()
+ [Live webpage](https://alpha-exchange.herokuapp.com/)
 
 ## About
 Alpha Exchange is an E-commerce website aimed at B2C sales with a drop shipping style model, this website mainly features clothing, home-wear and accessories. the website is designed to allow users to experience a fully featured shopping experience where you can easily find known products, search for new or similar products, filter by categories or browse through the new arrivals and clearance sections.
@@ -211,3 +211,113 @@ The website consists of 15 pages.
 13. Add products page
 14. Edit products page
 15. Error page
+
+### Database
+The website was built using Python and the Django framework with a postgres database to store all of our information.
+<details><summary>Database Diagram</summary>
+<img src="documentation/wireframes/database.jpg">
+</details>
+
+The following models were created to represent the real database model structure within the website database.
+
+database model list
+
+### Wireframes
+<details><summary>Mobile Design</summary>
+<details><summary>Home page</summary>
+<img src="documentation/wireframes/home-page-mobile.png">
+</details>
+<details><summary>All products</summary>
+<img src="documentation/wireframes/all-products-mobile.png">
+</details>
+<details><summary>Product details</summary>
+<img src="documentation/wireframes/product-details-mobile.png">
+</details>
+<details><summary>Product categories</summary>
+<img src="documentation/wireframes/product-categories-mobile.png">
+</details>
+<details><summary>Log in</summary>
+<img src="documentation/wireframes/log-in-mobile.png">
+</details>
+<details><summary>Log out</summary>
+<img src="documentation/wireframes/log-out-mobile.png">
+</details>
+<details><summary>Register</summary>
+<img src="documentation/wireframes/register-mobile.png">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/wireframes/profile-page-mobile.png">
+</details>
+<details><summary>Basket</summary>
+<img src="documentation/wireframes/basket-mobile.png">
+</details>
+<details><summary>Contact us</summary>
+<img src="documentation/wireframes/contact-us-mobile.png">
+</details>
+<details><summary>About us</summary>
+<img src="documentation/wireframes/about-us-mobile.png">
+</details>
+<details><summary>Admin</summary>
+<img src="documentation/wireframes/admin-mobile.png">
+</details>
+<details><summary>Add products page</summary>
+<img src="documentation/wireframes/add-products-page-mobile.png">
+</details>
+<details><summary>Edit products page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Error page</summary>
+<img src="documentation/wireframes/error-page-mobile.png">
+</details>
+</details>
+
+<details><summary>Desktop Design</summary>
+<details><summary>Home page</summary>
+<img src="documentation/wireframes/home-page.png">
+</details>
+<details><summary>All products</summary>
+<img src="documentation/wireframes/all-products.png">
+</details>
+<details><summary>Product details</summary>
+<img src="documentation/wireframes/product-details.png">
+</details>
+<details><summary>Product categories</summary>
+<img src="documentation/wireframes/product-categories.png">
+</details>
+<details><summary>Log in</summary>
+<img src="documentation/wireframes/log-in.png">
+</details>
+<details><summary>Log out</summary>
+<img src="documentation/wireframes/log-out.png">
+</details>
+<details><summary>Register</summary>
+<img src="documentation/wireframes/register.png">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/wireframes/profile-page.png">
+</details>
+<details><summary>Basket</summary>
+<img src="documentation/wireframes/basket.png">
+</details>
+<details><summary>Contact us</summary>
+<img src="documentation/wireframes/contact-us.png">	
+</details>
+<details><summary>About us</summary>
+<img src="documentation/wireframes/about-us.png">
+</details>
+<details><summary>Admin</summary>
+<img src="documentation/wireframes/admin.png">
+</details>
+<details><summary>Add products page</summary>
+<img src="documentation/wireframes/add-products-page.png">
+</details>
+<details><summary>Edit products page</summary>
+<img src="documentation/wireframes/edit-products-page.png">
+</details>
+<details><summary>Error page</summary>
+<img src="documentation/wireframes/error-page.png">
+</details>
+</details>
+<br>
+
+[Back to Table Of Content](#table-of-content)
