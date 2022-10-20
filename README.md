@@ -386,3 +386,12 @@ database model list
 </details>
 <br>
 
+### Newsletter E-mail List
+- Featured across the whole website within the footer.
+- The newsletter e-mail list allows users to sign up to a email list so that they can get updates on the products and news about the website.
+- User stories covered: 15, 27
+<details><summary>Newsletter E-mail List</summary>
+<img src="documentation/features/newsletter-mail-list.jpg">
+</details>
+<br>
+
