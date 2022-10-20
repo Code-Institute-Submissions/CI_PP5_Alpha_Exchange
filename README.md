@@ -395,3 +395,12 @@ database model list
 </details>
 <br>
 
+### Contact Us
+- The contact us link is featured across the whole website within the footer.
+- The contact us page allows users to fill out that sends the team an email with their query.
+- User stories covered: 14, 28
+<details><summary>Contact Us</summary>
+<img src="documentation/features/contact-us.jpg">
+</details>
+<br>
+
