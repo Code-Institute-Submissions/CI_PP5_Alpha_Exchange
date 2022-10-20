@@ -374,3 +374,15 @@ database model list
 <img src="documentation/features/menu-dark.jpg">
 </details>
 <br>
+
+### Footer
+- Featured across the whole website.
+- The footer contains links to the websites social media handle.
+- The footer contains Information on how to get in touch with support when needed.
+- The footer is fully responsive down to mobile size devices.
+- User stories covered: 1, 4, 14, 15, 24, 27, 28
+<details><summary>Footer</summary>
+<img src="documentation/features/footer.jpg">
+</details>
+<br>
+
