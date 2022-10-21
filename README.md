@@ -958,3 +958,16 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+14. As a unauthenticated user, I would like to be able contact the business so that I can ask any questions or make a complaint.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
+| Contact Us | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-14.jpg">
+</details>
+<br>
+
+
