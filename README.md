@@ -806,11 +806,22 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Navbar / Dropdown Menu | Use the Navbar to navigate to another page | The desired page loads correctly | Works As Expected |
 | Footer | Within the footer locate the social media or contact us links | The social media page or contact us page load correctly | Works As Expected |
-| Product Search | Use the search bar within the header to search for the name, recomended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
+| Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 | Error Pages | Edit the website URL from any page to form an invalid URL. On the error page use the built in navigation to navigate back to the main website. | The user is redirected to a custom error page and is able to navigate on their own back to the main website. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-1.jpg">
+</details>
+<br>
+
+2. As a unauthenticated user, I would like to be able to sign up for an account so that I can view my profile and track my orders.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| User Registration | Fill out the User Registration form to create an account | A user account is created for the user and redirected to the profile page | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-2.jpg">
 </details>
 <br>
 
