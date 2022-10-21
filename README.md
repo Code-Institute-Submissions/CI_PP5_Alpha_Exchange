@@ -947,3 +947,14 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+13. As a unauthenticated user, I would like to be able to log in to / sign out of an existing account so that I can get updated on my orders.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| User Login | From any page of the website use the login link within the accounts section on the navbar and fill out the login form. | The user is redirected to the login page and once the form is filled out they are logged into the website. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-13.jpg">
+</details>
+<br>
+
