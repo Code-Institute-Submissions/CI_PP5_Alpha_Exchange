@@ -139,7 +139,7 @@ The website includes a sign up form to a newsletter so the business can keep in 
 8. As a unauthenticated user, I would like to be able to see detailed description of the products available so that i can make an informed purchase.
 9. As a unauthenticated user, I would like to be able to add a product to my basket so that I can purchase them.
 10. As a unauthenticated user, I would like to be able to see the products that are in my basket so that I don't spend too much.
-11. As a unauthenticated user, I would like to be able to increase quantities and remove items from my basket so that I don't have to navigate to the store and add the item again each time.
+11. As a unauthenticated user, I would like to be able to increase and decrease quantities and remove items from my basket so that I don't have to navigate to the store and add the item again each time.
 12. As a unauthenticated user, I would like to be able to purchase the items in my basket so that I can complete my order.
 13. As a unauthenticated user, I would like to be able to log in to / sign out of an existing account so that I can get updated on my orders.
 14. As a unauthenticated user, I would like to be able contact the business so that I can ask any questions.
@@ -496,6 +496,15 @@ database model list
 - User stories covered: 18, 19
 <details><summary>Edit Product</summary>
 <img src="documentation/features/edit-product.jpg">
+</details>
+<br>
+
+### Delete Product
+- The delete product option features on the products page only for staff and admin users.
+- The delete product option allows staff and admins to delete the products on the store with confirmation to avoid accidental deletion.
+- User stories covered: 18, 19
+<details><summary>Delete Product</summary>
+<img src="documentation/features/delete-product.jpg">
 </details>
 <br>
 
