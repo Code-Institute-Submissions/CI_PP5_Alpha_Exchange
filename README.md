@@ -576,3 +576,15 @@ database model list
 </details>
 <br>
 
+### Error Pages
+- The custom Error pages are used to replace the standard error pages from django.
+- The custom Error pages cover 400, 404, 403, 500 errors.
+- The featured recipes list is fully responsive down to mobile size devices.
+- User stories covered: 1, 25, 26, 31
+<details><summary>Error Pages</summary>
+<img src="documentation/features/error-page.jpg">
+</details>
+<br>
+
+[Back to Table Of Content](#table-of-content)
+
