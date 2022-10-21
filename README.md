@@ -687,3 +687,52 @@ My code passed with no errors and warnings to show.
 </details>
 <br>
 
+### Accessibility
+I used WAVE WebAIM web accessibility evaluation tool to ensure the website met high accessibility standards. All pages passed with no errors, the profile page had to be run through the web extension as it would normally require a user to be logged in to an account and the standard API was not able to work around this.
+<details><summary>Home page</summary>
+<img src="documentation/validation/accessibility/home-page.jpg">
+</details>
+<details><summary>All products</summary>
+<img src="documentation/validation/accessibility/all-products.jpg">
+</details>
+<details><summary>Product details</summary>
+<img src="documentation/validation/accessibility/product-details.jpg">
+</details>
+<details><summary>Product categories</summary>
+<img src="documentation/validation/accessibility/product-categories.jpg">
+</details>
+<details><summary>Log in</summary>
+<img src="documentation/validation/accessibility/log-in.jpg">
+</details>
+<details><summary>Log out</summary>
+<img src="documentation/validation/accessibility/log-out.jpg">
+</details>
+<details><summary>Register</summary>
+<img src="documentation/validation/accessibility/register.jpg">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/validation/accessibility/profile-page.jpg">
+</details>
+<details><summary>Basket</summary>
+<img src="documentation/validation/accessibility/basket.jpg">
+</details>
+<details><summary>Contact us</summary>
+<img src="documentation/validation/accessibility/contact-us.jpg">
+</details>
+<details><summary>About us</summary>
+<img src="documentation/validation/accessibility/about-us.jpg">
+</details>
+<details><summary>Admin</summary>
+<img src="documentation/validation/accessibility/admin.jpg">
+</details>
+<details><summary>Add products page</summary>
+<img src="documentation/validation/accessibility/add-products-page.jpg">
+</details>
+<details><summary>Edit products page</summary>
+<img src="documentation/validation/accessibility/edit-products-page.jpg">
+</details>
+<details><summary>Error page</summary>
+<img src="documentation/validation/accessibility/error-page.jpg">
+</details>
+<br>
+
