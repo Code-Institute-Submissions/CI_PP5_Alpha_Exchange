@@ -1073,3 +1073,14 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+23. As the website owner, I want the products divided into categories so that users looking for something specific can navigate easier.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Categories | From any page use the navbar to locate the categories page or the individual categories and select a category to go to. | The current user is taken to the category of choice. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-23.jpg">
+</details>
+<br>
+
