@@ -566,3 +566,13 @@ database model list
 </details>
 <br>
 
+### Message Popups
+- The message popups feature is used to inform the user when a specified action has taken place and the action was applied.
+- The message popups feature is used to inform the user when an error has happens and that the action has not been applied.
+- The message popups feature is located in the top right corner of the screen and is closed manually by the user or on a new page load.
+- User stories covered: 29, 30
+<details><summary>Message Popups</summary>
+<img src="documentation/features/message-popups.jpg">
+</details>
+<br>
+
