@@ -518,3 +518,13 @@ database model list
 </details>
 <br>
 
+### Shopping Basket
+- The shopping basket is used to hold a list of products the user is looking to purchase.
+- The shopping basket is can be used to adjust quantities and remove products from the basket entirely.
+- The shopping basket can be found within the header on every page and links to a separate detailed page with all the items in the basket.
+- User stories covered: 9, 10, 11, 12
+<details><summary>Shopping Basket</summary>
+<img src="documentation/features/shopping-basket.jpg">
+</details>
+<br>
+
