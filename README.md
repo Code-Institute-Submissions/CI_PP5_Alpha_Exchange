@@ -863,3 +863,17 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+6. As a unauthenticated user, I would like to be able to sort and view products by category so that I can find specific products easily.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Categories | From any page of the website use one of the links in the header to navigate to the selected category page | The user is taken to the selected category page | Works As Expected |
+| All Products | From any page of the website use the link in the header to navigate to the products page | The user is taken to the all products page | Works As Expected |
+| Page Ordering | From any page containing a list of products use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
+| Product Search | Use the search bar within the header to search for the name, recomended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-6.jpg">
+</details>
+<br>
+
