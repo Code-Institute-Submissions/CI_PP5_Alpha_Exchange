@@ -490,3 +490,12 @@ database model list
 </details>
 <br>
 
+### Edit Product
+- The edit product option features on the products page only for staff and admin users.
+- The edit product option allows staff and admins to update the details of the products on the store.
+- User stories covered: 18, 19
+<details><summary>Edit Product</summary>
+<img src="documentation/features/edit-product.jpg">
+</details>
+<br>
+
