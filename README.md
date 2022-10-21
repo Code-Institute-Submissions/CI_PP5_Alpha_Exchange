@@ -558,3 +558,11 @@ database model list
 </details>
 <br>
 
+### Website Administration
+- The Website Administration page can be used by staff and admin to preform multiple actions and manipulate the database.
+- User stories covered: 18, 19, 20, 21, 22
+<details><summary>Website Administration</summary>
+<img src="documentation/features/website-administration.jpg">
+</details>
+<br>
+
