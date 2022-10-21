@@ -831,10 +831,21 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | All Products | From any page of the website use the link in the header to navigate to the products page | The user is taken to the all products page | Works As Expected |
 | Product Details | From any product page or category page select a product on the store | The user is redirected to the product details page | Works As Expected |
-| Product Search | Use the search bar within the header to search for the name, recomended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
+| Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-3.jpg">
+</details>
+<br>
+
+4. As a unauthenticated user, I would like to know how to find social media links so that I can find out about new products and news.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-4.jpg">
 </details>
 <br>
 
