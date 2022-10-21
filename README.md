@@ -3,7 +3,7 @@
 
 ![Mock-up image](documentation/wireframes/am-i-responsive.jpg)
 
- [Live webpage](https://alpha-exchange.herokuapp.com/)
+[Live webpage](https://alpha-exchange.herokuapp.com/)
 
 ## About
 Alpha Exchange is an E-commerce website aimed at B2C sales with a drop shipping style model, this website mainly features clothing, home-wear and accessories. the website is designed to allow users to experience a fully featured shopping experience where you can easily find known products, search for new or similar products, filter by categories or browse through the new arrivals and clearance sections.
@@ -1058,6 +1058,18 @@ The website was tested on the following browsers in both regular and incognito m
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-21.jpg">
+</details>
+<br>
+
+22. As a website staff user, I would like to be able to delete product categories so that products that are no longer available are removed.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here select the deleted category button. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, When the staff member clicks the delete category button teh staff member will be returned to the category management page and the dategory deleted. | Works As Expected |
+| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to prefrom bulk actions and full CRUD functionality. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-22.jpg">
 </details>
 <br>
 
