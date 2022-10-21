@@ -935,3 +935,15 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+12. As a unauthenticated user, I would like to be able to purchase the items in my basket so that I can complete my order.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Shopping Basket | From the Shopping basket page, once the user is happy wiht their order, select the checkout option and fillin their details | The user is redirected to the checkout page where they can fill out the checkout details and purchase their products. | Works As Expected |
+| Stripe Checkout | On the checkout page the user should fill out their details to finish the purchase of the items in the current basket | The user purchases the items they placed into the basket | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-12.jpg">
+</details>
+<br>
+
