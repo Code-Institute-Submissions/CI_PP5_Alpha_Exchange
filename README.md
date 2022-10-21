@@ -51,6 +51,8 @@ user information
 8. [Testing user stories](#testing-user-stories)
 9. [Automated Testing](#automated-testing)
 10. [Bugs](#bugs)
+11. [Google emails](#google-emails)
+12. [Stripe](#stripe)
 11. [Deployment](#deployment)
 13. [Credits](#credits)
 13. [Acknowledgements](#acknowledgements)
@@ -980,6 +982,18 @@ The website was tested on the following browsers in both regular and incognito m
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-15.jpg">
+</details>
+<br>
+
+16. As a authenticated user, I would like to be able to view and update my personal information so that I do not have to fill it out each time I make an order.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Stripe Checkout | When a user makes an order there is a checkbox to save the information for the next time, if this box is checked the details currently filled out will be saved to the user profile and appear on the profile page. | the deatils filled out on the checkout page appear on the profile page  | Works As Expected |
+| Profile Page | From the profile page, update the form with the new personal information and click the update button | the form saves and the page reloads with the new information saved in the database and displayed in teh form | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-16.jpg">
 </details>
 <br>
 
