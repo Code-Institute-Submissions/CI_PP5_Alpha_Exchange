@@ -736,3 +736,52 @@ I used WAVE WebAIM web accessibility evaluation tool to ensure the website met h
 </details>
 <br>
 
+### Performance
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. 
+<details><summary>Home page</summary>
+<img src="documentation/validation/lighthouse/home-page.jpg">
+</details>
+<details><summary>All products</summary>
+<img src="documentation/validation/lighthouse/all-products.jpg">
+</details>
+<details><summary>Product details</summary>
+<img src="documentation/validation/lighthouse/product-details.jpg">
+</details>
+<details><summary>Product categories</summary>
+<img src="documentation/validation/lighthouse/product-categories.jpg">
+</details>
+<details><summary>Log in</summary>
+<img src="documentation/validation/lighthouse/log-in.jpg">
+</details>
+<details><summary>Log out</summary>
+<img src="documentation/validation/lighthouse/log-out.jpg">
+</details>
+<details><summary>Register</summary>
+<img src="documentation/validation/lighthouse/register.jpg">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/validation/lighthouse/profile-page.jpg">
+</details>
+<details><summary>Basket</summary>
+<img src="documentation/validation/lighthouse/basket.jpg">
+</details>
+<details><summary>Contact us</summary>
+<img src="documentation/validation/lighthouse/contact-us.jpg">
+</details>
+<details><summary>About us</summary>
+<img src="documentation/validation/lighthouse/about-us.jpg">
+</details>
+<details><summary>Admin</summary>
+<img src="documentation/validation/lighthouse/admin.jpg">
+</details>
+<details><summary>Add products page</summary>
+<img src="documentation/validation/lighthouse/add-products-page.jpg">
+</details>
+<details><summary>Edit products page</summary>
+<img src="documentation/validation/lighthouse/edit-products-page.jpg">
+</details>
+<details><summary>Error page</summary>
+<img src="documentation/validation/lighthouse/error-page.jpg">
+</details>
+<br>
+
