@@ -913,3 +913,25 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+10. As a unauthenticated user, I would like to be able to see the products that are in my basket so that I don't spend too much.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Shopping Basket | From any page, select the basket icon on the navbar to navigate to the shopping basket page | View the items in the shopping basket. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-10.jpg">
+</details>
+<br>
+
+11. As a unauthenticated user, I would like to be able to increase or decrease quantities and remove items from my basket so that I don't have to navigate to the store and add the item again each time.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Shopping Basket | From any page, select the basket icon on the navbar to navigate to the shopping basket page and select the increase or decrease buttons next to the product. | The quantity of the product in the basket is adjusted. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-11.jpg">
+</details>
+<br>
+
