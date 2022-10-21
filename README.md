@@ -877,3 +877,16 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+7. As a unauthenticated user, I would like to be able to order the products on a page a variety of ways so that I can find what I am looking for easier.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| All Products | From the all products page use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
+| Page Ordering | From any page containing a list of products use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
+| Product Search | From the search results page use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-7.jpg">
+</details>
+<br>
+
