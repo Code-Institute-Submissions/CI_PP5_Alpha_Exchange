@@ -793,3 +793,9 @@ The website was tested on the following devices:
 - Samsung Galaxy S20 FE 5G
 In addition, the website was tested using Google Chrome Developer Tools Device Toggling option for all available device options.
 
+### Browser Compatibility
+The website was tested on the following browsers in both regular and incognito modes:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
