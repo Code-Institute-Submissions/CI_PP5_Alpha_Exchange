@@ -528,3 +528,15 @@ database model list
 </details>
 <br>
 
+### Stripe Checkout
+- The stripe checkout page is used to securely handle card information.
+- The stripe checkout link is part of the shopping basket page and the user can choose to checkout when ready.
+- The stripe checkout page contains a form for users to fill out their payment details.
+- The stripe checkout page form is pre-filled for authenticated users who have purchased products on the store before.
+- The stripe checkout Page shows a list of the items in the basket and the total cost.
+- User stories covered: 12, 16, 29
+<details><summary>Stripe Checkout</summary>
+<img src="documentation/features/stripe-checkout.jpg">
+</details>
+<br>
+
