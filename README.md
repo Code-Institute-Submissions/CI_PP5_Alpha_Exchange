@@ -901,3 +901,15 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+9. As a unauthenticated user, I would like to be able to add a product to my basket so that I can purchase them.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Shopping Basket | From any page containing a list of products hover over any item you want to purchase and select the "Add To Basket" button | The item is added to the basket | Works As Expected |
+| Shopping Basket | From the products detail page select the "Add To Basket" button | The item is added to the basket | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-9.jpg">
+</details>
+<br>
+
