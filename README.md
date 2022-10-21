@@ -997,3 +997,15 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+17. As a authenticated user, I would like to be able to view my order history so that i can find products i have ordered before and would order again.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile Page | From any page use the profile page link within the accounts section on the navbar to navigate to the profile page | On the profile page see a list of previous orders and the products ont he orders | Works As Expected |
+| Order History | On the profile page locate the order history, click on an order to open up a detailed view of the items, quantity and more information relating to the order. | The user is redirected to a new page with detailed information relating to the the order selected. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-17.jpg">
+</details>
+<br>
+
