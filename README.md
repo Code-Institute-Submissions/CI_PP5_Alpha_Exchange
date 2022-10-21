@@ -540,3 +540,12 @@ database model list
 </details>
 <br>
 
+### Profile Page
+- The profile page is used to view a users profile information and order history.
+- From the profile page a user is able to update their personal details.
+- User stories covered: 16, 17
+<details><summary>Profile Page</summary>
+<img src="documentation/features/profile-page.jpg">
+</details>
+<br>
+
