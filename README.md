@@ -971,3 +971,15 @@ The website was tested on the following browsers in both regular and incognito m
 <br>
 
 
+15. As a unauthenticated user, I would like to be able to sign up to the newsletter so that I can receive news and updates from the business.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
+| Newsletter E-mail List | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-15.jpg">
+</details>
+<br>
+
