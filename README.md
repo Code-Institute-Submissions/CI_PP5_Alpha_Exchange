@@ -649,3 +649,12 @@ My CSS passed with no errors and warnings to show.
 <img src="documentation/validation/css/products.jpg">
 </details>
 <br>
+
+### JavaScript Validation
+JSHint Static Code Analysis Tool for JavaScript was used to validate the Javascript file.
+All files with no errors or warnings.
+<details><summary>Theme Switch</summary>
+<img src="documentation/validation/js/js-theme.jpg">
+</details>
+<br>
+
