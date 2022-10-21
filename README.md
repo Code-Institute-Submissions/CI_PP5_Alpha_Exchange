@@ -588,3 +588,54 @@ database model list
 
 [Back to Table Of Content](#table-of-content)
 
+## Validation
+### HTML Validation
+I used the W3C Validation Service to validate the HTML of the website.
+All pages passed with no errors, these were run as web pages to combines the parts of the template into completed versions for the browser, with the exception of the error pages which would not be recognized by W3C.
+<details><summary>Home page</summary>
+<img src="documentation/validation/html/home-page.jpg">
+</details>
+<details><summary>All products</summary>
+<img src="documentation/validation/html/all-products.jpg">
+</details>
+<details><summary>Product details</summary>
+<img src="documentation/validation/html/product-details.jpg">
+</details>
+<details><summary>Product categories</summary>
+<img src="documentation/validation/html/product-categories.jpg">
+</details>
+<details><summary>Log in</summary>
+<img src="documentation/validation/html/log-in.jpg">
+</details>
+<details><summary>Log out</summary>
+<img src="documentation/validation/html/log-out.jpg">
+</details>
+<details><summary>Register</summary>
+<img src="documentation/validation/html/register.jpg">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/validation/html/profile-page.jpg">
+</details>
+<details><summary>Basket</summary>
+<img src="documentation/validation/html/basket.jpg">
+</details>
+<details><summary>Contact us</summary>
+<img src="documentation/validation/html/contact-us.jpg">
+</details>
+<details><summary>About us</summary>
+<img src="documentation/validation/html/about-us.jpg">
+</details>
+<details><summary>Admin</summary>
+<img src="documentation/validation/html/admin.jpg">
+</details>
+<details><summary>Add products page</summary>
+<img src="documentation/validation/html/add-products-page.jpg">
+</details>
+<details><summary>Edit products page</summary>
+<img src="documentation/validation/html/edit-products-page.jpg">
+</details>
+<details><summary>Error page</summary>
+<img src="documentation/validation/html/error-page.jpg">
+</details>
+<br>
+
