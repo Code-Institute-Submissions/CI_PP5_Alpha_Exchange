@@ -890,3 +890,14 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+8. As a unauthenticated user, I would like to be able to see detailed description of the products available so that i can make an informed purchase.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Product Details | From any page containing a list of products select a product to view | The user is redirected to a product details page containing all the product information | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-8.jpg">
+</details>
+<br>
+
