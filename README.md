@@ -549,3 +549,12 @@ database model list
 </details>
 <br>
 
+### Order History
+- From the profile page a user is able to see their order history and select the items they previously ordered.
+- The order history includes all the details of the order including the order number, products, cost , delivery and billing information.
+- User stories covered: 17
+<details><summary>Order History</summary>
+<img src="documentation/features/order-history.jpg">
+</details>
+<br>
+
