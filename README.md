@@ -639,3 +639,13 @@ All pages passed with no errors, these were run as web pages to combines the par
 </details>
 <br>
 
+### CSS Validation
+I used the W3C Jigsaw CSS Validation Service to validate the CSS of the website.
+My CSS passed with no errors and warnings to show.
+<details><summary>Base CSS</summary>
+<img src="documentation/validation/css/base.jpg">
+</details>
+<details><summary>Products CSS</summary>
+<img src="documentation/validation/css/products.jpg">
+</details>
+<br>
