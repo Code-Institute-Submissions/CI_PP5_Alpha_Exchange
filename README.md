@@ -508,3 +508,13 @@ database model list
 </details>
 <br>
 
+### Product Search
+- The product search is used to find specific products that the customer is looking for.
+- The product search is part of the header and is featured on all pages of the website.
+- The product search works by using keywords to filter the products to what it feels is relevant to the user.
+- User stories covered: 1, 3, 5, 6, 7
+<details><summary>Product Search</summary>
+<img src="documentation/features/product-search.jpg">
+</details>
+<br>
+
