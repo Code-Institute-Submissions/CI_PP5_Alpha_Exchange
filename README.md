@@ -49,10 +49,11 @@ user information
     7. [Device Testing](#device-testing)
     8. [Browser Compatibility](#browser-compatibility)
 8. [Testing user stories](#testing-user-stories)
-9. [Bugs](#bugs)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
-12. [Acknowledgements](#acknowledgements)
+9. [Automated Testing](#automated-testing)
+10. [Bugs](#bugs)
+11. [Deployment](#deployment)
+13. [Credits](#credits)
+13. [Acknowledgements](#acknowledgements)
 
 ## Project Goals
 ### Website User Goals
@@ -846,6 +847,19 @@ The website was tested on the following browsers in both regular and incognito m
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-4.jpg">
+</details>
+<br>
+
+5. As a unauthenticated user, I would like to be able to search or filter the website for specific products and brands so that I can find exactly what i am looking.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Categories | From any page of the website use one of the links in the header to navigate to the selected category page | The user is taken to the selected category page | Works As Expected |
+| All Products | From any page of the website use the link in the header to navigate to the products page | The user is taken to the all products page | Works As Expected |
+| Product Search | Use the search bar within the header to search for the name, recomended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-5.jpg">
 </details>
 <br>
 
