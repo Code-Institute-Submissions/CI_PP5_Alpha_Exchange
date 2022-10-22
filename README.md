@@ -1120,3 +1120,15 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+27. As the website owner, I want users to be sign up to a newsletter to capture user information and bring users back to the website.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
+| Newsletter E-mail List | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-27.jpg">
+</details>
+<br>
+
