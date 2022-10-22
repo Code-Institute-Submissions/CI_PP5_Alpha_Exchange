@@ -1378,3 +1378,10 @@ Any further recipes and images added by third parties and individuals have been 
 |  |  |  |
 |  |  |  |
 
+### Code
+- The Django All-Auth code and webpages were used from the Django blog project and then customized for this project.
+- The card design was based upon a guide found [HERE](https://www.youtube.com/watch?v=5DEq5cWNYt8&ab_channel=KevinPowell) by Kevin Powell on youtube, this was adapted to fit my use case.
+- The pagination code used was referenced both from the CI course material and this blog post found [HERE](https://dontrepeatyourself.org/post/django-pagination-with-function-based-view/) 
+
+[Back to Table Of Content](#table-of-content)
+
