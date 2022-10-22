@@ -1224,3 +1224,12 @@ To show code coverage a python test plugin called coverage was used to generate 
 
 [Back to Table Of Content](#table-of-content)
 
+## Bugs
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Issues with loading the filtered query page search along with pagination |  |
+|  |  |
+|  |  |
+
+[Back to Table Of Content](#table-of-content)
+
