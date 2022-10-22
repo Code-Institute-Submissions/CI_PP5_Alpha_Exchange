@@ -1385,3 +1385,11 @@ Any further recipes and images added by third parties and individuals have been 
 
 [Back to Table Of Content](#table-of-content)
 
+## Acknowledgements
+
+I would like to take the opportunity to thank:
+- My mentor Mo Shami, for his professional feedback, advice, guidance, and support.
+- My partner Megan Fox, for her support advice, help testing, inspiration for the project and allowing me the time to work on my project.
+- To the Code Institute Slack community for providing help and support.
+
+[Back to Table Of Content](#table-of-content)
