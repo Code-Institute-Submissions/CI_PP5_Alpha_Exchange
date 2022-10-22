@@ -1132,3 +1132,15 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+28. As the website owner, I want users to be able to view the business social media so that users are made aware of the products on offer and kept up to date with any news.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Footer | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
+| Contact Us | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-28.jpg">
+</details>
+<br>
+
