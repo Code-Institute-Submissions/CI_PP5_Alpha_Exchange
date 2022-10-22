@@ -1212,3 +1212,15 @@ I have demonstrated some proficiency in using these tests but the code does not 
 
 [Back to Table Of Content](#table-of-content)
 
+### Coverage
+
+To show code coverage a python test plugin called coverage was used to generate the following results
+
+<details><summary>Images</summary>
+<img src="documentation/automated-testing/coverage1.jpg"><br>
+<img src="documentation/automated-testing/coverage2.jpg"><br>
+<img src="documentation/automated-testing/coverage3.jpg">
+</details>
+
+[Back to Table Of Content](#table-of-content)
+
