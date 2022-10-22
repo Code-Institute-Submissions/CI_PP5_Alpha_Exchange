@@ -1182,7 +1182,7 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| About Us | From any page on the website, scroll to the bottom of the page, locate the about us section within the footer | The user is able to get a brief description about the business and to fond out more is directed towards the social media handle. | Works As Expected |
+| About Us | From any page on the website, scroll to the bottom of the page, locate the about us link within the footer | The user is redirected to a new page with a brief description about the business and to find out more is directed towards the social media handle, there is also a FAQ section to answer commonly asked questions. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-32.jpg">
