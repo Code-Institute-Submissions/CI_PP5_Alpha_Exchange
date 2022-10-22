@@ -1254,3 +1254,23 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 
 [Back to Table Of Content](#table-of-content)
 
+## Stripe
+1. Register for an account at stripe.com
+2. Click on the Developers section of your account once logged in
+3. Under Developers, click on the API keys section
+<br>![API keys](documentation/stripe_keys1.jpg)
+4. Note the values for the publishable and secret keys
+5. In your local environment(env.py) and heroku, create environment variables STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY with the publishable and secret key values
+<br><code>os.environ.setdefault('STRIPE_PUBLIC_KEY', 'YOUR_VALUE_GOES_HERE')</code>
+<br><code>os.environ.setdefault('STRIPE_SECRET_KEY', 'YOUR_VALUE_GOES_HERE')</code>
+6. Back in the Developers section of your stripe account click on Webhooks
+7. Create a webhook with the url of your website <url>/checkout/wh/, for example: https://alpha-exchange.herokuapp.com/checkout/wh/
+8. Select the payment_intent.payment_failed and payment_intent.succeeded as events to send
+<br>![Webhook](documentation/stripe_keys2.jpg)
+9. Note the key created for this webhook
+10. In your local environment(env.py) and heroku, create environment variable STRIPE_WH_SECRET with the secret values
+<code>os.environ.setdefault('STRIPE_WH_SECRET', 'YOUR_VALUE_GOES_HERE')</code>
+11. Feel free to test out the webhook and note the success/fail attempts for troubleshooting
+
+[Back to Table Of Content](#table-of-content)
+
