@@ -1362,3 +1362,19 @@ Final Steps:
 
 [Back to Table Of Content](#table-of-content)
 
+## Credits
+### Media
+All of the media featured on the website is not owned by the developer. 
+
+Any further recipes and images added by third parties and individuals have been obtained by the third party.
+
+| **Link to Asset** | **Created By** | **Web Source** |
+| ----------------- | -------------- | -------------- |
+| [shopping-cart.webp](/media/shopping-cart.webp) | [Alexas_Fotos](https://pixabay.com/users/alexas_fotos-686414/) | [Pixabay](https://pixabay.com/photos/shopping-business-retail-trade-1165437/) |
+| [shopping-cart.svg](/media/shopping-cart.svg) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) |
+| [Categories]() | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
+| [Products]() | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
+| [Images]() | Created by CI and pruned from from Kaggle dataset then converted to webp format for better lighthouse optimization. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_images/tree/master/pics) |
+|  |  |  |
+|  |  |  |
+
