@@ -1178,3 +1178,14 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+32. As a user, I would like to be able to find a description of the business and an FAQ section so that I can find the answers I need.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| About Us | From any page on the website, scroll to the bottom of the page, locate the about us section within the footer | The user is able to get a brief description about the business and to fond out more is directed towards the social media handle. | Works As Expected |
+|  |  |  |  |
+<details><summary>Screenshots</summary>
+<img src="documentation/user-story-testing/user-story-32.jpg">
+</details>
+<br>
+
