@@ -1189,3 +1189,26 @@ The website was tested on the following browsers in both regular and incognito m
 </details>
 <br>
 
+## Automated Testing
+
+As part of this project I have produced some automated tests Django's testing framework which is based on python unittest.
+
+I have demonstrated some proficiency in using these tests but the code does not have full coverage due to time constraints. If there are future releases I could endeavor to increase the number of tests and coverage of the code.
+
+#### Home
+
+- Testing Views
+
+1. Test home page loads
+2. Test 404 returned if url error
+
+#### Products
+
+- Testing Models
+
+1. Test str method
+
+<br>![Auto test results](documentation/automated-testing/results.jpg)
+
+[Back to Table Of Content](#table-of-content)
+
