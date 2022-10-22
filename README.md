@@ -1233,3 +1233,24 @@ To show code coverage a python test plugin called coverage was used to generate 
 
 [Back to Table Of Content](#table-of-content)
 
+## Google emails
+To set up the project to send emails and to use a Google account as an SMTP server, the following steps are required
+1. Create an email account at google.com, login, navigate to Settings in your gmail account and then click on Other Google Account Settings
+2. Turn on 2-step verification and follow the steps to enable
+3. Click on app passwords, select Other as the app and give the password a name, for example Django
+<br>![App password](documentation/gmail-password.jpg)
+4. Click create and a 16 digit password will be generated, note the password down
+5. In the env.py file, create an environment variable called EMAIL_HOST_PASS with the 16 digit password
+6. In the env.py file, create an environment variable called EMAIL_HOST_USER with the email address of the gmail account
+7. Set and confirm the following values in the settings.py file to successfully send emails
+<br><code>EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'</code>
+<br><code>EMAIL_USE_TLS = True</code>
+<br><code>EMAIL_PORT = 587</code>
+<br><code>EMAIL_HOST = 'smtp.gmail.com'</code>
+<br><code>EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')</code>
+<br><code>EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')</code>
+<br><code>DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')</code>
+8. You will also need to set the variables EMAIL_HOST_PASS and EMAIL_HOST_USER in your production instance, for example Heroku
+
+[Back to Table Of Content](#table-of-content)
+
