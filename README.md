@@ -1346,3 +1346,19 @@ Final Steps:
 4. Scroll down and enable automatic deployment
 ![Deployment steps](documentation/heroku-deployment-deploy.jpg)
 
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button in top right corner
+3. You will then have a copy of the repository in your own GitHub account.
+   
+### Making a Local Clone
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it
+3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone <span>https://</span>github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone
+
+[Back to Table Of Content](#table-of-content)
+
