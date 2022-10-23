@@ -1,33 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Quicksand&display=swap');
+@import "/static/css/variables.css";
 
-/* Light Mode Theme */
-:root.light {
-    --headertext: 'Inter', 'sans-serif';
-    --bodytext: 'Quicksand', 'sans-serif';
-    --menu-color: #568Cff;
-    --background-color: #D0D0D0;
-    --accent-color: #FFC05A;
-    --font-color: #000;
-    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Dark Mode Theme */
-:root:not(.light) {
-    --headertext: 'Inter', 'sans-serif';
-    --bodytext: 'Quicksand', 'sans-serif';
-    --menu-color: #14213D;
-    --background-color: #969696;
-    --accent-color: #EB9100;
-    --font-color: #fff;
-    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
+/* Common Styles */
 html {
     height: 100%;
 }
 
+body {
+    background-color: var(--background-color);
+    font-family: var(--bodytext);
+}
+
 .home-image {
-    background-image: url('/media/shopping-cart.webp');
+    background-image: url('/media/shopping-cart.webp') !important;
     background-size: cover;
     min-width: -webkit-fill-available;
 }
@@ -39,6 +23,28 @@ html {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--headertext);
+}
+
+.btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--font-color);
+}
+
+.btn-dark {
+    background-color: var(--menu-color);
+    border-color: var(--menu-color);
+    color: var(--font-color);
+}
+
+.btn-light:hover {
+    background-color: var(--btn-hover-color);
+    border-color: var(--btn-hover-color);
+    color: var(--btn-hover-font);
 }
 
 /* Header Styles */
@@ -62,6 +68,17 @@ html {
 
 #search div button {
     border-radius: 0 6px 6px 0;
+}
+
+.navbar-toggler-icon {
+    background-image: var(--toggler)
+}
+
+.navbar-toggler {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
 }
 
 /* Theme Switch Styles */
