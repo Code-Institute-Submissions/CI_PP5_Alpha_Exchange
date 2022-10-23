@@ -40,6 +40,11 @@
     border-color: var(--accent-color);
 }
 
+.category-titles {
+    text-decoration: none;
+    color: var(--font-color) !important;
+}
+
 @media (hover) {
     .card-content {
         transition: transform 500ms ease;
@@ -54,6 +59,4 @@
     .card-bottom-rule::after {
         transform: scaleX(0);
     }
-
-    
 }

@@ -65,3 +65,26 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def categories(request):
+    """
+    Renders the categories page.
+    """
+    return render(request, 'products/categories.html')
+
+
+def categories_view(request, cats):
+    """
+    Renders the recipes filtered by categories.
+    """
+    category = Recipe.objects.filter(
+        categories__title__contains=cats, status=1)
+
+    paginator = Paginator(category, 8)
+
+    page_number = request.GET.get('page')
+    category = paginator.get_page(page_number)
+
+    return render(request, 'category.html', {
+        'cats': cats.title(), 'category': category})

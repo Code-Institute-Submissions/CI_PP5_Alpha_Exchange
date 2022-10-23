@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- List of Categories -->
+    <div class="col text-center my-3">
+        <h1 class="text-center">Categories</h1>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            {% for category in categories_list %}
+            <div class="col-md-4">
+                <a class="category-titles" href="" aria-label="Go to a list of all categories.">
+                    <div class="content-img">
+                        <img src="" alt="">
+                        <div>
+                            <h2 class="text-center display-6 category-titles">{{ category.friendly_name }}</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+    <!-- End of Categories List -->
+
+    {% endblock content %}
