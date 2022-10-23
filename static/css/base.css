@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Quicksand&display=swap');
+
 /* Light Mode Theme */
 :root.light {
     --headertext: 'Inter', 'sans-serif';
     --bodytext: 'Quicksand', 'sans-serif';
-    --menu-color: #0dcaf0;
-    --background-color: #dee2e6;
-    --recipe-background: #bebebe;
+    --menu-color: #568Cff;
+    --background-color: #D0D0D0;
+    --accent-color: #FFC05A;
     --font-color: #000;
     --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    
 }
 
 /* Dark Mode Theme */
 :root:not(.light) {
     --headertext: 'Inter', 'sans-serif';
     --bodytext: 'Quicksand', 'sans-serif';
-    --menu-color: #084298;
-    --background-color: #41464b;
-    --recipe-background: #646464;
+    --menu-color: #14213D;
+    --background-color: #969696;
+    --accent-color: #EB9100;
     --font-color: #fff;
     --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -40,6 +41,29 @@ html {
     width: 1.5rem;
 }
 
+/* Header Styles */
+.bg-light {
+    background-color: var(--menu-color) !important;
+}
+
+.navbar-brand {
+    background-color: var(--background-color);
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.nav-link, .icon {
+    color: var(--font-color) !important;
+}
+
+#search input {
+    border-radius: 6px 0 0 6px;
+}
+
+#search div button {
+    border-radius: 0 6px 6px 0;
+}
+
 /* Theme Switch Styles */
 .switch {
     width: 76px;
@@ -47,8 +71,13 @@ html {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    background-color: black;
-    text-indent: -200px
+    background-color: var(--background-color);
+    text-indent: -200px;
+    border-radius: 6px;
+}
+
+.slider {
+    border-radius: 6px;
 }
 
 :root:not(.light) .switch span {
@@ -68,7 +97,7 @@ html {
     width: 38px;
     display: inline;
     position: relative;
-    background: white;
+    background: var(--accent-color);
 }
 
 :root:not(.light) .slider {
@@ -96,5 +125,5 @@ html {
     width: 38px;
     display: inline;
     position: relative;
-    background: white;
+    background: var(--accent-color);
 }

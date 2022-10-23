@@ -172,7 +172,7 @@ The website includes a sign up form to a newsletter so the business can keep in 
 ### Agile Methodology
 
 All functionality and development of this project were managed using GitHub which Projects can be found
-[here]()
+[here](https://github.com/users/benjamindraper1996/projects/5/views/1)
 
 [Back to Table Of Content](#table-of-content)
 
@@ -189,9 +189,9 @@ For the color scheme I have opted to implement a dark and light theme while usin
 ![Light Mode Theme](documentation/features/colour-palette-light.jpg)
 
 ### Fonts
- I am using xxxxxx font with a backup of xxxxxx across the website for the title and headers. This is used to maintain a Consistent and professional look with an easily readable format.
+I am using Inter font with a backup of sans-serif across the website for the title and headers.This is used to maintain a Consistent and professional look with an easily readable format.
 
-For the Secondary font for the body text the owners decided to use xxxxxx with a backup of xxxxxx, this will help to maintain the consistent theme across the website.
+For the Secondary font for the body text the owners decided to use Quicksand with a backup of sans-serif, this will help to maintain the consistent theme across the website.
 
 ### Structure
 The website has been built using a template engine so that all pages follow the same design to maintain the feel across the website.
@@ -337,7 +337,8 @@ database model list
 - [Gitpod](https://gitpod.io/) was used to write all the code and to link up with Github to maintain the version control.
 - [Balsamiq](https://balsamiq.com/) was use to create the wireframes for the website.
 - [Google Fonts](https://fonts.google.com/) was used to pick out the fonts in use across the website.
-- [Feather Icons](https://feathericons.com/) was used to create the favicon.
+- [Feather Icons](https://feathericons.com/) was used to select the favicon from their database.
+- [Favicon](https://favicon.io/) was used to convert the raw svg file into a useable favicon image.
 - [Coolors](https://coolors.co/) was used to generate a colour pallette.
 - [Am I Responsive?](https://ui.dev/amiresponsive) was used to test the responsive nature of the website design.
 - [Bootstrap](https://getbootstrap.com/) was used for the pre-defined components and responsive nature of the layout.
@@ -1282,17 +1283,17 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 3. Uncheck the "Block All Public access setting"
 4. In the Properties section, navigate to the "Static Website Hosting" section and click edit
 5. Enable the setting, and set the index.html and the error.html values
-<br>![AWS Static](documentation/aws_static.jpg)
+<br>![AWS Static](documentation/deployment/aws_static.jpg)
 6. In the Permissions section, click edit on the CORS configuration and set the below configuration
-<br>![AWS CORS](documentation/aws_cors.jpg)
+<br>![AWS CORS](documentation/deployment/aws_cors.jpg)
 7. In the permissions section, click edit on the bucket policy and generate and set the below configuration(or similar to your settings)
-<br>![AWS Bucket Policy](documentation/aws_bucket_policy.jpg)
+<br>![AWS Bucket Policy](documentation/deployment/aws_bucket_policy.jpg)
 8. In the permissions section, click edit on the Access control list(ACL)
 9. Set Read access for the Bucket ACL for Everyone(Public Access)
 10. The bucket is created, the next step is to open the IAM application to set up access
 11. Create a new user group named "manage-alpha-exchange"
 12. Add the "AmazonS3FullAccess" policy permission for the user group
-<br>![AWS Bucket Policy](documentation/aws_user_group.jpg)
+<br>![AWS Bucket Policy](documentation/deployment/aws_user_group.jpg)
 13. Go to "Policies" and click "Create New Policy"
 14. Click "Import Managed Policy" and select "AmazonS3FullAccess" > Click 'Import'.
 15. In the JSON editor, update the policy "Resource" to the following
@@ -1302,15 +1303,15 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 <br><code>]</code>
 16. Give the policy a name and click "Create Policy"
 17. Add the newly created policy to the user group
-<br>![AWS Bucket Policy](documentation/aws_policy.jpg)
+<br>![AWS Bucket Policy](documentation/deployment/aws_policy.jpg)
 18. Go to Users and create a new user
 19. Add the user to the user group manage-alpha-exchange
 20. Select "Programmatic access" for the access type
 21. Note the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID variables, they are used in other parts of this README for local deployment and Heroku setup
 22. The user is now created with the correct user group and policy
-<br>![AWS Bucket Policy](documentation/aws_user.jpg)
+<br>![AWS Bucket Policy](documentation/deployment/aws_user.jpg)
 23. Note the AWS code in settings.py. Note an environment variable called USE_AWS must be set to use these settings, otherwise it will use local storage
-<br>![AWS Settings](documentation/aws_settings.jpg)
+<br>![AWS Settings](documentation/deployment/aws_settings.jpg)
 24. These settings set up a cache policy, set the bucket name, and the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY that you set in your aws account
 25. The configuration also requires the media/static folders that must be setup in the AWS S3 bucket to store the media and static files 
 
@@ -1333,18 +1334,18 @@ This application has been deployed from GitHub to Heroku by following the steps:
 10. Ensure Debug is set to False in the settings.py file
 11. Add localhost/127.0.0.1, and alpha-exchange.herokuapp.com to the ALLOWED_HOSTS variable in settings.py
 12. Go to Settings in your Heroku and set the environment variables in the Config Vars
-![Config vars](documentation/heroku-config-vars.jpg)
+![Config vars](documentation/deployment/heroku-config-vars.jpg)
 13. Remove DISABLE_COLLECTSTATIC from Heroku settings
 14. Push the code to Heroku using the command git push heroku main
 
 Final Steps:
 1. Go to "Deploy" in the menu bar on the top
 2. Select the deployment method Github
-![Deployment steps](documentation/heroku-deployment.jpg)
+![Deployment steps](documentation/deployment/heroku-deployment.jpg)
 3. Search for the name of the Github Repository and connect
-![Deployment steps](documentation/heroku-deployment-repo.jpg)
+![Deployment steps](documentation/deployment/heroku-deployment-repo.jpg)
 4. Scroll down and enable automatic deployment
-![Deployment steps](documentation/heroku-deployment-deploy.jpg)
+![Deployment steps](documentation/deployment/heroku-deployment-deploy.jpg)
 
 ### Forking the GitHub Repository
 1. Go to the GitHub repository
@@ -1371,10 +1372,10 @@ Any further recipes and images added by third parties and individuals have been 
 | **Link to Asset** | **Created By** | **Web Source** |
 | ----------------- | -------------- | -------------- |
 | [shopping-cart.webp](/media/shopping-cart.webp) | [Alexas_Fotos](https://pixabay.com/users/alexas_fotos-686414/) | [Pixabay](https://pixabay.com/photos/shopping-business-retail-trade-1165437/) |
-| [shopping-cart.svg](/media/shopping-cart.svg) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) |
-| [Categories]() | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
-| [Products]() | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
-| [Images]() | Created by CI and pruned from from Kaggle dataset then converted to webp format for better lighthouse optimization. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_images/tree/master/pics) |
+| [Favicon](/media/favicon-32x32.webp) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) | [Feather Icons](https://feathericons.com/?query=%2Fshopping-cart) |
+| [Categories](/products/fixtures/categories.json) | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
+| [Products](/products/fixtures/products.json) | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
+| Images | Created by CI and pruned from from Kaggle dataset then converted to webp format for better lighthouse optimization. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_images/tree/master/pics) |
 |  |  |  |
 |  |  |  |
 
