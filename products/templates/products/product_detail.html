@@ -39,8 +39,16 @@
                         {% else %}
                             <small class="mr-3">Product Rating: No Rating</small>
                         {% endif %}
-                        <br>
-                        <a href="#" class="btn btn-large btn-light mt-2 mx-2">Add To Basket</a>
+                        {% if product.category %}
+                            <p class=" my-0 mr-3">
+                                <a class="btn btn-large btn-light mt-2" href="{% url 'all_products' %}?category={{ product.category.name }}">
+                                    <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
+                                </a>
+                            </p>
+                        {% endif %}
+                        <a href="#" class="btn btn-large btn-light mt-2">
+                            <i class="fas fa-shopping-bag"></i> Add To Basket
+                        </a>
                     </div>
                 </div>
                 <hr class="product-rule"></hr>

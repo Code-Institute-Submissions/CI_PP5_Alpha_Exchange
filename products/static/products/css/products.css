@@ -45,6 +45,15 @@
     color: var(--font-color) !important;
 }
 
+.img-fluid {
+    border-radius: 6px;
+}
+
+.cat-link {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
 @media (hover) {
     .card-content {
         transition: transform 500ms ease;

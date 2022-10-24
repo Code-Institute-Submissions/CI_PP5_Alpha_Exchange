@@ -52,9 +52,9 @@ def list_products(request, page=1):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-    paginator = Paginator(products, 20)
-    page_number = request.GET.get('page')
-    products = paginator.get_page(page_number)
+#    paginator = Paginator(products, 20)
+#    page_number = request.GET.get('page')
+#    products = paginator.get_page(page_number)
 
     context = {
         'products': products,

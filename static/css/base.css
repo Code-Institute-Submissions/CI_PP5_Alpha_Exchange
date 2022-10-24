@@ -27,6 +27,11 @@ body {
 
 h1, h2, h3 {
     font-family: var(--headertext);
+    color: var(--font-color);
+}
+
+p {
+    color: var(--font-color);
 }
 
 .btn {
