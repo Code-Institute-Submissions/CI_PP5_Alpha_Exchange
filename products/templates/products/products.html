@@ -30,8 +30,8 @@
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-last d-flex justify-content-center justify-content-md-end justify-content-sm-center">
                         <div class="sort-select-wrapper">
-                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <select id="sort-box" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="default" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
                                 <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
@@ -137,4 +137,8 @@
             </ul>
         </nav>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'products/js/sort-box.js' %}"></script>
 {% endblock %}
