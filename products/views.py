@@ -4,6 +4,7 @@ A module containing the views within products app.
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.core.paginator import Paginator, EmptyPage
 from .models import Product, Category
 
@@ -16,9 +17,24 @@ def list_products(request, page=1):
     products = Product.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
 
-    # Search query filter
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -28,26 +44,23 @@ def list_products(request, page=1):
             query = request.GET['q']
             if not query:
                 messages.error(
-                    request, "Please enter some search criteria.")
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(
-                    description__icontains=query) | Q(
-                    recommended_use__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-    paginator = Paginator(products, 20)  # Number to paginate by
-
-    # Try to paginate
-    try:
-        products = paginator.page(page)
-    except EmptyPage:
-        products = paginator.page(paginator.num_pages)
+    current_sorting = f'{sort}_{direction}'
+    paginator = Paginator(products, 20)
+    page_number = request.GET.get('page')
+    products = paginator.get_page(page_number)
 
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
