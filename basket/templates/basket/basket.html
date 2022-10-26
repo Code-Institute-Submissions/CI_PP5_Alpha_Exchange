@@ -10,5 +10,22 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="container">
+    <div class="row">
+        <h1 class="display-6 text-center my-3">Shopping Basket</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+                <p>Items in the bag</p>
+            {% else %}
+                <p class="fs-2 my-5">Your basket is empty!</p>
+                <a href="{% url 'all_products' %}" class="btn btn-light btn-lg">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="text-uppercase">to the shop!</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
