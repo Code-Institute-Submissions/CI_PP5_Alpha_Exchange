@@ -95,7 +95,8 @@
                         </ul>
                         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-3">
                             <!-- Search box form -->
-                            <form method="GET" action="" class="d-flex py-1">
+                            <form method="GET" action="{% url 'search_products' %}" class="d-flex py-1">
+                                {% csrf_token %}
                                 <div class="input-group w-100" id="search">
                                     <input class="form-control border border-black" type="text" name="q" placeholder="Search ...">
                                     <div class="input-group-append">

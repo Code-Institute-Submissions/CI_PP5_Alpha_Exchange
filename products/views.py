@@ -6,64 +6,75 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator, EmptyPage
+from django.views.generic import ListView
+from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
 
 
-def list_products(request, page=1):
+class ListProducts(ListView):
     """
-    Displays the list of products with filtering and search queries.
+    A class to view all the products with filtering and sorting.
     """
+    model = Product
+    paginate_by = 20
+    ordering = ['rating']
 
-    products = Product.objects.all()
-    query = None
-    categories = None
-    sort = None
-    direction = None
+    def __init__(self):
+        self.no_search_result = True
 
-    if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+    def get_queryset(self, **kwargs):
+        search_results = ProductFilter(self.request.GET, self.queryset)
+        if search_results.qs:
+            self.no_search_result = False
+        # Returns the default queryset if an empty
+        # queryset is returned by the django_filters
+        return search_results.qs.distinct() or self.model.objects.all()
 
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['filter'] = ProductFilter(
+            self.request.GET, queryset=self.get_queryset()
+            )
+        return context
 
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
 
-            queries = Q(
-                name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
+class SearchProduct(ListView):
+    """
+    A class to view the search results with filtering and sorting.
+    """
+    model = Product
+    paginate_by = 20
 
-    current_sorting = f'{sort}_{direction}'
-#    paginator = Paginator(products, 20)
-#    page_number = request.GET.get('page')
-#    products = paginator.get_page(page_number)
+    def __init__(self):
+        self.no_search_result = True
 
-    context = {
-        'products': products,
-        'search_term': query,
-        'current_categories': categories,
-        'current_sorting': current_sorting,
-    }
+    def get_queryset(self, **kwargs):
+        search_results = ProductFilter(self.request.GET, self.queryset)
+        queryset = search_results.qs.distinct()
+        query = self.request.GET.get('q')
+        if not query:
+            messages.info(
+                self.request, 'You did not enter any search criteria'
+                )
+            return Product.objects.none()
+        if query:
+            search_results = queryset.filter(
+                Q(name__icontains=query) |
+                Q(description__icontains=query) |
+                Q(recommended_use__icontains=query)).distinct()
+        if search_results:
+            self.no_search_result = False
+        # Returns the queryset returned by the django_filters
+        return search_results
 
-    return render(request, 'products/products.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['filter'] = ProductOrderFilter(
+            self.request.GET, queryset=Product.objects.all()
+            )
+        return context
 
 
 def product_detail(request, product_id):

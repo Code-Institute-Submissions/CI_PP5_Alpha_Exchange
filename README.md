@@ -1228,7 +1228,7 @@ To show code coverage a python test plugin called coverage was used to generate 
 ## Bugs
 | **Bug** | **Fix** |
 | ------- | ------- |
-| Issues with loading the filtered query page search along with pagination |  |
+| Issues with loading the filtered query page search along with pagination | Re-write views and used django-filters package as per guides detailed below. |
 |  |  |
 |  |  |
 
@@ -1383,6 +1383,8 @@ Any further recipes and images added by third parties and individuals have been 
 - The Django All-Auth code and webpages were used from the Django blog project and then customized for this project.
 - The card design was based upon a guide found [HERE](https://www.youtube.com/watch?v=5DEq5cWNYt8&ab_channel=KevinPowell) by Kevin Powell on youtube, this was adapted to fit my use case.
 - The pagination code used was referenced both from the CI course material and this blog post found [HERE](https://dontrepeatyourself.org/post/django-pagination-with-function-based-view/) 
+
+- A massive thank you to [dannymagnus](https://github.com/dannymagnus) and [aleksandracodes](https://code-institute-room.slack.com/archives/C010RUUFGDQ/p1650997281601259?thread_ts=1650970836.247149&cid=C010RUUFGDQ) on Github who's project and post on slack respectively, these two pointed me towards posts and examples to help fix my bugs with pagination and sorting/filtering my products. These resources can be found on a [Youtube Video](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s&ab_channel=TauhidCodes), on a blog [post](https://simpleisbetterthancomplex.com/snippet/2016/08/22/dealing-with-querystring-parameters.html), and [stackoverflow post](https://stackoverflow.com/questions/47996963/that-page-number-is-less-than-1-django).
 
 [Back to Table Of Content](#table-of-content)
 
