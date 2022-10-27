@@ -54,6 +54,10 @@
     color: var(--font-color);
 }
 
+.qty_input {
+    height: 31px;
+}
+
 @media (hover) {
     .card-content {
         transition: transform 500ms ease;

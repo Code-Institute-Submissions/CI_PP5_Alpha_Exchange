@@ -50,6 +50,7 @@ p {
     background-color: var(--btn-hover-color);
     border-color: var(--btn-hover-color);
     color: var(--btn-hover-font);
+    border-radius: 6px;
 }
 
 /* Header Styles */
@@ -148,4 +149,19 @@ p {
     display: inline;
     position: relative;
     background: var(--accent-color);
+}
+
+/* Basket Styles */
+.basket-icon{
+    position: absolute;
+    left: 6px;
+    top: calc(100% - 1.05em);
+}
+
+.prod_details_btn {
+    padding-left: 28px;
+}
+
+.input-wrapper{
+    position: relative;
 }
