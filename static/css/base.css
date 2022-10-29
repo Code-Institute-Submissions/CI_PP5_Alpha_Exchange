@@ -165,3 +165,17 @@ p {
 .input-wrapper{
     position: relative;
 }
+
+/* Media Queires */
+@media screen and (max-width: 1050px) {
+    .logo, .nav-link, .nav-item {
+        font-size: 90% !important;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .logo {
+        display: none;
+    }
+}

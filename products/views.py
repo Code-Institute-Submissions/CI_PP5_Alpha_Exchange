@@ -17,7 +17,6 @@ class ListProducts(ListView):
     """
     model = Product
     paginate_by = 20
-    ordering = ['rating']
 
     def __init__(self):
         self.no_search_result = True
@@ -100,9 +99,9 @@ def categories(request):
 
 def categories_view(request, cats):
     """
-    Renders the recipes filtered by categories.
+    Renders the products filtered by categories.
     """
-    category = Recipe.objects.filter(
+    category = Product.objects.filter(
         categories__title__contains=cats, status=1)
 
     paginator = Paginator(category, 8)

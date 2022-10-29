@@ -400,7 +400,7 @@ database model list
 <br>
 
 ### Contact Us
-- The contact us link is featured across the whole website within the footer.
+- The contact us link is featured across the whole website within the navbar.
 - The contact us page allows users to fill out that sends the team an email with their query.
 - User stories covered: 14, 28
 <details><summary>Contact Us</summary>
@@ -808,8 +808,7 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Navbar / Dropdown Menu | Use the Navbar to navigate to another page | The desired page loads correctly | Works As Expected |
-| Footer | Within the footer locate the social media or contact us links | The social media page or contact us page load correctly | Works As Expected |
+| Navbar / Dropdown Menu | Use the Navbar to navigate to the contact us page | The contact us page loads correctly and the user can fill in the form | Works As Expected |
 | Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 | Error Pages | Edit the website URL from any page to form an invalid URL. On the error page use the built in navigation to navigate back to the main website. | The user is redirected to a custom error page and is able to navigate on their own back to the main website. | Works As Expected |
 |  |  |  |  |
@@ -966,7 +965,7 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Footer | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
-| Contact Us | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
+| Contact Us | From any page on the website, use the navbar to navigate to the contact us page | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-14.jpg">
@@ -1138,7 +1137,6 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Footer | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
-| Contact Us | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-28.jpg">

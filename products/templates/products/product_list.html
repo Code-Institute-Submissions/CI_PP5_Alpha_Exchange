@@ -31,10 +31,10 @@
                 <div class="row mt-1 mb-2">
                     <form class = "w-100">
                         <div class="d-flex justify-content-end align-items-end">
+                            {{ filter.form.price__iexact.as_hidden}}
                             {{ filter.form.name__iexact.as_hidden}}
-                            {{ filter.form.category__name__iexact.as_hidden}}
-                            {{ filter.form.brand__name__iexact.as_hidden}}
-                            <label for="id_ordering" class="d-none d-sm-block">Order by:</label>
+                            {{ filter.form.rating__iexact.as_hidden}}
+                            <label for="id_ordering" class="d-none d-sm-block me-2">Order by:</label>
                             <input type="hidden" name = "q" value = "{{request.GET.q }}">
                             {{ filter.form.ordering }}
                         </div>

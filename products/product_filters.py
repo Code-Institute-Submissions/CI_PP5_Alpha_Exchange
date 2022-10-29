@@ -22,7 +22,8 @@ class ProductFilter(django_filters.FilterSet):
     ordering = django_filters.ChoiceFilter(
         label='Ordering',
         choices=CHOICES,
-        method='filter_by_order'
+        method='filter_by_order',
+        empty_label='Featured',
         )
 
     class Meta:

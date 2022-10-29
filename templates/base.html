@@ -43,57 +43,43 @@
         <div class="row">
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid list-inline-item">
-                    <div class="navbar-brand order-first">
+                    <div class="navbar-brand order-first me-1">
                         <img src="/media/favicon-32x32.webp" alt="Website Branding">
                     </div>
+                    <h1 class="logo fs-6 m-0">Alpha-Exchange</h1>
                     <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
                         <!-- Navigation Links -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="{% url 'all_products' %}">All Products</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Disabled</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">New Arrivals</a>
-                            </li>
+                            <!-- Categories Dropdown -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="all-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    All Products
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="all-products">
-                                    <a href="{% url 'all_products' %}?sort=price&direction=asc" class="dropdown-item">Sort By Price</a>
-                                    <a href="{% url 'all_products' %}?sort=rating&direction=desc" class="dropdown-item ">Sort By Rating</a>
-                                    <a href="{% url 'all_products' %}?sort=category&direction=asc" class="dropdown-item ">Sort By Category</a>
-                                    <a href="{% url 'all_products' %}" class="dropdown-item">All Products</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="clothing-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Clothing
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                                    <a href="{% url 'all_products' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                                    <a href="{% url 'all_products' %}?category=jeans" class="dropdown-item">Jeans</a>
-                                    <a href="{% url 'all_products' %}?category=shirts" class="dropdown-item">Shirts</a>
-                                    <a href="{% url 'all_products' %}?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Clothing</a>
-                                </div>
+                                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <!-- Categories Page -->
+                                    <li>
+                                        <a class="dropdown-item nav-link" href="{% url 'categories' %}" aria-label="Go to the categories page">Categories</a>
+                                    </li>
+                                    <!-- For List of Categories -->
+                                    {% for category in categories_list %}
+                                        <li>
+                                            <a class="dropdown-item nav-link" href="{% url 'categories_list' category %}" aria-label="Go to the this category.">{{ category.friendly_name }}</a>
+                                        </li>
+                                    {% endfor%}
+                                </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'all_products' %}?category=kitchen_dining,bed_bath">Homewear</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'all_products' %}?Clearance">clearance</a>
+                                <a class="nav-link" aria-current="page" href="">Contact Us</a>
                             </li>
                         </ul>
-                        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 mx-3">
+                        <div class="col-12 col-lg-4 py-1 py-lg-0 me-1 d-flex justify-content-end">
                             <!-- Search box form -->
                             <form method="GET" action="{% url 'search_products' %}" class="d-flex py-1">
                                 {% csrf_token %}
@@ -111,7 +97,7 @@
                         </div>
                     </div>
                     <!-- User administration -->
-                    <ul>
+                    <ul class="p-0">
                         <li class="nav-item dropdown list-inline-item text-center my-0">
                             <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="text-center">
@@ -135,7 +121,7 @@
                             </ul>
                         </li>
                         <!-- Shopping cart -->
-                        <li class="list-inline-item mx-3">
+                        <li class="list-inline-item me-2">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'basket' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
