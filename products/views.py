@@ -102,12 +102,12 @@ def categories_view(request, cats):
     Renders the products filtered by categories.
     """
     category = Product.objects.filter(
-        categories__title__contains=cats, status=1)
+        category__friendly_name__contains=cats)
 
-    paginator = Paginator(category, 8)
+    paginator = Paginator(category, 20)
 
     page_number = request.GET.get('page')
-    category = paginator.get_page(page_number)
+    paginator.get_page(page_number)
 
-    return render(request, 'category.html', {
-        'cats': cats.title(), 'category': category})
+    return render(request, 'products/category.html', {
+        'cats': cats, 'category': category})

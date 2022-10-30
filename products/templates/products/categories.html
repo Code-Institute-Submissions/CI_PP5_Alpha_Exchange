@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 
+{% block content %}
     <!-- List of Categories -->
     <div class="col text-center my-3">
         <h1 class="text-center">Categories</h1>
@@ -11,7 +14,7 @@
         <div class="row">
             {% for category in categories_list %}
             <div class="col-md-4">
-                <a class="category-titles" href="" aria-label="Go to a list of all categories.">
+                <a class="category-titles" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
                     <div class="content-img">
                         <img src="" alt="">
                         <div>
@@ -24,5 +27,4 @@
         </div>
     </div>
     <!-- End of Categories List -->
-
-    {% endblock content %}
+{% endblock content %}
