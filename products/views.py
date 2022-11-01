@@ -109,7 +109,7 @@ def categories_view(request, cats):
 
     context['filter'] = filtered_products
 
-    paginated_filtered_products = Paginator(filtered_products.qs, 4)
+    paginated_filtered_products = Paginator(filtered_products.qs, 20)
 
     page_number = request.GET.get('page')
     product_page_obj = paginated_filtered_products.get_page(page_number)
