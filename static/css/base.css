@@ -25,12 +25,12 @@ body {
     width: 1.5rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--headertext);
     color: var(--font-color);
 }
 
-p {
+p, th {
     color: var(--font-color);
 }
 
@@ -164,6 +164,20 @@ p {
 
 .input-wrapper{
     position: relative;
+}
+
+.table-header {
+    background-color: var(--menu-color);
+}
+
+.table-bordered .border {
+    border-color: var(--font-color) !important;
+}
+
+.border-remove {
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
 }
 
 /* Media Queires */
