@@ -9,12 +9,12 @@
     <div class="row">
         <div class="col">
             {% if basket_items %}
-                <p>Items in the bag</p>
+                {{ basket_items }}
             {% else %}
                 <p class="fs-2 my-5">Your basket is empty!</p>
-                <a href="{% url 'all_products' %}" class="btn btn-light btn-lg">
+                <a href="javascript:history.back()" class="btn btn-light btn-lg">
                     <i class="fas fa-arrow-left"></i>
-                    <span class="text-uppercase">to the shop!</span>
+                    <span class="text-uppercase">back to the shop!</span>
                 </a>
             {% endif %}
         </div>
