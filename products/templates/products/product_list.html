@@ -62,23 +62,23 @@
                                     <div>
                                         <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                                             {% csrf_token %}
-                                                <div class="row d-flex justify-content-between">
-                                                    {% with product.has_sizes as size %}
-                                                        {% if size %}
-                                                            <div class="col-4 p-0 me-2">
-                                                                <div class="form-group my-1">
-                                                                    <div class="input-group">
-                                                                        <select class="form-control select_input" name="product_size" id='id_product_size'>
-                                                                            <option value="xs">XS</option>
-                                                                            <option value="s">S</option>
-                                                                            <option value="m" selected>M</option>
-                                                                            <option value="l">L</option>
-                                                                            <option value="xl">XL</option>
-                                                                        </select>
-                                                                    </div>
+                                            <div class="row d-flex justify-content-between">
+                                                {% with product.has_sizes as size %}
+                                                    {% if size %}
+                                                        <div class="col-4 p-0 me-2">
+                                                            <div class="form-group my-1">
+                                                                <div class="input-group">
+                                                                    <select class="form-control select_input" name="product_size" id='id_product_size'>
+                                                                        <option value="xs">XS</option>
+                                                                        <option value="s">S</option>
+                                                                        <option value="m" selected>M</option>
+                                                                        <option value="l">L</option>
+                                                                        <option value="xl">XL</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
-                                                        {% endif %}
+                                                        </div>
+                                                    {% endif %}
                                                     <div class="col-4 p-0 me-2">
                                                         <div class="form-group my-1">
                                                             <div class="input-group">
@@ -93,7 +93,7 @@
                                                             <input type="submit" id="add_to_basket" class="btn btn-light btn-sm" value="Add to Basket">
                                                         </p>
                                                     </div>
-                                                    <div class="col-5 p-0 me-2">
+                                                    <div class="col-4 p-0 me-2">
                                                         <p class="input-wrapper my-1 d-flex justify-content-end">
                                                             <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-light">View</a>
                                                         </p>
@@ -118,23 +118,23 @@
                                     <div>
                                         <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                                             {% csrf_token %}
-                                                <div class="row d-flex justify-content-between">
-                                                    {% with product.has_sizes as size %}
-                                                        {% if size %}
-                                                            <div class="col-4 p-0 me-2">
-                                                                <div class="form-group my-1">
-                                                                    <div class="input-group">
-                                                                        <select class="form-control select_input" name="product_size" id='id_product_size'>
-                                                                            <option value="xs">XS</option>
-                                                                            <option value="s">S</option>
-                                                                            <option value="m" selected>M</option>
-                                                                            <option value="l">L</option>
-                                                                            <option value="xl">XL</option>
-                                                                        </select>
-                                                                    </div>
+                                            <div class="row d-flex justify-content-between">
+                                                {% with product.has_sizes as size %}
+                                                    {% if size %}
+                                                        <div class="col-4 p-0 me-2">
+                                                            <div class="form-group my-1">
+                                                                <div class="input-group">
+                                                                    <select class="form-control select_input" name="product_size" id='id_product_size'>
+                                                                        <option value="xs">XS</option>
+                                                                        <option value="s">S</option>
+                                                                        <option value="m" selected>M</option>
+                                                                        <option value="l">L</option>
+                                                                        <option value="xl">XL</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
-                                                        {% endif %}
+                                                        </div>
+                                                    {% endif %}
                                                     <div class="col-4 p-0 me-2">
                                                         <div class="form-group my-1">
                                                             <div class="input-group">
@@ -149,7 +149,7 @@
                                                             <input type="submit" id="add_to_basket" class="btn btn-light btn-sm" value="Add to Basket">
                                                         </p>
                                                     </div>
-                                                    <div class="col-5 p-0 me-2">
+                                                    <div class="col-4 p-0 me-2">
                                                         <p class="input-wrapper my-1 d-flex justify-content-end">
                                                             <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-light">View</a>
                                                         </p>
