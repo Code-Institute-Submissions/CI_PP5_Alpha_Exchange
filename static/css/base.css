@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--font-color);
 }
 
-p, th {
+p, th, .icon {
     color: var(--font-color);
 }
 
@@ -64,8 +64,9 @@ p, th {
     padding: 5px;
 }
 
-.nav-link, .icon {
+.nav-link {
     color: var(--font-color) !important;
+    text-decoration: underline 2px var(--font-color);
 }
 
 #search input {
@@ -178,6 +179,11 @@ p, th {
     border-bottom: 0 !important;
     border-left: 0 !important;
     border-right: 0 !important;
+}
+
+.delivery-msg {
+    background-color: var(--accent-color) !important;
+    color: var(--font-color);
 }
 
 /* Media Queires */
