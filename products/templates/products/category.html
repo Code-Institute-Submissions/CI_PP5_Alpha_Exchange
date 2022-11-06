@@ -37,13 +37,9 @@
                                 <div class="row card h-100 mx-3 my-auto">
                                     <div class="card-image">
                                         {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
                                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </a>
                                         {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
                                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.webp" alt="{{ product.name }}">
-                                        </a>
                                         {% endif %}
                                     </div>
                                     <!-- Product Card -->
@@ -64,7 +60,7 @@
                                                             <div class="col-auto p-0">
                                                                 <div class="form-group my-1">
                                                                     <div class="input-group">
-                                                                        <select class="form-select select_input ps-2" name="product_size" id='id_product_size'>
+                                                                        <select class="form-select select_input ps-2" id='id_product_size' aria-label="product_size">
                                                                             <option value="xs">XS</option>
                                                                             <option value="s">S</option>
                                                                             <option value="m" selected>M</option>
@@ -80,13 +76,16 @@
                                                                 <div class="input-group">
                                                                     <button class="decrement-qty btn btn-light select_input rounded-start p-0" 
                                                                         data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                                        <p class="sr-only">decrement-qty</p>
                                                                         <i class="fas fa-minus"></i>
                                                                     </button>
+                                                                    <label class="sr-only" for="id_qty_{{ product.id }}">quantity</label>
                                                                     <input class="form-control select_input ps-2 pe-0" type="number"
                                                                         name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
                                                                         id="id_qty_{{ product.id }}">
                                                                     <button class="increment-qty btn btn-light select_input rounded-end p-0"
                                                                         data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                                        <p class="sr-only">increment-qty</p>
                                                                         <i class="fas fa-plus"></i>
                                                                     </button>
                                                                 </div>
@@ -183,4 +182,5 @@
 
 {% block postloadjs %}
     <script src="{% static 'products/js/sort-box.js' %}"></script>
+    <script src="{% static 'products/js/qty-box.js' %}"></script>
 {% endblock %}

@@ -86,12 +86,12 @@
                             <form method="GET" action="{% url 'search_products' %}" class="d-flex py-1">
                                 {% csrf_token %}
                                 <div class="input-group w-100" id="search">
-                                    <input class="form-control border border-black" type="text" name="q" placeholder="Search ...">
-                                    <div class="input-group-append">
+                                    <label class="sr-only" for="search_box">search</label>
+                                    <input class="form-control border border-black" type="text" name="q" id="search_box" placeholder="Search ...">
+                                    <div>
                                         <button class="form-control btn btn-black border border-black" type="submit">
-                                            <span class="icon">
-                                                <i class="fas fa-search"></i>
-                                            </span>
+                                            <p class="sr-only">search</p>
+                                            <i class="fas fa-search"></i>
                                         </button>
                                     </div>
                                 </div>
