@@ -39,11 +39,6 @@
     border-color: var(--accent-color);
 }
 
-.category-titles {
-    text-decoration: none;
-    color: var(--font-color) !important;
-}
-
 .img-fluid {
     border-radius: 6px;
 }

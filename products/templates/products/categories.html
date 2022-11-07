@@ -7,18 +7,18 @@
 
 {% block content %}
     <!-- List of Categories -->
-    <div class="col text-center my-3">
-        <h1 class="text-center">Categories</h1>
+    <div class="col title">
+        <h1>Categories</h1>
     </div>
     <div class="container mt-5">
         <div class="row">
             {% for category in categories_list %}
             <div class="col-md-4">
-                <a class="category-titles" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
+                <a class="nav-link" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
                     <div class="content-img">
                         <img src="" alt="">
-                        <div>
-                            <h2 class="text-center display-6 category-titles">{{ category.friendly_name }}</h2>
+                        <div class="title">
+                            <h2>{{ category.friendly_name }}</h2>
                         </div>
                     </div>
                 </a>
