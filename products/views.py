@@ -16,7 +16,7 @@ class ListProducts(ListView):
     A class to view all the products with filtering and sorting.
     """
     model = Product
-    paginate_by = 20
+    paginate_by = 12
 
     def __init__(self):
         self.no_search_result = True
@@ -43,7 +43,7 @@ class SearchProduct(ListView):
     A class to view the search results with filtering and sorting.
     """
     model = Product
-    paginate_by = 20
+    paginate_by = 12
 
     def __init__(self):
         self.no_search_result = True
@@ -109,7 +109,7 @@ def categories_view(request, cats):
 
     context['filter'] = filtered_products
 
-    paginated_filtered_products = Paginator(filtered_products.qs, 20)
+    paginated_filtered_products = Paginator(filtered_products.qs, 12)
 
     page_number = request.GET.get('page')
     product_page_obj = paginated_filtered_products.get_page(page_number)

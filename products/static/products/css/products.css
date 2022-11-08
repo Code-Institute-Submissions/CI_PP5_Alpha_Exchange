@@ -1,4 +1,30 @@
-@import "/static/css/variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Light Mode Theme */
+:root.light {
+    --bodytext: 'Inter', 'sans-serif';
+    --menu-color: #568cff;
+    --card-color: 86, 140, 255;
+    --background-color: #D0D0D0;
+    --btn-hover-color: #969696;
+    --btn-hover-font: #fff;
+    --accent-color: #FFC05A;
+    --font-color: #000;
+    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dark Mode Theme */
+:root:not(.light) {
+    --bodytext: 'Inter', 'sans-serif';
+    --menu-color: #14213d;
+    --card-color: 20, 33, 61;
+    --background-color: #969696;
+    --btn-hover-color: #D0D0D0;
+    --btn-hover-font: #000;
+    --accent-color: #EB9100;
+    --font-color: #fff;
+    --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 
 .card {
     position: relative;
@@ -39,13 +65,16 @@
     border-color: var(--accent-color);
 }
 
-.img-fluid {
-    border-radius: 6px;
+.card-img {
+    max-width: 100%;
+    height: auto;
 }
 
-.cat-link {
-    text-decoration: none;
-    color: var(--font-color);
+.cust-img {
+    border-radius: 6px;
+    max-width: inherit;
+    height: auto;
+    vertical-align: middle;
 }
 
 .select_input {
@@ -55,6 +84,10 @@
 
 .input-group select {
     padding-right: 1.75rem!important;
+}
+
+.input-group input {
+    max-width: 50px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -92,5 +125,11 @@
 @media screen and (max-width: 1200px) {
     .product-name {
         font-size: 120%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-name {
+        font-size: 80%;
     }
 }

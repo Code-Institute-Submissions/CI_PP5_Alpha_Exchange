@@ -189,9 +189,7 @@ For the color scheme I have opted to implement a dark and light theme while usin
 ![Light Mode Theme](documentation/features/colour-palette-light.jpg)
 
 ### Fonts
-I am using Inter font with a backup of sans-serif across the website for the title and headers.This is used to maintain a Consistent and professional look with an easily readable format.
-
-For the Secondary font for the body text the owners decided to use Quicksand with a backup of sans-serif, this will help to maintain the consistent theme across the website.
+I am using Inter font with a backup of sans-serif across the website. This is used to maintain a Consistent and professional look with an easily readable format.
 
 ### Structure
 The website has been built using a template engine so that all pages follow the same design to maintain the feel across the website.

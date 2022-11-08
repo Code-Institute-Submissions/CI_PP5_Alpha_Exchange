@@ -34,17 +34,17 @@
                     {% for product in object_list %}
                         <div class="col-sm-8 col-md-6 col-lg-6 col-xl-3 mb-3">
                             <div class="row card mx-3">
-                                <div class="card-image">
+                                <div class="card-img">
                                     {% if product.image %}
-                                        <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        <img class="cust-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
-                                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.webp" alt="{{ product.name }}">
+                                        <img class="cust-img" src="{{ MEDIA_URL }}noimage.webp" alt="{{ product.name }}">
                                     {% endif %}
                                 </div>
                                 <!-- Product Card -->
                                 <div class="card-content pt-2">
                                     <h2 class="product-name card-bottom-rule">{{ product.name }}</h2>
-                                    <p class="card-text mb-0 mr-3 list-inline-item">£{{ product.price }}</p>
+                                    <p class="mb-0 list-inline-item">£{{ product.price }}</p>
                                     {% if product.rating %}
                                         <small class="list-inline-item mr-3"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                     {% else %}
