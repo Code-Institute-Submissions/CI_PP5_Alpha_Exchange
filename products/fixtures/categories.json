@@ -4,7 +4,8 @@
         "model": "products.category",
         "fields": {
             "name": "activewear",
-            "friendly_name": "Activewear"
+            "friendly_name": "Activewear",
+            "image": "allen-solly-women-red-shorts.webp"
         }
     },
     {
@@ -12,7 +13,8 @@
         "model": "products.category",
         "fields": {
             "name": "bed_bath",
-            "friendly_name": "Bed & Bath"
+            "friendly_name": "Bed & Bath",
+            "image": "playboy-men-malibu-fragrance-gift-set.webp"
         }
     },
     {
@@ -20,23 +22,26 @@
         "model": "products.category",
         "fields": {
             "name": "clearance",
-            "friendly_name": "Clearance"
+            "friendly_name": "Clearance",
+            "image": "qq-men-black-watch.webp"
         }
     },
     {
         "pk": 4,
         "model": "products.category",
         "fields": {
-            "name": "deals",
-            "friendly_name": "Deals"
+            "name": "bags",
+            "friendly_name": "Bags",
+            "image": "puma-men-motion-mr-black-shoulder-bag.webp"
         }
     },
     {
         "pk": 5,
         "model": "products.category",
         "fields": {
-            "name": "essentials",
-            "friendly_name": "Essentials"
+            "name": "accessories",
+            "friendly_name": "Accessories",
+            "image": "revv-men-steel-bracelet.webp"
         }
     },
     {
@@ -44,23 +49,26 @@
         "model": "products.category",
         "fields": {
             "name": "jeans",
-            "friendly_name": "Jeans"
+            "friendly_name": "Jeans",
+            "image": "tokyo-talkies-women-navy-slim-fit-jeans.webp"
         }
     },
     {
         "pk": 7,
         "model": "products.category",
         "fields": {
-            "name": "kitchen_dining",
-            "friendly_name": "Kitchen & Dining"
+            "name": "shoes",
+            "friendly_name": "Shoes",
+            "image": "timberland-men-black-casual-shoes.webp"
         }
     },
     {
         "pk": 8,
         "model": "products.category",
         "fields": {
-            "name": "new_arrivals",
-            "friendly_name": "New Arrivals"
+            "name": "loungewear",
+            "friendly_name": "Loungewear",
+            "image": "inaya-women-lounge-top.webp"
         }
     },
     {
@@ -68,7 +76,8 @@
         "model": "products.category",
         "fields": {
             "name": "shirts",
-            "friendly_name": "Shirts"
+            "friendly_name": "Shirts",
+            "image": "wrangler-women-pink-t-shirt.webp"
         }
     }
 ]

@@ -1275,7 +1275,7 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 
 ### Amazon WebServices
 1. Create an account at aws.amazon.com
-2. Open the S3 application and create an S3 bucket named "alpha-exchange"
+2. Open the S3 application and create a new S3 bucket  with a globally unique name mine is "pp5-alpha-exchange"
 3. Uncheck the "Block All Public access setting"
 4. In the Properties section, navigate to the "Static Website Hosting" section and click edit
 5. Enable the setting, and set the index.html and the error.html values
@@ -1289,23 +1289,22 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 10. The bucket is created, the next step is to open the IAM application to set up access
 11. Create a new user group named "manage-alpha-exchange"
 12. Add the "AmazonS3FullAccess" policy permission for the user group
-<br>![AWS Bucket Policy](documentation/deployment/aws_user_group.jpg)
 13. Go to "Policies" and click "Create New Policy"
 14. Click "Import Managed Policy" and select "AmazonS3FullAccess" > Click 'Import'.
 15. In the JSON editor, update the policy "Resource" to the following
 <br><code>"Resource": [</code>
-<br><code>"arn:aws:s3:::alpha-exchange",</code>
-<br><code>"arn:aws:s3:::alpha-exchange/*"</code>
+<br><code>"arn:aws:s3:::pp5-alpha-exchange",</code>
+<br><code>"arn:aws:s3:::pp5-alpha-exchange/*"</code>
 <br><code>]</code>
 16. Give the policy a name and click "Create Policy"
 17. Add the newly created policy to the user group
-<br>![AWS Bucket Policy](documentation/deployment/aws_policy.jpg)
+<br>![AWS Bucket Policy](documentation/deployment/aws_user_group.jpg)
 18. Go to Users and create a new user
 19. Add the user to the user group manage-alpha-exchange
 20. Select "Programmatic access" for the access type
 21. Note the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID variables, they are used in other parts of this README for local deployment and Heroku setup
 22. The user is now created with the correct user group and policy
-<br>![AWS Bucket Policy](documentation/deployment/aws_user.jpg)
+<br>![AWS User](documentation/deployment/aws_user.jpg)
 23. Note the AWS code in settings.py. Note an environment variable called USE_AWS must be set to use these settings, otherwise it will use local storage
 <br>![AWS Settings](documentation/deployment/aws_settings.jpg)
 24. These settings set up a cache policy, set the bucket name, and the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY that you set in your aws account
@@ -1368,10 +1367,10 @@ Any further recipes and images added by third parties and individuals have been 
 | **Link to Asset** | **Created By** | **Web Source** |
 | ----------------- | -------------- | -------------- |
 | [shopping-cart.webp](/media/shopping-cart.webp) | [Alexas_Fotos](https://pixabay.com/users/alexas_fotos-686414/) | [Pixabay](https://pixabay.com/photos/shopping-business-retail-trade-1165437/) |
-| [Favicon](/media/favicon-32x32.webp) | [emirkhan bal](https://www.pexels.com/@emirkhan-bal-221704/) | [Pexels](https://www.pexels.com/photo/gray-and-blue-stainless-steel-shopping-cart-953862/) |
-| [Categories](/products/fixtures/categories.json) | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
-| [Products](/products/fixtures/products.json) | Created by CI and pruned from from Kaggle dataset then edited to contain extra values. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/bf096a773ea7e32253e20f58c1d6139317f681be/products/fixtures) |
-| Images | Created by CI and pruned from from Kaggle dataset then converted to webp format for better lighthouse optimization. | [GitHub](https://github.com/Code-Institute-Solutions/boutique_ado_images/tree/master/pics) |
+| [Favicon](/static/img/favicon_io/android-chrome-512x512.png) | [emirkhan bal](https://www.pexels.com/@emirkhan-bal-221704/) | [Pexels](https://www.pexels.com/photo/gray-and-blue-stainless-steel-shopping-cart-953862/) |
+| [Categories](/products/fixtures/categories.json) | Mirroring the CI Boutique Ado fixtures, I updated these to fit my needs with new information pruned from a new Kaggle dataset. | [Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small) |
+| [Products](/products/fixtures/products.json) | Mirroring the CI Boutique Ado fixtures, i updated these to fit my needs with new information pruned from a new Kaggle dataset. | [Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small) |
+| Product Images | Pruned from the kaggle dataset to match the product details in the fixtures, these were then renamed for accessibility reasons. | [Kaggle](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small) |
 |  |  |  |
 |  |  |  |
 
