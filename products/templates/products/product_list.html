@@ -36,9 +36,9 @@
                             <div class="row card mx-3">
                                 <div class="card-img">
                                     {% if product.image %}
-                                        <img class="cust-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        <img class="cust-img" width="600" height="800" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
-                                        <img class="cust-img" src="/media/noimage.webp" alt="{{ product.name }}">
+                                        <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ product.name }}">
                                     {% endif %}
                                 </div>
                                 <!-- Product Card -->
@@ -72,7 +72,7 @@
                                                         <div class="input-group my-1">
                                                             <button class="decrement-qty btn btn-light select_input rounded-start p-0" 
                                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                                <p class="sr-only">decrement-qty</p>
+                                                                <span class="sr-only">decrement-qty</span>
                                                                 <i class="fas fa-minus"></i>
                                                             </button>
                                                             <label class="sr-only" for="id_qty_{{ product.id }}">quantity</label>
@@ -81,7 +81,7 @@
                                                                 id="id_qty_{{ product.id }}">
                                                             <button class="increment-qty btn btn-light select_input rounded-end p-0"
                                                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                                <p class="sr-only">increment-qty</p>
+                                                                <span class="sr-only">increment-qty</span>
                                                                 <i class="fas fa-plus"></i>
                                                             </button>
                                                         </div>
