@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
                         {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
+                            <a href="{{ product.image.url }}" target="_blank">
+                                <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
                         {% else %}
-                        <a href="">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
+                            <a href="">
+                                <img class="img-fluid" src="/media/noimage.webp" alt="{{ product.name }}">
+                            </a>
                         {% endif %}
                     </div>
                     <div class="col-md-6">

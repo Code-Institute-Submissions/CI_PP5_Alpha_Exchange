@@ -16,7 +16,11 @@
             <div class="col-md-4">
                 <a class="nav-link" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
                     <div class="content-img">
-                        <img src="" alt="">
+                        {% if category.image %}
+                            <img class="img-fluid" src="{{ category.image.url }}" alt="{{ category.name }}">
+                        {% else %}
+                            <img class="img-fluid" src="/media/noimage.webp" alt="{{ category.name }}">
+                        {% endif %}
                         <div class="title">
                             <h2>{{ category.friendly_name }}</h2>
                         </div>
