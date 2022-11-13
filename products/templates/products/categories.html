@@ -15,15 +15,15 @@
             {% for category in categories_list %}
             <div class="col-md-4">
                 <a class="nav-link" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
-                    <div class="content-img">
+                    <div class="card-img">
                         {% if category.image %}
-                            <img class="img-fluid" src="{{ category.image.url }}" alt="{{ category.name }}">
+                            <img class="cust-img" width="600" height="800" src="{{ category.image.url }}" alt="{{ category.name }}">
                         {% else %}
-                            <img class="img-fluid" src="/media/noimage.webp" alt="{{ category.name }}">
+                            <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ category.name }}">
                         {% endif %}
-                        <div class="title">
-                            <h2>{{ category.friendly_name }}</h2>
-                        </div>
+                    </div>
+                    <div class="title">
+                        <h2>{{ category.friendly_name }}</h2>
                     </div>
                 </a>
             </div>

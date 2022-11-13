@@ -79,10 +79,6 @@
     height: auto;
 }
 
-.img-fluid {
-    border-radius: 6px;
-}
-
 .select_input {
     height: 31px;
     padding: 0 1rem;

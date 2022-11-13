@@ -1225,7 +1225,9 @@ To show code coverage a python test plugin called coverage was used to generate 
 | **Bug** | **Fix** |
 | ------- | ------- |
 | Issues with loading the filtered query page search along with pagination | Re-write views and used django-filters package as per guides detailed below. |
-|  |  |
+| Issues with too many GET requests from AWS servers | Added database_url to env.py by mistake, removed to stop linking to postgres database during development. |
+| Category filtering not working using query filtering | Used category view to filter the products directly. |
+| Django self updated to version 4.2 when preparing to deploy to heroku due to another library and also installed backports.zoneinfo | Rolled back Django to 3.2 for version support and uninstalled backports.zoneinfo |
 |  |  |
 
 [Back to Table Of Content](#table-of-content)
