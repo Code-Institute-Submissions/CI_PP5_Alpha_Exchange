@@ -34,7 +34,7 @@ def basket_contents(request):
                 product_count += quantity
                 basket_items.append({
                     'item_id': item_id,
-                    'quantity': data,
+                    'quantity': quantity,
                     'product': product,
                     'size': size
                 })
@@ -53,6 +53,7 @@ def basket_contents(request):
         'basket_items': basket_items,
         'total': total,
         'product_count': product_count,
+        'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,

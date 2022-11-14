@@ -1,0 +1,58 @@
+.cust-img {
+    border-radius: 6px;
+    padding: 1%;
+    width: 100%;
+    height: auto;
+}
+
+.select_input {
+    height: 31px;
+    padding: 0 1rem;
+}
+
+.qty-box {
+    min-width: 50px;
+}
+
+.increment-qty, .decrement-qty {
+    width: 31px;
+}
+
+.increment-qty {
+    float: right;
+}
+
+.remove-item, .update-link {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .btn-lg {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    p, h6, h4, a {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    p, a {
+        font-size: 70%;
+    }
+
+    h6, h4 {
+        font-size: 80%;
+    }
+
+    .increment-qty, .decrement-qty {
+        width: 17px;
+        font-size: 0.75rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.6rem !important;
+    }
+}

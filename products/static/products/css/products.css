@@ -92,6 +92,10 @@
     max-width: 50px;
 }
 
+.increment-qty, .decrement-qty {
+    width: 31px;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .card-content {
         transition: transform 500ms ease;
@@ -106,10 +110,6 @@
     .card-bottom-rule::after {
         transform: scaleX(0);
     }
-}
-
-.increment-qty, .decrement-qty {
-    width: 31px;
 }
 
 @media screen and (min-width: 1400px) {

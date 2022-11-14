@@ -1,4 +1,3 @@
-
 $('#sort-box').change(function() {
     var selector = $(this);
     var currentUrl = new URL(window.location);

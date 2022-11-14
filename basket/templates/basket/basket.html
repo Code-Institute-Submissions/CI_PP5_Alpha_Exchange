@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'basket/css/basket.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -17,29 +22,65 @@
                                 <th scope="col"></th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Qty</th>
-                                <th scope="col">Product total</th>
+                                <th scope="col">Total</th>
                             </tr>
                         </thead>
                         {% for item in basket_items %}
                             <tr class="border border-3">
                                 <td class="w-25">
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    <img class="cust-img" src="{{ item.product.image.url }}">
                                 </td>
                                 <td class="py-3">
                                     <a class="nav-link" href="{% url 'product_detail' item.product.id %}">
                                         <p><strong>{{ item.product.name }}</strong></p>
                                     </a>
-                                    <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                    <p class="my-0">
+                                        <strong>Size: </strong>
+                                        {% if item.product.has_sizes %}
+                                            {{ item.size|upper }}
+                                        {% else %}
+                                            N/A
+                                        {% endif %}
+                                    </p>
                                     <p class="my-0">SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class="py-3">
                                     <p>£{{ item.product.price }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p>{{ item.quantity }}</p>
+                                    <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="input-group my-1">
+                                            <div class="col-12">
+                                                <label class="sr-only" for="id_qty_{{ item.item.id }}">quantity</label>
+                                                <input class="form-control select_input ps-2 pe-0" type="number"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item.id }}"
+                                                    id="id_qty_{{ item.item.id }}">
+                                            </div>
+                                            <div class="col-12 mt-2">
+                                                <button class="decrement-qty btn btn-light select_input rounded p-0" 
+                                                    data-item_id="{{ item.item.id }}" id="decrement-qty_{{ item.item.id }}">
+                                                    <span class="sr-only">decrement-qty</span>
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <button class="increment-qty btn btn-light select_input rounded p-0"
+                                                    data-item_id="{{ item.item.id }}" id="increment-qty_{{ item.item.id }}">
+                                                    <span class="sr-only">increment-qty</span>
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        {% endif %}
+                                    </form>
+                                    <div class="d-flex flex-wrap justify-content-md-between">
+                                        <a class="update-link text-info mt-2">Update</a>
+                                        <a class="remove-item text-danger mt-2" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">Remove</a>
+                                    </div>
                                 </td>
                                 <td class="py-3">
-                                    <p>£{{ item.product.price }}</p>
+                                    <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -85,4 +126,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'products/js/qty-box.js' %}"></script>
+    <script src="{% static 'basket/js/basket-qty.js' %}"></script>
 {% endblock %}
