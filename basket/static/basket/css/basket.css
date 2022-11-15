@@ -26,19 +26,23 @@
     cursor: pointer;
 }
 
+label {
+    display: block;
+}
+
 @media screen and (max-width: 800px) {
     .btn-lg {
         padding: 0.25rem 0.5rem !important;
         font-size: 0.75rem !important;
     }
 
-    p, h6, h4, a {
+    p, h6, h4, a, span{
         font-size: 90%;
     }
 }
 
 @media screen and (max-width: 500px) {
-    p, a {
+    p, a, span {
         font-size: 70%;
     }
 

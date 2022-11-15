@@ -50,21 +50,25 @@
                                 <td class="py-3">
                                     <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
                                         {% csrf_token %}
-                                        <div class="input-group my-1">
+                                        <div class="input-group my-1 input-group-{{ item.item_id }}">
                                             <div class="col-12">
-                                                <label class="sr-only" for="id_qty_{{ item.item.id }}">quantity</label>
-                                                <input class="form-control select_input ps-2 pe-0" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item.id }}"
-                                                    id="id_qty_{{ item.item.id }}">
+                                                <label><span class="sr-only">Quantity: </span>
+                                                <input class="form-control select_input ps-2 pe-0 id_qty_{{ item.item_id }} 
+                                                    {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                                                    type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                                                    data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                </label>
                                             </div>
                                             <div class="col-12 mt-2">
-                                                <button class="decrement-qty btn btn-light select_input rounded p-0" 
-                                                    data-item_id="{{ item.item.id }}" id="decrement-qty_{{ item.item.id }}">
+                                                <button class="decrement-qty btn btn-light select_input rounded p-0 decrement-qty_{{ item.item_id }} 
+                                                    {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                                                    data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                                     <span class="sr-only">decrement-qty</span>
                                                     <i class="fas fa-minus"></i>
                                                 </button>
-                                                <button class="increment-qty btn btn-light select_input rounded p-0"
-                                                    data-item_id="{{ item.item.id }}" id="increment-qty_{{ item.item.id }}">
+                                                <button class="increment-qty btn btn-light select_input rounded p-0 increment-qty_{{ item.item_id }} 
+                                                    {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
+                                                    data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                                     <span class="sr-only">increment-qty</span>
                                                     <i class="fas fa-plus"></i>
                                                 </button>
@@ -129,6 +133,6 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script src="{% static 'products/js/qty-box.js' %}"></script>
     <script src="{% static 'basket/js/basket-qty.js' %}"></script>
+    <script src="{% static 'products/js/qty-box.js' %}"></script>
 {% endblock %}

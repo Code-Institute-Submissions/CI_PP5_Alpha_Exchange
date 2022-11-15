@@ -58,7 +58,7 @@
                                                     {% if size %}
                                                         <div class="col-auto p-0">
                                                             <div class="input-group my-1">
-                                                                <select class="form-select select_input ps-1" id='id_product_size' aria-label="product_size" name="product_size">
+                                                                <select class="form-select select_input ps-1" aria-label="product_size" name="product_size">
                                                                     <option value="xs">XS</option>
                                                                     <option value="s">S</option>
                                                                     <option value="m" selected>M</option>
@@ -69,18 +69,18 @@
                                                         </div>
                                                     {% endif %}
                                                     <div class="col-auto p-0">
-                                                        <div class="input-group my-1">
-                                                            <button class="decrement-qty btn btn-light select_input rounded-start p-0" 
-                                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                        <div class="input-group my-1 input-group-{{ product.id }}">
+                                                            <button class="decrement-qty btn btn-light select_input rounded-start p-0
+                                                                decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
                                                                 <span class="sr-only">decrement-qty</span>
                                                                 <i class="fas fa-minus"></i>
                                                             </button>
                                                             <label class="sr-only" for="id_qty_{{ product.id }}">quantity</label>
-                                                            <input class="form-control qty-box select_input ps-2 pe-0" type="number"
+                                                            <input class="form-control qty-box select_input ps-2 pe-0 id_qty_{{ product.id }}" type="number"
                                                                 name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
                                                                 id="id_qty_{{ product.id }}">
-                                                            <button class="increment-qty btn btn-light select_input rounded-end p-0"
-                                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                            <button class="increment-qty btn btn-light select_input rounded-end p-0 
+                                                                increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
                                                                 <span class="sr-only">increment-qty</span>
                                                                 <i class="fas fa-plus"></i>
                                                             </button>
@@ -90,7 +90,7 @@
                                                 <div class="row d-flex justify-content-between">
                                                     <div class="col-4 p-0">
                                                         <p class="input-wrapper my-1">
-                                                            <input type="submit" id="add_to_basket" class="btn btn-light btn-sm" value="Add to Basket">
+                                                            <input type="submit" class="btn btn-light btn-sm" value="Add to Basket">
                                                         </p>
                                                     </div>
                                                     <div class="col-4 p-0">
