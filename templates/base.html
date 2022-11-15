@@ -88,7 +88,7 @@
                             <form method="GET" action="{% url 'search_products' %}" class="py-1">
                                 {% csrf_token %}
                                 <div class="input-group" id="search">
-                                    <label class="sr-only" for="search_box">search</label>
+                                    <label class="sr-only d-none" for="search_box">search</label>
                                     <input class="form-control" type="text" name="q" id="search_box" placeholder="Search ...">
                                     <div>
                                         <button class="btn btn-light" type="submit">

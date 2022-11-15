@@ -347,7 +347,7 @@ database model list
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS.
 - [WAVE](https://wave.webaim.org/) was used to validate the accessibility of the website.
 - [JShint](https://jshint.com/) was used to validate the Javascript.
-- [PEP8 Online](http://pep8online.com/) was used to validate the Python.
+- [Pycodestyle](https://pycodestyle.pycqa.org/en/latest/index.html) was used to validate the Python code.
 - [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to validate the website performance, best practice and SEO.
 - [Facebook](https://www.facebook.com) - was used to make a social media marketing page.
 - [Stripe](https://stripe.com/gb) - was used to take payments for the website.
