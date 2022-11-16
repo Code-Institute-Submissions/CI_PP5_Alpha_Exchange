@@ -21,7 +21,7 @@
                             {{ filter.form.price__iexact.as_hidden}}
                             {{ filter.form.name__iexact.as_hidden}}
                             {{ filter.form.rating__iexact.as_hidden}}
-                            <label for="id_ordering" class="d-none d-sm-block me-2">Order by:</label>
+                            <label for="id_ordering" class="d-none d-sm-block me-2" id="sort-label">Order by:</label>
                             <input type="hidden" name="q" value="{{request.GET.q }}">
                             {{ filter.form.ordering }}
                         </div>
@@ -143,7 +143,7 @@
                         <li class="active disabled"><a class="page-link" href="#">{{ i }}</a></li>
                     {% elif i > product_page_obj.number|add:'-2' and i < product_page_obj.number|add:'2' %}
                         <li>
-                            <a class="page-link" href="?{% param_replace page=i %}">{{ i }}</a>
+                            <button class="page-link" onclick="location.href='?{% param_replace page=i %}'" type="button">{{ i }}</button>
                         </li>
                     {% endif %}
                 {% endfor %}
@@ -166,6 +166,7 @@
 {% endblock content %}
 
 {% block postloadjs %}
+    {{ block.super }}
     <script src="{% static 'products/js/sort-box.js' %}"></script>
     <script src="{% static 'products/js/qty-box.js' %}"></script>
 {% endblock %}

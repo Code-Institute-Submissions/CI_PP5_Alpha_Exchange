@@ -32,7 +32,8 @@ def add_to_basket(request, item_id):
                 basket[item_id]['item_sizes'][size] += quantity
                 messages.success(
                     request,
-                    f'Updated size {size.upper()} {product.name} quantity to {basket[item_id]["item_sizes"][size]}')
+                    f'Updated size {size.upper()} {product.name} quantity ' +
+                    f'to {basket[item_id]["item_sizes"][size]}')
             else:
                 basket[item_id]['item_sizes'][size] = quantity
                 messages.success(
@@ -42,17 +43,18 @@ def add_to_basket(request, item_id):
             basket[item_id] = {'item_sizes': {size: quantity}}
             messages.success(
                 request,
-                f'Added size {size.upper()} {product.name} to your basket')
+                f'Added size {size.upper()} {product.name}, with quantity' +
+                f' {basket[item_id]["item_sizes"][size]} to your basket.')
     else:
         if item_id in list(basket.keys()):
             basket[item_id] += quantity
             messages.success(
-                request, f'Updated {Product.name} in your basket!'
+                request, f'Updated {product.name} in your basket!'
                 )
         else:
             basket[item_id] = quantity
             messages.success(
-                request, f'Added {Product.name} to your basket!'
+                request, f'Added {product.name} to your basket!'
                 )
 
     request.session['basket'] = basket

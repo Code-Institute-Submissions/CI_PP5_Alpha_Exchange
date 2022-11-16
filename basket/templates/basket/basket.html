@@ -133,6 +133,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
     <script src="{% static 'basket/js/basket-qty.js' %}"></script>
     <script src="{% static 'products/js/qty-box.js' %}"></script>
 {% endblock %}
