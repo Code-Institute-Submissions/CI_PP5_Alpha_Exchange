@@ -64,7 +64,9 @@ body {
     width: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6, p, th, .icon, span, #sort-label {
+h1, h2, h3, h4, h5, h6, p, th, 
+.icon, span, legend, #sort-label,
+.form-check-label {
     color: var(--font-color);
 }
 
@@ -132,6 +134,10 @@ h1, h2, h3, h4, h5, h6, p, th, .icon, span, #sort-label {
     padding: 0;
     margin: 0;
     background-color: var(--background-color);
+}
+
+.special-margin {
+    margin-right: 0.5rem !important;
 }
 
 /* Theme Switch Styles */
@@ -260,5 +266,9 @@ h1, h2, h3, h4, h5, h6, p, th, .icon, span, #sort-label {
 @media screen and (max-width: 500px) {
     .logo {
         display: none;
+    }
+
+    .special-margin {
+        margin-right: 0 !important;
     }
 }
