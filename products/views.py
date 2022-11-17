@@ -53,7 +53,7 @@ class SearchProduct(ListView):
         queryset = search_results.qs.distinct()
         query = self.request.GET.get('q')
         if not query:
-            messages.info(
+            messages.error(
                 self.request, 'You did not enter any search criteria'
                 )
             return Product.objects.none()

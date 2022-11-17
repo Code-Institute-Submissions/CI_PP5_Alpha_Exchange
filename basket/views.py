@@ -30,7 +30,7 @@ def add_to_basket(request, item_id):
         if item_id in list(basket.keys()):
             if size in basket[item_id]['item_sizes'].keys():
                 basket[item_id]['item_sizes'][size] += quantity
-                messages.success(
+                messages.info(
                     request,
                     f'Updated size {size.upper()} {product.name} quantity ' +
                     f'to {basket[item_id]["item_sizes"][size]}')
@@ -48,7 +48,7 @@ def add_to_basket(request, item_id):
     else:
         if item_id in list(basket.keys()):
             basket[item_id] += quantity
-            messages.success(
+            messages.info(
                 request, f'Updated {product.name} in your basket!'
                 )
         else:
@@ -65,6 +65,7 @@ def adjust_basket(request, item_id):
     """
     Change the quantity of an item in the basket.
     """
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
     if 'product_size' in request.POST:
@@ -74,15 +75,28 @@ def adjust_basket(request, item_id):
     if size:
         if quantity > 0:
             basket[item_id]['item_sizes'][size] = quantity
+            messages.info(
+                    request,
+                    f'Updated size {size.upper()} {product.name} quantity ' +
+                    f'to {basket[item_id]["item_sizes"][size]}')
         else:
             del basket[item_id]['item_sizes'][size]
             if not basket[item_id]['item_sizes']:
                 basket.pop(item_id)
+            messages.warning(
+                request, f'Removed {product.name} from your basket!'
+                )
     else:
         if quantity > 0:
             basket[item_id] = quantity
+            messages.info(
+                request, f'Updated {product.name} in your basket!'
+                )
         else:
             basket.pop(item_id)
+            messages.warning(
+                request, f'Removed {product.name} from your basket!'
+                )
 
     request.session['basket'] = basket
     return redirect(reverse('basket'))
@@ -103,12 +117,12 @@ def remove_basket(request, item_id):
             del basket[item_id]['item_sizes'][size]
             if not basket[item_id]['item_sizes']:
                 basket.pop(item_id)
-            messages.success(
+            messages.warning(
                 request,
                 f'Removed size {size.upper()} {product.name} from your bag')
         else:
             basket.pop(item_id)
-            messages.success(
+            messages.warning(
                 request, f'{product.name} was removed from your basket!'
                 )
 
