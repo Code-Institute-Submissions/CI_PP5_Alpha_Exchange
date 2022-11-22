@@ -7,12 +7,17 @@ from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
 from products.models import Product
+from users.models import UserAccount
 
 
 class Order(models.Model):
     """
     A class for creating a order on the website.
     """
+
+    # UserAccount foreign key
+    user_account = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
 
     # Name and address information
     full_name = models.CharField(max_length=50, null=False, blank=False)
