@@ -255,10 +255,26 @@ h1, h2, h3, h4, h5, h6, p, th,
     color: var(--font-color);
 }
 
+/* All-Auth Styles */
+
+.account-row {
+    padding: 10% 25%;
+}
+
+.account-row label:not(.form-check-label) {
+    display: none;
+}
+
 /* Media Queires */
 @media screen and (max-width: 1050px) {
     .logo, .nav-link, .nav-item {
         font-size: 90% !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .account-row {
+        padding: 10% 10%;
     }
 }
 
