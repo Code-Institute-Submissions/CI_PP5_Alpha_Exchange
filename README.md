@@ -9,11 +9,13 @@
 Alpha Exchange is an E-commerce website aimed at B2C sales with a drop shipping style model, this website mainly features clothing, home-wear and accessories. the website is designed to allow users to experience a fully featured shopping experience where you can easily find known products, search for new or similar products, filter by categories or browse through the new arrivals and clearance sections.
 
 ### User Information
-user information
+A regular user has been setup with the following details for testing the website.
+- Username: test_user
+- Password: TestPassword123
 
 ### Card Information
 - Test Card Number: 4242 4242 4242 4242 
-- Expiration Date: Any future date (e.g. 02/24) 
+- Expiration Date: Any future date (e.g. 02/42) 
 - CVC: Any three digits (e.g. 424)
 
 ## Table of Content

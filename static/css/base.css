@@ -120,6 +120,10 @@ h1, h2, h3, h4, h5, h6, p, th,
     border-radius: 0 6px 6px 0;
 }
 
+#search input::placeholder {
+    color: #000;
+}
+
 .navbar-toggler-icon {
     background-image: var(--toggler)
 }
@@ -261,7 +265,11 @@ h1, h2, h3, h4, h5, h6, p, th,
     padding: 10% 25%;
 }
 
-.account-row label:not(.form-check-label) {
+.account-row input::placeholder {
+    color: #000;
+}
+
+.account-row label:not([for='id_remember']) {
     display: none;
 }
 

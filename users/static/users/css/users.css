@@ -1,0 +1,12 @@
+.title h1 {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.form-label, .form-select-label {
+    display: none;
+}
+
+#profile-update-form input::placeholder {
+    color: #000;
+}
