@@ -55,6 +55,20 @@ body {
     background-color: rgba(var(--card-color), 0.5);
 }
 
+.basket-icon{
+    position: absolute;
+    left: 6px;
+    top: calc(100% - 1.05em);
+}
+
+.input-wrapper{
+    position: relative;
+}
+
+.prod_details_btn {
+    padding-left: 28px;
+}
+
 /* from Bulma/ Boutique Ado */
 .icon {
     align-items: center;
@@ -223,40 +237,6 @@ h1, h2, h3, h4, h5, h6, p, th,
 
 .toast-capper {
     height: 3px;
-}
-
-/* Basket Styles */
-.basket-icon{
-    position: absolute;
-    left: 6px;
-    top: calc(100% - 1.05em);
-}
-
-.prod_details_btn {
-    padding-left: 28px;
-}
-
-.input-wrapper{
-    position: relative;
-}
-
-.table-header {
-    background-color: var(--menu-color);
-}
-
-.table-bordered .border {
-    border-color: var(--font-color) !important;
-}
-
-.border-remove {
-    border-bottom: 0 !important;
-    border-left: 0 !important;
-    border-right: 0 !important;
-}
-
-.delivery-msg {
-    background-color: var(--accent-color) !important;
-    color: var(--font-color);
 }
 
 /* All-Auth Styles */

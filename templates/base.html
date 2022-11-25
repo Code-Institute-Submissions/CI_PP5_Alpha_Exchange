@@ -109,8 +109,8 @@
                             </a>
                             <!-- User dropdown -->
                             <ul class="dropdown-menu">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
+                                {% if user.is_authenticated %}
+                                    {% if user.is_superuser %}
                                         <li><a href="" class="dropdown-item">Create New Product</a></li>
                                         <li><a href="" class="dropdown-item">Manage Categories</a></li>
                                     {% endif %}

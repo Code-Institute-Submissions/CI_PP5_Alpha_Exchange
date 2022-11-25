@@ -10,3 +10,11 @@
 #profile-update-form input::placeholder {
     color: #000;
 }
+
+.table-header {
+    background-color: var(--menu-color);
+}
+
+.table-bordered .border {
+    border-color: var(--font-color) !important;
+}

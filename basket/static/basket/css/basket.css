@@ -1,3 +1,22 @@
+.table-header {
+    background-color: var(--menu-color);
+}
+
+.table-bordered .border {
+    border-color: var(--font-color) !important;
+}
+
+.border-remove {
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+.delivery-msg {
+    background-color: var(--accent-color) !important;
+    color: var(--font-color);
+}
+
 .cust-img {
     border-radius: 6px;
     padding: 1%;

@@ -17,7 +17,8 @@ class Order(models.Model):
 
     # UserAccount foreign key
     user_account = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+                                     null=True, blank=True,
+                                     related_name='orders')
 
     # Name and address information
     full_name = models.CharField(max_length=50, null=False, blank=False)

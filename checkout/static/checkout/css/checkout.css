@@ -30,6 +30,13 @@
     color: #dc3545;
 }
 
+.border {
+    border-color: var(--font-color) !important;
+    background-color: #fff;
+    color: #000;
+
+}
+
 /* Custom CSS */
 
 .form-label {
