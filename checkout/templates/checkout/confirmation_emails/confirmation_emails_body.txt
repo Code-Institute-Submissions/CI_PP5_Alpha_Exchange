@@ -1,0 +1,27 @@
+Hello {{ order.user_account }}!
+
+Thank you for your order with us at Alpha Exchange. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date|date:"d/m/Y" }}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be shipped to the address below.{{ order.country }}.
+
+Order Name:{{ order.full_name }}
+Street Address 1:{{ order.street_address1 }}
+Street Address 2:{{ order.street_address2|default:"" }}
+Town or City:{{ order.town_or_city }}
+County, State or Locality:{{ order.county|default:"" }}
+Postal Code:{{ order.postcode|default:"" }}
+Country:{{ order.country }}
+
+If you have any questions or need to change the details of the
+order, please feel free to contact us at {{ contact_email }}.
+
+Sincerely,
+
+Alpha Exchange

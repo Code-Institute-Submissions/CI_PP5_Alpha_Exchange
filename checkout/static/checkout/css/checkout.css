@@ -31,10 +31,8 @@
 }
 
 .border {
-    border-color: var(--font-color) !important;
+    border-color: #000 !important;
     background-color: #fff;
-    color: #000;
-
 }
 
 /* Custom CSS */

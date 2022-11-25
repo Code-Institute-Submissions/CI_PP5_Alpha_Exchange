@@ -18,3 +18,8 @@
 .table-bordered .border {
     border-color: var(--font-color) !important;
 }
+
+.order-link {
+    color: var(--font-color) !important;
+    text-decoration: underline 3px var(--font-color);
+}
