@@ -36,5 +36,7 @@
       "Pixabay",
       "Procfile",
       "setdefault"
-   ]
+   ],
+   "editor.tabCompletion": "on",
+   "diffEditor.codeLens": true
 }

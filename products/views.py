@@ -3,12 +3,14 @@ A module containing the views within products app.
 """
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator, EmptyPage
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
+from .forms import ProductModelForm
 
 
 class ListProducts(ListView):
@@ -118,3 +120,29 @@ def categories_view(request, cats):
     context['product_page_obj'] = product_page_obj
 
     return render(request, 'products/category.html', context)
+
+
+class ProductCreateView(UserPassesTestMixin, CreateView):
+    """
+    A class view to create products
+    """
+    template_name = 'products/create_product.html'
+    form_class = ProductModelForm
+    queryset = Product.objects.all()
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    raise_exception = True
+    redirect_field_name = '/'
+    permission_denied_message = "You do not have permission to view this page"
+    login_url = '/accounts/login'
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Product created successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Something went wrong"})
+        messages.error(self.request, 'Sorry, something went wrong')
+        return self.render_to_response(context)

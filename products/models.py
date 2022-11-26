@@ -2,6 +2,7 @@
 A module containing the models within products app.
 """
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -30,10 +31,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    name = models.CharField(max_length=254)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
@@ -48,3 +49,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.sku not in kwargs:
+            self.sku = f'sku100{Product.objects.count() + 1}'
+        super(Product, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        """
+        A method to return the absolute url
+        """
+        return reverse('product_detail', args=[str(self.pk)])

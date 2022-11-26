@@ -70,6 +70,14 @@
     width: 31px;
 }
 
+.form-label {
+    display: none;
+}
+
+.form-control::placeholder {
+    color: #000;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .card-content {
         transition: transform 500ms ease;
