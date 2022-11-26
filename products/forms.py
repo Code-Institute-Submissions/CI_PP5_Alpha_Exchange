@@ -47,4 +47,8 @@ class ProductModelForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-                self.fields['category'].empty_label = 'Category *'
+
+        categories = Category.objects.all()
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
+
+        self.fields['category'].choices = friendly_names

@@ -1,13 +1,14 @@
 """
 A module containing the views within products app.
 """
-from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.core.paginator import Paginator, EmptyPage
-from django.views.generic import ListView, CreateView
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponseRedirect)
+from django.views.generic import ListView, CreateView, UpdateView
 from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
 from .forms import ProductModelForm
@@ -144,5 +145,40 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Something went wrong"})
-        messages.error(self.request, 'Sorry, something went wrong')
+        messages.error(
+            self.request,
+            "Sorry, something went wrong, please check the form again.")
         return self.render_to_response(context)
+
+
+class ProductUpdateView(UserPassesTestMixin, UpdateView):
+    """
+    A class view to update products
+    """
+    template_name = 'products/create_product.html'
+    form_class = ProductModelForm
+    queryset = Product.objects.all()
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    raise_exception = True
+    permission_denied_message = "You do not have permission to view this page"
+    login_url = '/accounts/login'
+
+    def get_object(self, queryset=queryset):
+        pk_ = self.kwargs.get("pk")
+        return get_object_or_404(Product, pk=pk_)
+
+    def form_valid(self, form):
+        messages.success(self.request, "Product updated successfully")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        """
+        If the form is invalid, render the invalid form.
+        """
+        messages.error(
+            self.request,
+            "Sorry there was an error, please check the form again.")
+        return self.render_to_response(self.get_context_data(form=form))

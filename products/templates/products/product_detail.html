@@ -101,6 +101,14 @@
                                 <h2> Product Description</h2>
                                 <p class=" my-0 mr-3">{{ product.description }}</p>
                             </div>
+                            <div>
+                                <a class="btn btn-large btn-light mt-2" href="{% url 'update_product' product.id %}">
+                                    <i class="fas fa-save fa-lg"></i> Edit Product
+                                </a>
+                                <a class="btn btn-large btn-light mt-2" href="">
+                                    <i class="fa-solid fa-trash-can fa-lg"></i> Delete Product
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
