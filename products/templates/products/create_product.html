@@ -41,7 +41,13 @@
             </div>
             {% if product %}
                 <div class="col-12 col-lg-6 pt-2">
-                    <img class="cust-img p-0" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="cust-img p-0" width="600" height="800" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ product.name }}">
+                    {% endif %}
                 </div>
             {% endif %}
         </div>

@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponseRedirect)
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
 from .forms import ProductModelForm
@@ -123,7 +123,7 @@ def categories_view(request, cats):
     return render(request, 'products/category.html', context)
 
 
-class ProductCreateView(UserPassesTestMixin, CreateView):
+class ProductCreate(UserPassesTestMixin, CreateView):
     """
     A class view to create products
     """
@@ -135,11 +135,11 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
         return self.request.user.is_superuser
     raise_exception = True
     redirect_field_name = '/'
-    permission_denied_message = "You do not have permission to view this page"
+    permission_denied_message = "You do not have permission to view this page."
     login_url = '/accounts/login'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Product created successfully')
+        messages.success(self.request, 'Product created successfully.')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -151,7 +151,7 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
         return self.render_to_response(context)
 
 
-class ProductUpdateView(UserPassesTestMixin, UpdateView):
+class ProductUpdate(UserPassesTestMixin, UpdateView):
     """
     A class view to update products
     """
@@ -162,7 +162,7 @@ class ProductUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_superuser
     raise_exception = True
-    permission_denied_message = "You do not have permission to view this page"
+    permission_denied_message = "You do not have permission to view this page."
     login_url = '/accounts/login'
 
     def get_object(self, queryset=queryset):
@@ -170,7 +170,7 @@ class ProductUpdateView(UserPassesTestMixin, UpdateView):
         return get_object_or_404(Product, pk=pk_)
 
     def form_valid(self, form):
-        messages.success(self.request, "Product updated successfully")
+        messages.success(self.request, "Product updated successfully.")
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())
 
@@ -182,3 +182,26 @@ class ProductUpdateView(UserPassesTestMixin, UpdateView):
             self.request,
             "Sorry there was an error, please check the form again.")
         return self.render_to_response(self.get_context_data(form=form))
+
+
+class ProductDelete(UserPassesTestMixin, DeleteView):
+    """
+    A class view to delete products
+    """
+    template_name = 'products/delete_product.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    raise_exception = False
+    redirect_field_name = '/'
+    permission_denied_message = "You do not have permission to view this page."
+    login_url = '/accounts/login'
+
+    def get_object(self, queryset=None):
+        pk_ = self.kwargs.get("pk")
+        return get_object_or_404(Product, pk=pk_)
+
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, "Product deleted successfully.")
+        success_url = reverse('all_products')
+        return success_url

@@ -112,7 +112,7 @@
                                 {% if user.is_authenticated %}
                                     {% if user.is_superuser %}
                                         <li><a href="{% url 'create_product' %}" class="dropdown-item">Create New Product</a></li>
-                                        <li><a href="" class="dropdown-item">Manage Categories</a></li>
+                                        <li><a href="" class="dropdown-item">Create Category</a></li>
                                     {% endif %}
                                     <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
                                     <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
