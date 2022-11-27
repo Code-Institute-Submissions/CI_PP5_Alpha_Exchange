@@ -77,11 +77,8 @@
                                     {% endfor%}
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="">Contact Us</a>
-                            </li>
                         </ul>
-                        <div class="col-auto me-1 d-flex justify-content-end">
+                        <div class="col-auto me-1">
                             <!-- Search box form -->
                             <form method="GET" action="{% url 'search_products' %}" class="py-1">
                                 {% csrf_token %}
@@ -168,11 +165,13 @@
         </div>
     {% endif %}
 
-    {% block content %}
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <!-- Footer -->
-    <footer class="footer mt-3 py-3 container-fluid">
+    <footer class="footer py-3 container-fluid">
         <div class="row pb-2 text-center">
             <!-- Mailchimp Newsletter -->
             <div class="col-12 col-sm-6 col-md-3 mt-3">
@@ -191,9 +190,13 @@
             <!-- About us -->
             <div class="col-12 col-sm-6 col-md-3 mt-3">
                 <p>Thank you for visiting!</p>
-                <p>
-                    Take a look at our <a class = "nav-link" href="">About Us</a> page <br>
-                    and FAQ for more information.
+                <p class="text-wrap">
+                    Take a look at our <a class = "nav-link" href="">About Us</a> 
+                    page and FAQ for more information.
+                </p>
+                <p class="text-wrap">
+                    If you have a specific question of need to get in touch, visit our
+                    <a class="nav-link" aria-current="page" href="">Contact Us</a> page.
                 </p>
             </div>
             <!-- Social Media Links -->

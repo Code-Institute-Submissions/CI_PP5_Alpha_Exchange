@@ -28,18 +28,30 @@
 
 /* Common Styles */
 html {
+    box-sizing: border-box;
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 body {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: var(--background-color);
     font-family: var(--bodytext);
+}
+
+main {
+    flex-grow: 1;
 }
 
 .home-image {
     background-image: url('/media/shopping-cart.webp') !important;
     background-size: cover;
     min-width: -webkit-fill-available;
+    height: calc(100vh - 246px);
 }
 
 .title {
@@ -108,6 +120,8 @@ h1, h2, h3, h4, h5, h6, p, th,
 .footer {
     color: var(--font-color);
     background-color: var(--menu-color);
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .footer .nav-link {
@@ -124,6 +138,11 @@ h1, h2, h3, h4, h5, h6, p, th,
 }
 
 /* Header Styles */
+header {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .navbar {
     background-color: var(--menu-color) !important;
 }
@@ -294,5 +313,11 @@ h1, h2, h3, h4, h5, h6, p, th,
 
     .special-margin {
         margin-right: 0 !important;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .home-image {
+        height: calc(100vh - 63px);
     }
 }
