@@ -136,7 +136,7 @@
                 <ul class="pagination justify-content-center">
                     {% if page_obj.has_previous %}
                         <li>
-                            <a class="page-link" href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+                            <a class="page-link" href="?{% param_replace page=page_obj.previous_page_number %}">&lt;&lt;</a>
                         </li>
                     {% endif %}
 
@@ -161,7 +161,7 @@
                     {% if page_obj.has_next %}
                         {% if page_obj.next_page_number != paginator.num_pages %}
                             <li>
-                                <a class="page-link" href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
+                                <a class="page-link" href="?{% param_replace page=page_obj.next_page_number %}">&gt;&gt;</a>
                             </li>
                         {% endif %}
                     {% endif %}

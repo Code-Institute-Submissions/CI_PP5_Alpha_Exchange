@@ -226,6 +226,9 @@ The following models were created to represent the real database model structure
 database model list
 
 ### Wireframes
+
+Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same
+
 <details><summary>Mobile Design</summary>
 <details><summary>Home page</summary>
 <img src="documentation/wireframes/home-page-mobile.png">
@@ -260,13 +263,22 @@ database model list
 <details><summary>About us</summary>
 <img src="documentation/wireframes/about-us-mobile.png">
 </details>
-<details><summary>Admin</summary>
-<img src="documentation/wireframes/admin-mobile.png">
-</details>
 <details><summary>Add products page</summary>
 <img src="documentation/wireframes/add-products-page-mobile.png">
 </details>
 <details><summary>Edit products page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Delete products page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Add categories page</summary>
+<img src="documentation/wireframes/add-products-page-mobile.png">
+</details>
+<details><summary>Edit categories page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Delete categories page</summary>
 <img src="documentation/wireframes/edit-products-page-mobile.png">
 </details>
 <details><summary>Error page</summary>
@@ -308,14 +320,23 @@ database model list
 <details><summary>About us</summary>
 <img src="documentation/wireframes/about-us.png">
 </details>
-<details><summary>Admin</summary>
-<img src="documentation/wireframes/admin.png">
-</details>
 <details><summary>Add products page</summary>
-<img src="documentation/wireframes/add-products-page.png">
+<img src="documentation/wireframes/add-products-page-mobile.png">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/wireframes/edit-products-page.png">
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Delete products page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Add categories page</summary>
+<img src="documentation/wireframes/add-products-page-mobile.png">
+</details>
+<details><summary>Edit categories page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
+</details>
+<details><summary>Delete categories page</summary>
+<img src="documentation/wireframes/edit-products-page-mobile.png">
 </details>
 <details><summary>Error page</summary>
 <img src="documentation/wireframes/error-page.png">
@@ -368,8 +389,11 @@ database model list
 - The navbar / dropdown menu includes links to allow users to navigate around the website easily.
 - The navbar / dropdown menu includes the dark theme switch toggler option for users that prefer to use a lighter of darker theme.
 - user stories covered: 1, 24, 26
-<details><summary>Navbar / Dropdown Menu</summary>
-<img src="documentation/features/hamburger.jpg">
+<details><summary>Navbar / Dropdown Menu Open</summary>
+<img src="documentation/features/hamburger-open.jpg">
+</details>
+<details><summary>Navbar / Dropdown Menu Closed</summary>
+<img src="documentation/features/hamburger-closed.jpg">
 </details>
 <details><summary>Navbar / Dropdown Menu Light</summary>
 <img src="documentation/features/menu-light.jpg">

@@ -171,6 +171,44 @@
     {% block content %}
     {% endblock %}
 
+    <!-- Footer -->
+    <footer class="footer mt-3 py-3 container-fluid">
+        <div class="row pb-2 text-center">
+            <!-- Mailchimp Newsletter -->
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                
+            </div>
+            <!-- Business Address -->
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                <p class="m-0">
+                    <span class="fs-5 fw-bold">Alpha-Exchange</span><br>
+                    62 West Wallaby Street<br>
+                    Wigan<br>
+                    Lancashire<br>
+                    WG7 7FU
+                </p>
+            </div>
+            <!-- About us -->
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                <p>Thank you for visiting!</p>
+                <p>
+                    Take a look at our <a class = "nav-link" href="">About Us</a> page <br>
+                    and FAQ for more information.
+                </p>
+            </div>
+            <!-- Social Media Links -->
+            <div class="col-12 col-sm-6 col-md-3 mt-3">
+                <p>Find out more at the following links: </p>
+                <a class="social-networks" href="" target="_blank" rel="noopener" 
+                aria-label="Visit our Facebook page (opens in a new tab)."><i class="fab fa-lg fa-facebook-square ms-3"></i></a>
+                <a class="social-networks" href="https://twitter.com/" target="_blank" rel="noopener" 
+                aria-label="Visit our Twitter page (opens in a new tab)."><i class="fab fa-lg fa-twitter-square ms-3"></i></a>
+                <a class="social-networks" href="https://www.instagram.com/" target="_blank" rel="noopener" 
+                aria-label="Visit our Instagram page (opens in a new tab)."><i class="fab fa-lg fa-instagram-square ms-3"></i></a>
+            </div>
+        </div>
+    </footer>
+
     {% block postloadjs %}
     <!-- Theme switch script -->
     <script src="{% static 'js/theme.js' %}"></script>

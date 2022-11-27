@@ -78,6 +78,12 @@
     color: #000;
 }
 
+.page-link{
+    border-radius: 6px;
+    margin: 0 0.1rem;
+    color: #000;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .card-content {
         transition: transform 500ms ease;
