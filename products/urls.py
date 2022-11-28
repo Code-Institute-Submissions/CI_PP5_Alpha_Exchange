@@ -17,4 +17,8 @@ urlpatterns = [
     path(
         'delete/<str:pk>/', views.ProductDelete.as_view(),
         name='delete_product'),
+    path(
+        'create_category/', views.CategoryCreate.as_view(),
+        name='create_category'
+        ),
 ]

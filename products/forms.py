@@ -52,3 +52,28 @@ class ProductModelForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
+
+
+class CategoryModelForm(forms.ModelForm):
+    """
+    A form class for the Product model.
+    """
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'name': 'Category name',
+            'friendly_name': 'Friendly Name',
+        }
+
+        self.fields['name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            if field != 'image':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder

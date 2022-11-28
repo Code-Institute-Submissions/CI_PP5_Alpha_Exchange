@@ -114,6 +114,8 @@ For This project I have chosen for the stock to be handled by a third party.
 ### SEO
 Long tag keywords and short tag keywords were searched for in regards to SEO using Google tools and other online resources. These tags are included within the main HTML head and in the appropriate places within the project to name images and within main body text.
 
+I also made included the categories within the meta tag keywords so that as these are updates the keywords will also be updated.
+
 ![SEO keywords HTML]()
 
 ### Marketing

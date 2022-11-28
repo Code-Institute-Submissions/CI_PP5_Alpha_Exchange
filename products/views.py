@@ -11,7 +11,7 @@ from django.shortcuts import (
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
-from .forms import ProductModelForm
+from .forms import ProductModelForm, CategoryModelForm
 
 
 class ListProducts(ListView):
@@ -133,10 +133,6 @@ class ProductCreate(UserPassesTestMixin, CreateView):
 
     def test_func(self):
         return self.request.user.is_superuser
-    raise_exception = True
-    redirect_field_name = '/'
-    permission_denied_message = "You do not have permission to view this page."
-    login_url = '/accounts/login'
 
     def form_valid(self, form):
         messages.success(self.request, 'Product created successfully.')
@@ -150,6 +146,12 @@ class ProductCreate(UserPassesTestMixin, CreateView):
             "Sorry, something went wrong, please check the form again.")
         return self.render_to_response(context)
 
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
+
 
 class ProductUpdate(UserPassesTestMixin, UpdateView):
     """
@@ -161,9 +163,6 @@ class ProductUpdate(UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user.is_superuser
-    raise_exception = True
-    permission_denied_message = "You do not have permission to view this page."
-    login_url = '/accounts/login'
 
     def get_object(self, queryset=queryset):
         pk_ = self.kwargs.get("pk")
@@ -183,6 +182,12 @@ class ProductUpdate(UserPassesTestMixin, UpdateView):
             "Sorry there was an error, please check the form again.")
         return self.render_to_response(self.get_context_data(form=form))
 
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
+
 
 class ProductDelete(UserPassesTestMixin, DeleteView):
     """
@@ -192,10 +197,6 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user.is_superuser
-    raise_exception = False
-    redirect_field_name = '/'
-    permission_denied_message = "You do not have permission to view this page."
-    login_url = '/accounts/login'
 
     def get_object(self, queryset=None):
         pk_ = self.kwargs.get("pk")
@@ -205,3 +206,41 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
         messages.success(self.request, "Product deleted successfully.")
         success_url = reverse('all_products')
         return success_url
+
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
+
+
+class CategoryCreate(UserPassesTestMixin, CreateView):
+    """
+    A class view to create brands
+    """
+    model = Category
+    form_class = CategoryModelForm
+    template_name = 'products/create_category.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Category created successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Something went wrong"})
+        messages.error(
+            self.request,
+            "Sorry, something went wrong, please check the form again.")
+        return self.render_to_response(context)
+
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
+
+    success_url = '/products/categories/'
