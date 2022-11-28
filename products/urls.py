@@ -25,4 +25,8 @@ urlpatterns = [
         '<int:pk>/update_category/', views.CategoryUpdate.as_view(),
         name='update_category'
         ),
+    path(
+        '<int:pk>/delete_category/', views.CategoryDelete.as_view(),
+        name='delete_category'
+        ),
 ]

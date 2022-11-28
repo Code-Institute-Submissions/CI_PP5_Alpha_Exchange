@@ -193,7 +193,7 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
     """
     A class view to delete products
     """
-    template_name = 'products/delete_product.html'
+    template_name = 'products/delete_object.html'
 
     def test_func(self):
         return self.request.user.is_superuser
@@ -272,6 +272,28 @@ class CategoryUpdate(UserPassesTestMixin, UpdateView):
             self.request,
             "Sorry, something went wrong, please check the form again.")
         return self.render_to_response(context)
+
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
+
+
+class CategoryDelete(UserPassesTestMixin, DeleteView):
+    """
+    A class view to delete categories
+    """
+    model = Category
+    template_name = 'products/delete_object.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, "Category deleted successfully.")
+        success_url = '/products/categories/'
+        return success_url
 
     def handle_no_permission(self):
         messages.error(
