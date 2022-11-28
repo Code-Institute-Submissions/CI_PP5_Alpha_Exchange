@@ -1,0 +1,34 @@
+<form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+    {% csrf_token %}
+    <div class="input-group my-1 input-group-{{ item.item_id }}">
+        <div class="col-12">
+            <label><span class="sr-only">Quantity: </span>
+            <input class="form-control select_input ps-2 pe-0 id_qty_{{ item.item_id }} 
+                {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" 
+                data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+            </label>
+        </div>
+        <div class="col-12 mt-2">
+            <button class="decrement-qty btn btn-light select_input rounded p-0 decrement-qty_{{ item.item_id }} 
+                {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                <span class="sr-only">decrement-qty</span>
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="increment-qty btn btn-light select_input rounded p-0 increment-qty_{{ item.item_id }} 
+                {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
+                data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                <span class="sr-only">increment-qty</span>
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    {% if item.product.has_sizes %}
+        <input type="hidden" name="product_size" value="{{ item.size }}">
+    {% endif %}
+</form>
+<div class="d-flex flex-wrap justify-content-between">
+    <a class="update-link text-info mt-2">Update</a>
+    <a class="remove-item text-danger mt-2" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">Remove</a>
+</div>
