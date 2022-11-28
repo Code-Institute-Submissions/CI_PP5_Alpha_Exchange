@@ -41,14 +41,16 @@
                 </form>
             </div>
             {% if category %}
-                <div class="col-12 col-lg-6 pt-2">
-                    {% if category.image %}
-                        <a href="{{ category.image.url }}" target="_blank">
-                            <img class="cust-img p-0" width="600" height="800" src="{{ category.image.url }}" alt="{{ category.name }}">
-                        </a>
-                    {% else %}
-                        <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ category.name }}">
-                    {% endif %}
+                <div class="col-12 col-lg-6 mb-5">
+                    <div id="cat-img">
+                        {% if category.image %}
+                            <a href="{{ category.image.url }}" target="_blank">
+                                <img class="cust-img p-0" width="600" height="800" src="{{ category.image.url }}" alt="{{ category.name }}">
+                            </a>
+                        {% else %}
+                            <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ category.name }}">
+                        {% endif %}
+                    </div>
                 </div>
             {% endif %}
         </div>

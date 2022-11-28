@@ -24,10 +24,28 @@
                             <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ category.name }}">
                         {% endif %}
                     </div>
-                    <div class="title">
-                        <h2>{{ category.friendly_name }}</h2>
+                    <div class="title mb-0">
+                        <h2 class="m-0">{{ category.friendly_name }}</h2>
                     </div>
                 </a>
+                {% if user.is_superuser %}
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-4 p-0">
+                            <p class="input-wrapper">
+                                <a class="btn btn-sm btn-light" href="{% url 'update_category' category.id %}">
+                                    <i class="fas fa-save fa-lg"></i> Edit
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-4 p-0">
+                            <p class="input-wrapper d-flex justify-content-end">
+                                <a class="btn btn-sm btn-light" href="">
+                                    <i class="fa-solid fa-trash-can fa-lg"></i> Delete
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
             {% endfor%}
         </div>

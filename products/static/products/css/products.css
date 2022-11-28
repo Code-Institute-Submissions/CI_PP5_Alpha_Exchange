@@ -84,6 +84,12 @@
     color: #000;
 }
 
+#cat-img {
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .card-content {
         transition: transform 500ms ease;

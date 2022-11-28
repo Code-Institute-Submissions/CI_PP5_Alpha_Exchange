@@ -216,7 +216,7 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
 
 class CategoryCreate(UserPassesTestMixin, CreateView):
     """
-    A class view to create brands
+    A class view to create categories
     """
     model = Category
     form_class = CategoryModelForm
@@ -244,3 +244,37 @@ class CategoryCreate(UserPassesTestMixin, CreateView):
         return redirect('/accounts/login')
 
     success_url = '/products/categories/'
+
+
+class CategoryUpdate(UserPassesTestMixin, UpdateView):
+    """
+    A class view to create categories
+    """
+    model = Category
+    form_class = CategoryModelForm
+    template_name = 'products/create_category.html'
+    success_url = '/products/categories/'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    raise_exception = False
+    redirect_field_name = '/'
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Category updated successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Something went wrong"})
+        messages.error(
+            self.request,
+            "Sorry, something went wrong, please check the form again.")
+        return self.render_to_response(context)
+
+    def handle_no_permission(self):
+        messages.error(
+            self.request,
+            "You do not have permission to view this page.")
+        return redirect('/accounts/login')
