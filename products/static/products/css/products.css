@@ -44,13 +44,6 @@
     contain: content;
 }
 
-.cust-img {
-    border-radius: 6px;
-    padding: 1%;
-    width: 100%;
-    height: auto;
-}
-
 #cat-img {
     height: 400px;
     width: 300px;

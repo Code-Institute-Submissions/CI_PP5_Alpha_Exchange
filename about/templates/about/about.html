@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container mx-auto">
+    <div class="row d-flex justify-content-between">
+        <!-- About business description and image -->
+        <div class="col-lg-5 mt-5">
+            <div class="row">
+                <div class="">
+                    <h1 class="title">About Us</h1>
+                    <p>
+                        Thank you for visiting Alpha-Exchange, we are here to give you the best
+                        online shopping experience we can provide. We aim to offer you the best
+                        products we can supply at great prices, along with an excellent service
+                        and easy to access support teams for if you need them.
+                    </p>
+                    <p>
+                        We look forward to offering you our services and hope you have a great time shopping with us!
+                    </p>
+                </div>
+            </div>
+            <!-- About accordion from bootstrap showing faqs -->
+            <div class="my-5">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="accordion" id="accordionExample">
+                            <h2 class="title">FAQS</h2>
+                            {% for faq in faqs %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                    <button class="accordion-button text-black collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapseTwo">
+                                        {{ faq.friendly_title }}
+                                    </button>
+                                    </h2>
+                                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p class="bold text-black">{{ faq.question }}</p>
+                                        <hr>
+                                        <p class="text-black">{{ faq.answer }}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 my-5">
+            <div class="row p-2">
+                <img class="cust-img p-0" src="/media/inaya-women-lounge-top.webp" alt="about us">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

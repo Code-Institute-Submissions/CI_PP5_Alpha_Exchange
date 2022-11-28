@@ -114,6 +114,13 @@ h1, h2, h3, h4, h5, h6, p, th,
     border-radius: 6px;
 }
 
+.cust-img {
+    border-radius: 6px;
+    padding: 1%;
+    width: 100%;
+    height: auto;
+}
+
 /* Footer Styles */
 
 .footer {
