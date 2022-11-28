@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}Error 403{% endblock %}
+
+{% block content %}
+    <div class="container mb-3">
+        <div class="row py-5">
+            <div class="col-12 col-sm-6 mx-auto">
+                <h1 class="display-4 text-center">Error 403 Forbidden!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 mx-auto text-center">
+                <p class="fs-3">You don't have permission to do that,<br>
+                    ask the team and head back to the website</p>
+                <button class=" btn btn-lg bt-light"onclick="location.href='{% url 'home' %}'" type="button">Return Home</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
