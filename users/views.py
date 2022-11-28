@@ -1,9 +1,13 @@
+"""
+A module containing the views within the users app.
+"""
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
 from .models import UserAccount
 from .forms import UserAccountForm
+
 
 @login_required()
 def profile(request):
@@ -34,7 +38,7 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        f'This is a previous orders with order number: ' +
+        "This is a previous orders with order number: " +
         f'{order_number}. The confirmation sent to your' +
         f' email on {order.date:%d/%m/%Y %H:%M}.'
     ))

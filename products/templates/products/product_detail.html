@@ -13,6 +13,7 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
+                        <!-- Product image or default image -->
                         {% if product.image %}
                             <a href="{{ product.image.url }}" target="_blank">
                                 <img class="cust-img p-0" width="600" height="800" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -22,6 +23,7 @@
                         {% endif %}
                     </div>
                     <div class="col-md-6">
+                        <!-- Product information -->
                         <h1 class="display-6 mt-2">{{ product.name }}</h1>
                         <hr class="product-rule">
                         <p class=" my-0 mr-3">Price: £{{ product.price }}</p>
@@ -45,6 +47,7 @@
                             <div class="form-row">
                                 {% with product.has_sizes as size %}
                                     {% if size %}
+                                        <!-- Size selector box -->
                                         <div class="col-12">
                                             <p class="mb-0"><strong>Size:</strong></p>
                                             <div class="form-group w-50 my-2">
@@ -61,6 +64,7 @@
                                         </div>
                                     {% endif %}
                                         <div class="col-12">
+                                            <!-- Quantity input and buttons -->
                                             <p class="mb-0"><strong>Quantity:</strong></p>
                                             <div class="form-group w-50 my-2">
                                                 <div class="input-group input-group-{{ item.item_id }}">
@@ -80,6 +84,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Back to shop and add to basket buttons -->
                                         <div class="col-12">
                                             <a href="javascript:history.back()" class="btn btn-light mb-2">
                                                 <i class="fas fa-arrow-left fa-lg"></i>
@@ -98,19 +103,11 @@
                             </form>
                             <hr class="product-rule">
                             <div>
+                                <!-- Product description -->
                                 <h2> Product Description</h2>
                                 <p class=" my-0 mr-3">{{ product.description }}</p>
                             </div>
-                            {% if user.is_superuser %}
-                                <div>
-                                    <a class="btn btn-large btn-light mt-2" href="{% url 'update_product' product.id %}">
-                                        <i class="fas fa-save fa-lg"></i> Edit Product
-                                    </a>
-                                    <a class="btn btn-large btn-light mt-2" href="{% url 'delete_product' product.id %}">
-                                        <i class="fa-solid fa-trash-can fa-lg"></i> Delete Product
-                                    </a>
-                                </div>
-                            {% endif %}
+                            {% include "products/includes/admin_buttons.html" %}
                         </div>
                     </div>
                 </div>

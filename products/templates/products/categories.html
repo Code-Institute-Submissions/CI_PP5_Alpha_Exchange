@@ -17,6 +17,7 @@
             {% for category in categories_list %}
             <div class="col-md-4">
                 <a class="nav-link" href="{% url 'categories_list' category.friendly_name %}" aria-label="Go to a list of all categories.">
+                    <!-- Category image -->
                     <div class="card-img">
                         {% if category.image %}
                             <img class="cust-img" width="600" height="800" src="{{ category.image.url }}" alt="{{ category.name }}">
@@ -25,10 +26,12 @@
                         {% endif %}
                     </div>
                     <div class="title mb-0">
+                        <!-- Category title -->
                         <h2 class="m-0">{{ category.friendly_name }}</h2>
                     </div>
                 </a>
                 {% if user.is_superuser %}
+                    <!-- Edit/Delete Admin Buttons -->
                     <div class="row d-flex justify-content-around">
                         <div class="col-4 p-0">
                             <p class="input-wrapper">

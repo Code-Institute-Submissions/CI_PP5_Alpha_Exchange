@@ -1,0 +1,37 @@
+{% load static %}
+{% load tags %}
+<div>
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+            <li>
+                <a class="page-link" href="?{% param_replace page=page_obj.previous_page_number %}">&lt;&lt;</a>
+            </li>
+        {% endif %}
+
+        {% if page_obj.number|add:'-1' > 1 %}
+            <li class="disabled"><a class="page-link">&hellip;</a></li>
+        {% endif %}
+
+        {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="active disabled"><a class="page-link" href="#">{{ i }}</a></li>
+            {% elif i > page_obj.number|add:'-2' and i < page_obj.number|add:'2' %}
+                <li>
+                    <button class="page-link" onclick="location.href='?{% param_replace page=i %}'" type="button">{{ i }}</button>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.paginator.num_pages > page_obj.number|add:'1' %}
+            <li class="disabled"><a class="page-link" href="#">&hellip;</a></li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            {% if page_obj.next_page_number != paginator.num_pages %}
+                <li>
+                    <a class="page-link" href="?{% param_replace page=page_obj.next_page_number %}">&gt;&gt;</a>
+                </li>
+            {% endif %}
+        {% endif %}
+    </ul>
+</div>

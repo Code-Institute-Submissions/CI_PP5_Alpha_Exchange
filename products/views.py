@@ -1,11 +1,10 @@
 """
-A module containing the views within products app.
+A module containing the views within the products app.
 """
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.core.paginator import Paginator, EmptyPage
+from django.core.paginator import Paginator
 from django.db.models import Q
-from django.db.models.functions import Lower
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponseRedirect)
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -54,13 +53,16 @@ class SearchProduct(ListView):
     def get_queryset(self, **kwargs):
         search_results = ProductFilter(self.request.GET, self.queryset)
         queryset = search_results.qs.distinct()
+        # get search criteria
         query = self.request.GET.get('q')
         if not query:
+            # send error message if nothing entered
             messages.error(
                 self.request, 'You did not enter any search criteria'
                 )
             return Product.objects.none()
         if query:
+            # apply filters to all products
             search_results = queryset.filter(
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
@@ -115,10 +117,10 @@ def categories_view(request, cats):
     paginated_filtered_products = Paginator(filtered_products.qs, 12)
 
     page_number = request.GET.get('page')
-    product_page_obj = paginated_filtered_products.get_page(page_number)
+    page_obj = paginated_filtered_products.get_page(page_number)
 
     context['cats'] = cats
-    context['product_page_obj'] = product_page_obj
+    context['page_obj'] = page_obj
 
     return render(request, 'products/category.html', context)
 
@@ -132,14 +134,17 @@ class ProductCreate(UserPassesTestMixin, CreateView):
     queryset = Product.objects.all()
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     def form_valid(self, form):
+        # if form was valid send success message
         messages.success(self.request, 'Product created successfully.')
         return super().form_valid(form)
 
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
+        # if form was invalid send error message
         context.update({"Error": "Something went wrong"})
         messages.error(
             self.request,
@@ -147,6 +152,7 @@ class ProductCreate(UserPassesTestMixin, CreateView):
         return self.render_to_response(context)
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")
@@ -162,6 +168,7 @@ class ProductUpdate(UserPassesTestMixin, UpdateView):
     queryset = Product.objects.all()
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     def get_object(self, queryset=queryset):
@@ -169,6 +176,7 @@ class ProductUpdate(UserPassesTestMixin, UpdateView):
         return get_object_or_404(Product, pk=pk_)
 
     def form_valid(self, form):
+        # if form was valid send success message and redirect to product
         messages.success(self.request, "Product updated successfully.")
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())
@@ -177,12 +185,14 @@ class ProductUpdate(UserPassesTestMixin, UpdateView):
         """
         If the form is invalid, render the invalid form.
         """
+        # if form was invalid send error message
         messages.error(
             self.request,
             "Sorry there was an error, please check the form again.")
         return self.render_to_response(self.get_context_data(form=form))
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")
@@ -196,6 +206,7 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
     template_name = 'products/delete_object.html'
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     def get_object(self, queryset=None):
@@ -203,11 +214,13 @@ class ProductDelete(UserPassesTestMixin, DeleteView):
         return get_object_or_404(Product, pk=pk_)
 
     def get_success_url(self, **kwargs):
+        # if form was valid send success message
         messages.success(self.request, "Product deleted successfully.")
         success_url = reverse('all_products')
         return success_url
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")
@@ -223,14 +236,17 @@ class CategoryCreate(UserPassesTestMixin, CreateView):
     template_name = 'products/create_category.html'
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     def form_valid(self, form):
+        # if form was valid send success message
         messages.success(self.request, 'Category created successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
+        # if form was invalid send error message
         context.update({"Error": "Something went wrong"})
         messages.error(
             self.request,
@@ -238,6 +254,7 @@ class CategoryCreate(UserPassesTestMixin, CreateView):
         return self.render_to_response(context)
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")
@@ -256,17 +273,20 @@ class CategoryUpdate(UserPassesTestMixin, UpdateView):
     success_url = '/products/categories/'
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     raise_exception = False
     redirect_field_name = '/'
 
     def form_valid(self, form):
+        # if form was valid send success message and redirect to all categories
         messages.success(self.request, 'Category updated successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
+        # if form was invalid send error message
         context.update({"Error": "Something went wrong"})
         messages.error(
             self.request,
@@ -274,6 +294,7 @@ class CategoryUpdate(UserPassesTestMixin, UpdateView):
         return self.render_to_response(context)
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")
@@ -288,14 +309,17 @@ class CategoryDelete(UserPassesTestMixin, DeleteView):
     template_name = 'products/delete_object.html'
 
     def test_func(self):
+        # check if user is a superuser
         return self.request.user.is_superuser
 
     def get_success_url(self, **kwargs):
+        # if form was valid send success message
         messages.success(self.request, "Category deleted successfully.")
         success_url = '/products/categories/'
         return success_url
 
     def handle_no_permission(self):
+        # if user not allowed redirect and send message
         messages.error(
             self.request,
             "You do not have permission to view this page.")

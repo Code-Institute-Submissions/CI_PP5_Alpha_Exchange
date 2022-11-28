@@ -1,3 +1,6 @@
+"""
+A Module to hold all the URL's for the checkout app.
+"""
 from django.urls import path
 from . import views
 from .webhooks import webhook

@@ -11,6 +11,7 @@ class UserAccountForm(forms.ModelForm):
     """
     class Meta:
         model = UserAccount
+        # only exclude user field
         exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
@@ -19,6 +20,7 @@ class UserAccountForm(forms.ModelForm):
         remove auto-generated labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
+        # placeholders to overwrite
         placeholders = {
             'default_full_name': 'Full Name',
             'default_phone_number': 'Phone Number',
@@ -29,6 +31,7 @@ class UserAccountForm(forms.ModelForm):
             'default_postcode': 'Postal Code',
         }
 
+        # set the placeholders, autofocus and style class
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':

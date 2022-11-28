@@ -1,3 +1,4 @@
+/* Card Styles */
 .card {
     position: relative;
     overflow: hidden;
@@ -19,6 +20,7 @@
     height: inherit;
 }
 
+/* Card focus/ transform */
 .card-bottom-rule::after {
     transition: transform 1000ms ease;
     display:block;
@@ -35,11 +37,7 @@
     transform: scale(1);
 }
 
-.product-rule {
-    border: solid;
-    border-color: var(--accent-color);
-}
-
+/* Image styling */
 .card-img {
     display: flex;
     padding: 0;
@@ -53,6 +51,13 @@
     height: auto;
 }
 
+#cat-img {
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Input box styles */
 .select_input {
     height: 31px;
     padding: 0 1rem;
@@ -70,26 +75,30 @@
     width: 31px;
 }
 
+/* Hide default forms labels */
 .form-label {
     display: none;
 }
 
+/* Recolor placeholder for contrast */
 .form-control::placeholder {
     color: #000;
 }
 
+/* Pagination buttons */
 .page-link{
     border-radius: 6px;
     margin: 0 0.1rem;
     color: #000;
 }
 
-#cat-img {
-    height: 400px;
-    width: 300px;
-    margin: 0 auto;
+/* Custom product rule */
+.product-rule {
+    border: solid;
+    border-color: var(--accent-color);
 }
 
+/* Media queries */
 @media (hover: hover) and (pointer: fine) {
     .card-content {
         transition: transform 500ms ease;

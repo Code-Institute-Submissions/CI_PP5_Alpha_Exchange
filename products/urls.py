@@ -1,3 +1,6 @@
+"""
+A Module to hold all the URL's for the products app.
+"""
 from django.urls import path
 from . import views
 

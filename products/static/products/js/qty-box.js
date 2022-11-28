@@ -1,19 +1,23 @@
 // Limits the range of the buttons to 1-99
-
 function disableOption(itemId, size) {
     if (size) {
+        // if item has size
         var quantity = parseInt($(`.size_${itemId}_${size}`).val());
     } else {
+        // if item does not have size
         var quantity = parseInt($(`.id_qty_${itemId}`).val());
     }
 
+    // Number range offset by 1 gives (1-99)
     var minusDisabled = quantity < 2;
     var plusDisabled = quantity > 98;
 
     if (size) {
+        // if item has size set buttons to adjust by ID and size
         $(`.decrement-size_${itemId}_${size}`).prop('disabled', minusDisabled);
         $(`.increment-size_${itemId}_${size}`).prop('disabled', plusDisabled);
     } else {
+        // if item has no size set buttons to adjust by ID only
         $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }

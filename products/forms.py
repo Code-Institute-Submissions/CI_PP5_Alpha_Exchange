@@ -12,11 +12,13 @@ class ProductModelForm(forms.ModelForm):
 
     class Meta:
         model = Product
+        # fields to include
         fields = [
             'category', 'sku', 'name', 'description',
             'price', 'rating', 'image', 'has_sizes',
             'recommended_use', 'featured',
             ]
+        # wet custom widgets
         widgets = {
             'has_sizes': forms.CheckboxInput,
             'featured': forms.CheckboxInput,
@@ -28,6 +30,7 @@ class ProductModelForm(forms.ModelForm):
         remove auto-generated labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
+        # placeholders to overwrite
         placeholders = {
             'name': 'Product name',
             'sku': 'Product SKU',
@@ -37,6 +40,7 @@ class ProductModelForm(forms.ModelForm):
             'recommended_use': 'Recommended Use',
         }
 
+        # set the placeholders, autofocus and style class
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             exempt_placeholders = [
@@ -60,15 +64,18 @@ class CategoryModelForm(forms.ModelForm):
     """
     class Meta:
         model = Category
+        # use all fields
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # placeholders to overwrite
         placeholders = {
             'name': 'Category name',
             'friendly_name': 'Friendly Name',
         }
 
+        # set the placeholders, autofocus and style class
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'image':

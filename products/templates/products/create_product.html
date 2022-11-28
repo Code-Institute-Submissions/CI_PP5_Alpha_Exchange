@@ -20,6 +20,7 @@
         <div class="row">
             <div class="col">
                 <h1 class="my-5 text-center">
+                    <!-- Title depends on the need -->
                     {% if product %}
                         Update Product
                     {% else %}
@@ -33,6 +34,7 @@
         <div class="row d-flex justify-content-around">
             <div class="col-12 col-lg-6 mb-5">
                 <form method="POST" class="p-1" enctype='multipart/form-data'>
+                    <!-- Product form -->
                     {% csrf_token %}
                     {{ form | crispy }}
                     <button class="btn btn-light ms-auto me-3" type="submit">Save</button>
@@ -40,8 +42,10 @@
                 </form>
             </div>
             {% if product %}
+                <!-- Image if category exists -->
                 <div class="col-12 col-lg-6 pt-2">
                     {% if product.image %}
+                        <!-- Category image or default image -->
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="cust-img p-0" width="600" height="800" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>

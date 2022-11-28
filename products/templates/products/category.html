@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load tags %}
 
 {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'products/css/products.css' %}">
@@ -18,25 +17,16 @@
         <div class="row justify-content-center">
             <div class="col-10">
                 <div class="row">
-                    <form>
-                        <div class="d-flex justify-content-end">
-                            {{ filter.form.price__iexact.as_hidden}}
-                            {{ filter.form.name__iexact.as_hidden}}
-                            {{ filter.form.rating__iexact.as_hidden}}
-                            <label for="id_ordering" class="d-none d-sm-block me-2" id="sort-label">Order by:</label>
-                            <input type="hidden" name="q" value="{{request.GET.q }}">
-                            {{ filter.form.ordering }}
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-light btn-sm mt-2">Search</button>
-                        </div>
-                    </form>
+                    <!-- Category sort box -->
+                    {% include "products/includes/filter_box.html" %}
                 </div>
-                {% if product_page_obj %}
+                {% if page_obj %}
                     <div class="row my-3 justify-content-center">
-                        {% for product in product_page_obj %}
+                        {% for product in page_obj %}
+                            <!-- List of products -->
                             <div class="col-sm-8 col-md-6 col-lg-6 col-xl-3 mb-3">
                                 <div class="row card h-100 mx-3 my-auto">
+                                    <!-- Product image or default backup -->
                                     <div class="card-img">
                                         {% if product.image %}
                                             <img  class="cust-img" width="600" height="800" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -46,6 +36,7 @@
                                     </div>
                                     <!-- Product Card -->
                                     <div class="card-content pt-2">
+                                        <!-- Product information -->
                                         <h2 class="product-name card-bottom-rule">{{ product.name }}</h2>
                                         <p class="card-text mb-0 mr-3 list-inline-item">£{{ product.price }}</p>
                                         {% if product.rating %}
@@ -58,42 +49,9 @@
                                                 {% csrf_token %}
                                                 <div class="row d-flex justify-content-between">
                                                     {% with product.has_sizes as size %}
-                                                        {% if size %}
-                                                            <div class="col-auto p-0">
-                                                                <div class="form-group my-1">
-                                                                    <div class="input-group">
-                                                                        <select class="form-select select_input ps-2" aria-label="product_size" name="product_size">
-                                                                            <option value="xs">XS</option>
-                                                                            <option value="s">S</option>
-                                                                            <option value="m" selected>M</option>
-                                                                            <option value="l">L</option>
-                                                                            <option value="xl">XL</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        {% endif %}
-                                                        <div class="col-auto p-0">
-                                                            <div class="form-group my-1">
-                                                                <div class="input-group input-group-{{ product.id }}">
-                                                                    <button class="decrement-qty btn btn-light select_input rounded-start p-0" 
-                                                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                                        <span class="sr-only">decrement-qty</span>
-                                                                        <i class="fas fa-minus"></i>
-                                                                    </button>
-                                                                    <label class="sr-only" for="id_qty_{{ product.id }}">quantity</label>
-                                                                    <input class="form-control select_input ps-2 pe-0" type="number"
-                                                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
-                                                                        id="id_qty_{{ product.id }}">
-                                                                    <button class="increment-qty btn btn-light select_input rounded-end p-0"
-                                                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                                        <span class="sr-only">increment-qty</span>
-                                                                        <i class="fas fa-plus"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    {% include "products/includes/size_quantity.html" %}
                                                     </div>
+                                                    <!-- View and add to basket buttons -->
                                                     <div class="row d-flex justify-content-between">
                                                         <div class="col-4 p-0">
                                                             <p class="input-wrapper my-1">
@@ -109,24 +67,7 @@
                                                     {% endwith %}
                                                 </div>
                                             </form>
-                                            {% if user.is_superuser %}
-                                                <div class="row d-flex justify-content-between">
-                                                    <div class="col-4 p-0">
-                                                        <p class="input-wrapper my-1">
-                                                            <a class="btn btn-sm btn-light mt-2" href="{% url 'update_product' product.id %}">
-                                                                <i class="fas fa-save fa-lg"></i> Edit
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-4 p-0">
-                                                        <p class="input-wrapper my-1 d-flex justify-content-end">
-                                                            <a class="btn btn-sm btn-light mt-2" href="{% url 'delete_product' product.id %}">
-                                                                <i class="fa-solid fa-trash-can fa-lg"></i> Delete
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            {% endif %}
+                                            {% include "products/includes/admin_buttons.html" %}
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +75,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    <!-- If no recipes available -->
+                    <!-- If no products available -->
                     <div class="container p-5">
                         <div class="row">
                             <div class="title">
@@ -146,41 +87,7 @@
             </div>
         </div>
         <!-- Product Pagination -->
-        <div>
-            <ul class="pagination justify-content-center">
-                {% if product_page_obj.has_previous %}
-                    <li>
-                        <a class="page-link" href="?{% param_replace page=product_page_obj.previous_page_number %}">Previous</a>
-                    </li>
-                {% endif %}
-
-                {% if product_page_obj.number|add:'-1' > 1 %}
-                    <li class="disabled"><a class="page-link">&hellip;</a></li>
-                {% endif %}
-
-                {% for i in product_page_obj.paginator.page_range %}
-                    {% if product_page_obj.number == i %}
-                        <li class="active disabled"><a class="page-link" href="#">{{ i }}</a></li>
-                    {% elif i > product_page_obj.number|add:'-2' and i < product_page_obj.number|add:'2' %}
-                        <li>
-                            <button class="page-link" onclick="location.href='?{% param_replace page=i %}'" type="button">{{ i }}</button>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-
-                {% if product_page_obj.paginator.num_pages > product_page_obj.number|add:'1' %}
-                    <li class="disabled"><a class="page-link" href="#">&hellip;</a></li>
-                {% endif %}
-
-                {% if product_page_obj.has_next %}
-                    {% if product_page_obj.next_page_number != paginator.num_pages %}
-                        <li>
-                            <a class="page-link" href="?{% param_replace page=product_page_obj.next_page_number %}">Next</a>
-                        </li>
-                    {% endif %}
-                {% endif %}
-            </ul>
-        </div>
+        {% include "products/includes/pagination.html" %}
     </div>
 {% endif %}
 {% endblock content %}

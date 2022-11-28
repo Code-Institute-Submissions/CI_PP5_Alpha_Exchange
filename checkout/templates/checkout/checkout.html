@@ -16,6 +16,7 @@
     <div class="row">
         <div class="col-12 col-lg-6">
             <p class="text-center">Please fill out the form below to complete your order</p>
+            <!-- Order details form -->
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-3">
@@ -73,6 +74,7 @@
             </form>
         </div>
         <div class="col-12 col-lg-6 mb-5">
+            <!-- Order details -->
             <p>Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-6 offset-3 checkout-text">
@@ -83,6 +85,7 @@
                     </div>
                 </div>
                 {% for item in basket_items %}
+                <!-- products on the order -->
                     <div class="row">
                         <div class="col-3 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
@@ -93,6 +96,7 @@
                                 {% endif %}
                             </a>
                         </div>
+                        <!-- Product Information -->
                         <div class="col-6 checkout-text">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
@@ -105,6 +109,7 @@
                 {% endfor %}
                 <hr class="product-rule">
                 <div class="row">
+                    <!-- Basket Totals -->
                     <div class="col-6 offset-3 checkout-text">
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
@@ -120,6 +125,7 @@
         
     </div>
 </div>
+<!-- Spinner Overlay -->
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">

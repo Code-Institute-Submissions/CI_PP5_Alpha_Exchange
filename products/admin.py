@@ -1,3 +1,6 @@
+"""
+A Module to hold the admin configuration.
+"""
 from django.contrib import admin
 from .models import Product, Category
 

@@ -5,10 +5,12 @@
     https://stripe.com/docs/stripe-js
 */
 
+// get keys back from the view through two hidden fields
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
+// Personalized style to fit with the theme
 var style = {
     base: {
         color: '#000',
@@ -24,6 +26,7 @@ var style = {
         iconColor: '#dc3545'
     }
 };
+// create and mount the card onto the payment-element div
 var card = elements.create('card', {hidePostalCode: true, style: style});
 card.mount('#payment-element');
 
@@ -63,6 +66,7 @@ form.addEventListener('submit', function(ev) {
     };
     var url = '/checkout/cache_checkout_data/';
 
+    // confirm the card payment with stripe using billing details entered
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -80,6 +84,7 @@ form.addEventListener('submit', function(ev) {
                     }
                 }
             },
+            // taking shipping details incase an error occurs
             shipping: {
                 name: $.trim(form.full_name.value),
                 phone: $.trim(form.phone_number.value),
@@ -93,6 +98,7 @@ form.addEventListener('submit', function(ev) {
                 }
             },
         }).then(function(result) {
+            // if an error has occurred send the message back and reload the page
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `

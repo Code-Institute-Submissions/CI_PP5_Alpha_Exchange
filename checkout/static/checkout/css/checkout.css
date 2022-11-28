@@ -54,6 +54,7 @@ select, select option {
     padding: 8px 10px;
 }
 
+/* Loading spinner */
 #loading-overlay {
 	display: none;
 	position: fixed;
@@ -73,6 +74,7 @@ select, select option {
     height: 100%;
 }
 
+/* Media queries */
 @media screen and (max-width: 800px) {
     .btn-lg {
         padding: 0.4rem 0.8rem !important;

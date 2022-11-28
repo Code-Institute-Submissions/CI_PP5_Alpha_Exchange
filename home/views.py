@@ -1,5 +1,5 @@
 """
-A module containing the views within home app.
+A module containing the views within the home app.
 """
 from django.shortcuts import render
 

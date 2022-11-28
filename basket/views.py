@@ -1,5 +1,5 @@
 """
-A module containing the views within basket app.
+A module containing the views within the basket app.
 """
 from django.shortcuts import (
     render, redirect, get_object_or_404, reverse, HttpResponse)
@@ -26,32 +26,42 @@ def add_to_basket(request, item_id):
         size = request.POST['product_size']
     basket = request.session.get('basket', {})
 
+    # check for sizes
     if size:
+        # check if item is in the basket
         if item_id in list(basket.keys()):
+            # check if item of the same size is in the basket
             if size in basket[item_id]['item_sizes'].keys():
+                # update quantity in basket
                 basket[item_id]['item_sizes'][size] += quantity
                 messages.info(
                     request,
                     f'Updated size {size.upper()} {product.name} quantity ' +
                     f'to {basket[item_id]["item_sizes"][size]}')
             else:
+                # add new item to basket
                 basket[item_id]['item_sizes'][size] = quantity
                 messages.success(
                     request,
                     f'Added size {size.upper()} {product.name} to your basket')
         else:
+            # add new item to basket
             basket[item_id] = {'item_sizes': {size: quantity}}
             messages.success(
                 request,
                 f'Added size {size.upper()} {product.name}, with quantity' +
                 f' {basket[item_id]["item_sizes"][size]} to your basket.')
+    # items with no sizes
     else:
+        # check if item is in the basket
         if item_id in list(basket.keys()):
+            # update quantity in basket
             basket[item_id] += quantity
             messages.info(
                 request, f'Updated {product.name} in your basket!'
                 )
         else:
+            # add new item to basket
             basket[item_id] = quantity
             messages.success(
                 request, f'Added {product.name} to your basket!'
@@ -72,14 +82,18 @@ def adjust_basket(request, item_id):
         size = request.POST['product_size']
     basket = request.session.get('basket', {})
 
+    # check for sizes
     if size:
+        # check quantity more than 0
         if quantity > 0:
+            # update quantity in basket
             basket[item_id]['item_sizes'][size] = quantity
             messages.info(
                     request,
                     f'Updated size {size.upper()} {product.name} quantity ' +
                     f'to {basket[item_id]["item_sizes"][size]}')
         else:
+            # remove item from basket
             del basket[item_id]['item_sizes'][size]
             if not basket[item_id]['item_sizes']:
                 basket.pop(item_id)
@@ -93,6 +107,7 @@ def adjust_basket(request, item_id):
                 request, f'Updated {product.name} in your basket!'
                 )
         else:
+            # remove item from basket
             basket.pop(item_id)
             messages.warning(
                 request, f'Removed {product.name} from your basket!'
@@ -113,7 +128,9 @@ def remove_basket(request, item_id):
             size = request.POST['product_size']
         basket = request.session.get('basket', {})
 
+        # check for sizes
         if size:
+            # remove item of only this size
             del basket[item_id]['item_sizes'][size]
             if not basket[item_id]['item_sizes']:
                 basket.pop(item_id)
@@ -121,6 +138,7 @@ def remove_basket(request, item_id):
                 request,
                 f'Removed size {size.upper()} {product.name} from your bag')
         else:
+            # remove item
             basket.pop(item_id)
             messages.warning(
                 request, f'{product.name} was removed from your basket!'

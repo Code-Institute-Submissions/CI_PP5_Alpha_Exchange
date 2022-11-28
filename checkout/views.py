@@ -1,5 +1,5 @@
 """
-Views to create an order placed on the website.
+A module containing the views within the checkout app.
 Some of the code is derived from the Code Institute
 Boutique Ado project.
 """
@@ -46,12 +46,15 @@ def checkout(request):
     info and the payment, validating it in the process.
     Credit: Boutique Ado project, Code Institute.
     """
+
+    # get keys from settings file
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
 
+        # get values from post
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -64,6 +67,7 @@ def checkout(request):
             'postcode': request.POST['postcode'],
         }
 
+        # if form is valid get client secret and save
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -73,6 +77,7 @@ def checkout(request):
             order.save()
 
             for item_id, item_data in basket.items():
+                # try add the products to the bag by size if exists
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -91,10 +96,11 @@ def checkout(request):
                                 product_size=size,
                             )
                             order_line_item.save()
+                # if product was removed user is displayed an error
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        f'One of the products in your basket' +
-                        f'was not found in our database. '
+                        "One of the products in your basket"
+                        "was not found in our database."
                         "Please message us for assistance!")
                     )
                     order.delete()
@@ -103,9 +109,11 @@ def checkout(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
+        # display an error if the form was incorrectly filled out.
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
+    # display a message if there is nothing in the basket.
     else:
         basket = request.session.get('basket', {})
         if not basket:
@@ -123,6 +131,7 @@ def checkout(request):
         )
 
         if request.user.is_authenticated:
+            # if the user is logged in save the information to their profile
             try:
                 profile = UserAccount.objects.get(user=request.user)
                 order_form = OrderForm(initial={
@@ -136,11 +145,12 @@ def checkout(request):
                     'postcode': profile.default_postcode,
                     'country': profile.default_country,
                 })
-            except UserProfile.DoesNotExist:
+            except UserAccount.DoesNotExist:
                 order_form = OrderForm()
         else:
             order_form = OrderForm()
 
+    # warn if stripe public key is missing
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')

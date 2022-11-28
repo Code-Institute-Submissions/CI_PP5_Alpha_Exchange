@@ -21,8 +21,8 @@
         "purpose": "any"
       }
     ],
-    "start_url": "https://alpha-exchange.herokuapp.com/",
-    "scope": "https://alpha-exchange.herokuapp.com/",
+    "start_url": "../templates/base.html",
+    "scope": "/",
     "theme_color": "#000",
     "background_color": "#fff",
     "display": "standalone"

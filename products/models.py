@@ -51,6 +51,10 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        """
+        save the Product and if it doesn't have a sku set
+        the next available unused number
+        """
         if self.sku not in kwargs:
             self.sku = f'sku100{Product.objects.count() + 1}'
         super(Product, self).save(*args, **kwargs)

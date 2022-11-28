@@ -10,6 +10,7 @@ class ProductFilter(django_filters.FilterSet):
     A class to apply different filters.
     """
 
+    # Choices and labels to pick from select box
     CHOICES = (
         ('price_asc', 'Price (Ascending)'),
         ('price_desc', 'Price (Descending)'),
@@ -19,6 +20,7 @@ class ProductFilter(django_filters.FilterSet):
         ('rating_asc', 'Rating (Ascending)'),
     )
 
+    # create choice filter
     ordering = django_filters.ChoiceFilter(
         label='Ordering',
         choices=CHOICES,
@@ -26,6 +28,7 @@ class ProductFilter(django_filters.FilterSet):
         empty_label='Featured',
         )
 
+    # set match type on required fields
     class Meta:
         model = Product
         fields = {
@@ -36,7 +39,7 @@ class ProductFilter(django_filters.FilterSet):
 
     def filter_by_order(self, queryset, name, value):
         """
-        A method to order items by value
+        A Method to test the current selection
         """
         if value == 'price_asc':
             expression = 'price'
@@ -58,6 +61,7 @@ class ProductOrderFilter(django_filters.FilterSet):
     A class to filter the product model
     """
 
+    # Choices and labels to pick from select box
     CHOICES = (
         ('price_asc', 'Price (Ascending)'),
         ('price_desc', 'Price (Descending)'),
@@ -67,6 +71,7 @@ class ProductOrderFilter(django_filters.FilterSet):
         ('rating_asc', 'Rating (Ascending)'),
     )
 
+    # create choice filter
     ordering = django_filters.ChoiceFilter(
         label='Ordering',
         choices=CHOICES,
@@ -74,13 +79,14 @@ class ProductOrderFilter(django_filters.FilterSet):
         empty_label='Featured',
         )
 
+    # set match type on required fields
     class Meta:
         model = Product
         fields = {}
 
     def filter_by_order(self, queryset, name, value):
         """
-        A method to order items by value
+        A Method to test the current selection
         """
         if value == 'price_asc':
             expression = 'price'

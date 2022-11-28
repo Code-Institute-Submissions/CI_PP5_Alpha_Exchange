@@ -1,0 +1,13 @@
+<form>
+    <div class="d-flex justify-content-end">
+        {{ filter.form.price__iexact.as_hidden}}
+        {{ filter.form.name__iexact.as_hidden}}
+        {{ filter.form.rating__iexact.as_hidden}}
+        <label for="id_ordering" class="d-none d-sm-block me-2" id="sort-label">Order by:</label>
+        <input type="hidden" name="q" value="{{request.GET.q }}">
+        {{ filter.form.ordering }}
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-light btn-sm mt-2">Search</button>
+    </div>
+</form>
