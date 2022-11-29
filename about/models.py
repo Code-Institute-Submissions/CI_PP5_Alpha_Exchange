@@ -1,3 +1,6 @@
+"""
+A module containing models for the about app.
+"""
 from django.db import models
 
 
