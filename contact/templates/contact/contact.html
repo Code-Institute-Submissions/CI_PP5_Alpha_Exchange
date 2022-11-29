@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
+{% block extra_title %}Contact Us{% endblock %}
+
+{% block content %}
+<!-- Main container with background image -->
+<div class="container">
+    <div class="d-flex flex-column justify-content-center">
+        <div class="row mt-5">
+            <h1 class="title">Contact Us</h1>
+        </div>
+        <div class="row mx-sm-2 mx-lg-5 mb-5" id="form-row">
+            <!-- Main responsive form container -->
+            <div class="bg-light rounded">
+                <!-- Contact Form -->
+                <form method = "POST" class = "p-3">
+                    {% csrf_token %}
+                    {{ contact_form | crispy }}
+                    <br>
+                    <div class="d-flex">
+                        <button class="btn btn-light m-0" type="submit">Send message</button>
+                        <a class ="btn btn-light mx-auto" href="{{request.META.HTTP_REFERER|escape}}">Cancel</a>
+                        <!-- Link to shopping pages -->
+                        <a href="{% url 'all_products' %}" class="btn btn-light m-0">Back to Shop</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+.asteriskField {
+    color: #000 !important;
+}
+
+
+@media screen and (max-width: 800px) {
+    #form-row {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .btn {
+        padding: 0.2rem 0.4rem !important;
+        font-size: 0.7rem !important;
+    }
+}
