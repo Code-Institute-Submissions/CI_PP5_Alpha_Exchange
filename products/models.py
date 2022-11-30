@@ -2,6 +2,7 @@
 A module containing the models within products app.
 """
 from django.db import models
+from users.models import UserAccount
 from django.urls import reverse
 
 
@@ -31,6 +32,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """
+    A class for the products available
+    """
     name = models.CharField(max_length=254)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
@@ -43,12 +47,19 @@ class Product(models.Model):
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     recommended_use = models.CharField(max_length=254)
     featured = models.BooleanField(default=False, null=True, blank=True)
+    likes = models.ManyToManyField(
+        UserAccount, related_name='product_likes', blank=True)
 
     class Meta:
         ordering = ['-featured']
 
     def __str__(self):
+        # return the name
         return self.name
+
+    def number_of_likes(self):
+        # Returns the number of likes
+        return self.likes.count()
 
     def save(self, *args, **kwargs):
         """
@@ -64,3 +75,26 @@ class Product(models.Model):
         A method to return the absolute url
         """
         return reverse('product_detail', args=[str(self.pk)])
+
+
+class Review(models.Model):
+    """
+    A class for people to leave a review
+    """
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="review")
+    author = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    message = models.TextField(max_length=500, null=True, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["timestamp"]
+
+    def __str__(self):
+        return f"Comment {self.title} by {self.author}"
+
+    def get_absolute_url(self):
+        """Sets the slug"""
+        return reverse('product_detail', args=[self.product.slug])

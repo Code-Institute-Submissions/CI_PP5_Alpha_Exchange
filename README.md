@@ -225,7 +225,29 @@ The website was built using Python and the Django framework with a postgres data
 
 The following models were created to represent the real database model structure within the website database.
 
-database model list
+### Faq
+- 
+
+### Order
+- 
+
+### OrderLineItem
+- 
+
+### Contact
+- 
+
+### Category
+- 
+
+### Product
+- 
+
+### Review
+- 
+
+### UserAccount
+ - 
 
 ### Wireframes
 
@@ -474,7 +496,7 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The categories navbar displays a list of only the current categories, if any are added or removed the list will update.
 - User stories covered: 5, 6, 23, 26
 <details><summary>Categories Page</summary>
-<img src="documentation/features/categories.jpg">
+<img src="documentation/features/categories-page.jpg">
 </details>
 <details><summary>Menu Categories</summary>
 <img src="documentation/features/menu-categories.jpg">
@@ -537,7 +559,7 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The edit product option allows staff and admins to update the details of the products on the store.
 - User stories covered: 18, 19
 <details><summary>Edit Product</summary>
-<img src="documentation/features/update-product.jpg">
+<img src="documentation/features/product-update.jpg">
 </details>
 <br>
 
