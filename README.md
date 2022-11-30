@@ -420,8 +420,11 @@ Some pages share the same design and thus are not shown, these include, the erro
 - Featured across the whole website within the footer.
 - The newsletter e-mail list allows users to sign up to a email list so that they can get updates on the products and news about the website.
 - User stories covered: 15, 27
-<details><summary>Newsletter E-mail List</summary>
-<img src="documentation/features/newsletter-mail-list.jpg">
+<details><summary>Newsletter E-mail List Sign up</summary>
+<img src="documentation/misc/email-signup.jpg">
+</details>
+<details><summary>Newsletter E-mail Welcome</summary>
+<img src="documentation/misc/email-success.jpg">
 </details>
 <br>
 
@@ -470,8 +473,11 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The categories are shown on separate a navbar allowing users to filter the products by what category are looking for.
 - The categories navbar displays a list of only the current categories, if any are added or removed the list will update.
 - User stories covered: 5, 6, 23, 26
-<details><summary>Categories</summary>
+<details><summary>Categories Page</summary>
 <img src="documentation/features/categories.jpg">
+</details>
+<details><summary>Menu Categories</summary>
+<img src="documentation/features/menu-categories.jpg">
 </details>
 <br>
 
@@ -479,8 +485,14 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The category management option features in the staff and admin account options.
 - The category management allows staff and admins to edit the current categories, add or remove new or old ones.
 - User stories covered: 20, 21, 22
-<details><summary>Categories</summary>
-<img src="documentation/features/category-management.jpg">
+<details><summary>Add Category</summary>
+<img src="documentation/features/category-add.jpg">
+</details>
+<details><summary>Update Category</summary>
+<img src="documentation/features/category-update.jpg">
+</details>
+<details><summary>Delete Category</summary>
+<img src="documentation/features/category-delete.jpg">
 </details>
 <br>
 
@@ -525,7 +537,7 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The edit product option allows staff and admins to update the details of the products on the store.
 - User stories covered: 18, 19
 <details><summary>Edit Product</summary>
-<img src="documentation/features/edit-product.jpg">
+<img src="documentation/features/update-product.jpg">
 </details>
 <br>
 
@@ -543,8 +555,11 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The product search is part of the header and is featured on all pages of the website.
 - The product search works by using keywords to filter the products to what it feels is relevant to the user.
 - User stories covered: 1, 3, 5, 6, 7
-<details><summary>Product Search</summary>
-<img src="documentation/features/product-search.jpg">
+<details><summary>Product Search Box</summary>
+<img src="documentation/features/product-search-box.jpg">
+</details>
+<details><summary>Product Search Result</summary>
+<img src="documentation/features/product-search-result.jpg">
 </details>
 <br>
 
@@ -553,8 +568,11 @@ Some pages share the same design and thus are not shown, these include, the erro
 - The shopping basket is can be used to adjust quantities and remove products from the basket entirely.
 - The shopping basket can be found within the header on every page and links to a separate detailed page with all the items in the basket.
 - User stories covered: 9, 10, 11, 12
-<details><summary>Shopping Basket</summary>
-<img src="documentation/features/shopping-basket.jpg">
+<details><summary>Shopping Basket Desktop</summary>
+<img src="documentation/features/shopping-basket-desktop.jpg">
+</details>
+<details><summary>Shopping Basket Mobile</summary>
+<img src="documentation/features/shopping-basket-mobile.jpg">
 </details>
 <br>
 
@@ -588,14 +606,6 @@ Some pages share the same design and thus are not shown, these include, the erro
 </details>
 <br>
 
-### Website Administration
-- The Website Administration page can be used by staff and admin to preform multiple actions and manipulate the database.
-- User stories covered: 18, 19, 20, 21, 22
-<details><summary>Website Administration</summary>
-<img src="documentation/features/website-administration.jpg">
-</details>
-<br>
-
 ### Message Popups
 - The message popups feature is used to inform the user when a specified action has taken place and the action was applied.
 - The message popups feature is used to inform the user when an error has happens and that the action has not been applied.
@@ -608,7 +618,7 @@ Some pages share the same design and thus are not shown, these include, the erro
 
 ### Error Pages
 - The custom Error pages are used to replace the standard error pages from django.
-- The custom Error pages cover 400, 404, 403, 500 errors.
+- The custom Error pages cover 400, 404, 403 and 500 errors, these templates look the same with slight variance for the error.
 - The featured recipes list is fully responsive down to mobile size devices.
 - User stories covered: 1, 25, 26, 31
 <details><summary>Error Pages</summary>
@@ -1042,7 +1052,6 @@ The website was tested on the following browsers in both regular and incognito m
 | Create Product | When logged in as website staff, use the accounts section on the navbar to navigate to the create a product page, from here fill out the details for the new product. | When the staff member clicks the link to create a new product the staff member is redirected to a new page with a form for creating products, once the form is filled out and submitted a new product is created | Works As Expected |
 | Edit Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to edit the product | the staff member is redirected to the edit product page where there is a form pre-populated with the current information for the staff member to update and resubmit | Works As Expected |
 | Delete Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to delete the product | The selected product is deleted from the database. | Works As Expected |
-| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to perform bulk actions and full CRUD functionality. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-18.jpg">
@@ -1056,7 +1065,6 @@ The website was tested on the following browsers in both regular and incognito m
 | Create Product | When logged in as website staff, use the accounts section on the navbar to navigate to the create a product page, from here fill out the details for the new product. | When the staff member clicks the link to create a new product the staff member is redirected to a new page with a form for creating products, once the form is filled out and submitted a new product is created | Works As Expected |
 | Edit Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to edit the product | the staff member is redirected to the edit product page where there is a form pre-populated with the current information for the staff member to update and resubmit | Works As Expected |
 | Delete Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to delete the product | The selected product is deleted from the database. | Works As Expected |
-| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to perform bulk actions and full CRUD functionality. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-19.jpg">
@@ -1068,7 +1076,6 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here edit the details of the pre-populated with the current information for the staff member to update and resubmit. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, once the form is filled out and submitted the category selected is updated | Works As Expected |
-| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to perform bulk actions and full CRUD functionality. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-20.jpg">
@@ -1080,7 +1087,6 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here you can choose to add a new category, fill out the form and select submit. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for creating categories, once the form is filled out and submitted the category selected is created | Works As Expected |
-| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to perform bulk actions and full CRUD functionality. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-21.jpg">
@@ -1092,7 +1098,6 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here select the deleted category button. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, When the staff member clicks the delete category button teh staff member will be returned to the category management page and the category deleted. | Works As Expected |
-| Website Administration | When signed in as a admin, navigate to the admin page from the navbar link | From the admin panel the Admin user is able to perform bulk actions and full CRUD functionality. | Works As Expected |
 |  |  |  |  |
 <details><summary>Screenshots</summary>
 <img src="documentation/user-story-testing/user-story-22.jpg">
@@ -1265,7 +1270,7 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 1. Create an email account at google.com, login, navigate to Settings in your gmail account and then click on Other Google Account Settings
 2. Turn on 2-step verification and follow the steps to enable
 3. Click on app passwords, select Other as the app and give the password a name, for example Django
-<br>![App password](documentation/gmail-password.jpg)
+<br>![App password](documentation/misc/gmail-password.jpg)
 4. Click create and a 16 digit password will be generated, note the password down
 5. In the env.py file, create an environment variable called EMAIL_HOST_PASS with the 16 digit password
 6. In the env.py file, create an environment variable called EMAIL_HOST_USER with the email address of the gmail account
@@ -1285,7 +1290,7 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 1. Register for an account at stripe.com
 2. Click on the Developers section of your account once logged in
 3. Under Developers, click on the API keys section
-<br>![API keys](documentation/stripe_keys1.jpg)
+<br>![API keys](documentation/misc/stripe-keys.jpg)
 4. Note the values for the publishable and secret keys
 5. In your local environment(env.py) and heroku, create environment variables STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY with the publishable and secret key values
 <br><code>os.environ.setdefault('STRIPE_PUBLIC_KEY', 'YOUR_VALUE_GOES_HERE')</code>
@@ -1293,7 +1298,7 @@ To set up the project to send emails and to use a Google account as an SMTP serv
 6. Back in the Developers section of your stripe account click on Webhooks
 7. Create a webhook with the url of your website <url>/checkout/wh/, for example: https://alpha-exchange.herokuapp.com/checkout/wh/
 8. Select the payment_intent.payment_failed and payment_intent.succeeded as events to send
-<br>![Webhook](documentation/stripe_keys2.jpg)
+<br>![Webhook](documentation/misc/stripe-webhook.jpg)
 9. Note the key created for this webhook
 10. In your local environment(env.py) and heroku, create environment variable STRIPE_WH_SECRET with the secret values
 <code>os.environ.setdefault('STRIPE_WH_SECRET', 'YOUR_VALUE_GOES_HERE')</code>
