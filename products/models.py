@@ -87,7 +87,7 @@ class Review(models.Model):
     title = models.CharField(max_length=100)
     message = models.TextField(max_length=500, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["timestamp"]

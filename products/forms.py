@@ -2,7 +2,7 @@
 A module for forms in the products app
 """
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 class ProductModelForm(forms.ModelForm):
@@ -84,3 +84,28 @@ class CategoryModelForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
+
+
+class ReviewForm(forms.ModelForm):
+    """
+    Form users to post their reviews.
+    """
+    class Meta:
+        model = Review
+        fields = ('title', 'message')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # placeholders to overwrite
+        placeholders = {
+            'title': 'Title',
+            'message': 'Write your review...',
+        }
+
+        # set the placeholders, autofocus and style class
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder

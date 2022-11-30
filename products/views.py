@@ -2,15 +2,18 @@
 A module containing the views within the products app.
 """
 from django.contrib import messages
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponseRedirect)
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    ListView, CreateView, UpdateView, DeleteView, View)
+from users.models import UserAccount
 from .product_filters import ProductFilter, ProductOrderFilter
 from .models import Product, Category
-from .forms import ProductModelForm, CategoryModelForm
+from .forms import ProductModelForm, CategoryModelForm, ReviewForm
 
 
 class ListProducts(ListView):
@@ -81,18 +84,71 @@ class SearchProduct(ListView):
         return context
 
 
-def product_detail(request, product_id):
+class ProductDetail(View):
     """
     Displays the product details page by product ID.
     """
 
-    product = get_object_or_404(Product, pk=product_id)
+    def get(self, request, product_id):
+        """
+        fetches the information on the product, reviews and likes.
+        """
+        queryset = Product.objects.all()
+        product = get_object_or_404(queryset, pk=product_id)
+        reviews = product.review.filter(approved=True).order_by("timestamp")
+        number_of_reviews = reviews.count
+        liked = False
+        if product.likes.filter(id=request.user.id).exists():
+            liked = True
 
-    context = {
-        'product': product
-    }
+        context = {
+            'product': product,
+            "reviews": reviews,
+            "review_posted": False,
+            "liked": liked,
+            "review_form": ReviewForm(),
+            'number_reviews': number_of_reviews,
+        }
 
-    return render(request, 'products/product_detail.html', context)
+        return render(request, 'products/product_detail.html', context)
+
+    def post(self, request, product_id):
+        """
+        Handles the review form post
+        """
+        queryset = Product.objects.all()
+        product = get_object_or_404(queryset, pk=product_id)
+        reviews = product.review.filter(approved=True).order_by("timestamp")
+        profile = get_object_or_404(UserAccount, user=request.user)
+
+        liked = False
+        if product.likes.filter(id=request.user.id).exists():
+            liked = True
+
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review_form.instance.author = profile
+            review = review_form.save(commit=False)
+            review.product = product
+            review.save()
+            messages.success(
+                request, "Your review was has been posted successfully.")
+        else:
+            review_form = ReviewForm()
+            messages.success(
+                request,
+                "Your review was not submitted, please check the form.")
+
+        context = {
+                "product": product,
+                "reviews": reviews,
+                "review_posted": True,
+                "review_form": review_form,
+                "liked": liked,
+            }
+
+        return render(
+            request, 'products/product_detail.html', context)
 
 
 def categories(request):
