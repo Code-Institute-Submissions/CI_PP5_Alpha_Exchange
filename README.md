@@ -116,21 +116,21 @@ Long tag keywords and short tag keywords were searched for in regards to SEO usi
 
 I also made included the categories within the meta tag keywords so that as these are updates the keywords will also be updated.
 
-![SEO keywords HTML]()
+![SEO keywords HTML](/documentation/misc/keywords.jpg)
 
 ### Marketing
 #### Facebook Page
 To help market the website, the website includes a like to its own social media page in the footer where new products and announcements are made.
-the Facebook page can be viewed [here](). 
+the Facebook page can be viewed [here](https://www.facebook.com/profile.php?id=100087950336068).
 
-![Facebook Screenshot]()
+![Facebook Screenshot](/documentation/misc/facebook.jpg)
 
 #### Newsletter Sign up
-The website includes a sign up form to a newsletter so the business can keep in touch with anyone who want more information.
+The website includes a sign up form to a newsletter so the business can keep in touch with anyone who want more information. I used [SendinBlue](https://www.sendinblue.com) to create a form and preform the automation required to reply with an email to the given address.
 
-![Sign-up]()
+![Sign-up](/documentation/misc/email-signup.jpg)
 
-![Email-success]()
+![Email-success](/documentation/misc/email-success.jpg)
 
 [Back to Table Of Content](#table-of-content)
 

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /basket/
+Disallow: /accounts/
+Allow: /accounts/login/
+Allow: /accounts/signup/
+Sitemap: https://alpha-exchange.herokuapp.com/sitemap.xml

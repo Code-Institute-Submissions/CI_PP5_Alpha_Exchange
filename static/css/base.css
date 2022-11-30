@@ -12,7 +12,6 @@
     --font-color: #fff;
     --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
 /* Light Mode Theme */
 :root:not(.light) {
     --bodytext: 'Inter', 'sans-serif';
@@ -25,35 +24,27 @@
     --font-color: #000;
     --toggler: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
 /* Common Styles */
 html {
     box-sizing: border-box;
     height: 100%;
-    padding: 0;
-    margin: 0;
 }
-
 body {
-    box-sizing: border-box;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
     font-family: var(--bodytext);
+    color: var(--font-color);
 }
-
 main {
     flex-grow: 1;
 }
-
 .home-image {
-    background-image: url('/media/shopping-cart.webp') !important;
     background-size: cover;
     min-width: -webkit-fill-available;
     height: calc(100vh - 246px);
 }
-
 .title {
     text-align: center!important;
     margin-top: 1rem!important;
@@ -61,25 +52,20 @@ main {
     font-weight: 300;
     line-height: 1.2;
 }
-
 .home-text {
     background-color: rgba(var(--card-color), 0.5);
 }
-
 .basket-icon{
     position: absolute;
     left: 6px;
     top: calc(100% - 1.05em);
 }
-
 .input-wrapper{
     position: relative;
 }
-
 .prod_details_btn {
     padding-left: 28px;
 }
-
 /* from Bulma/ Boutique Ado */
 .icon {
     align-items: center;
@@ -88,121 +74,104 @@ main {
     height: 1.5rem;
     width: 1.5rem;
 }
-
-h1, h2, h3, h4, h5, h6, p, th, 
-.icon, span, legend, #sort-label,
-.form-check-label {
-    color: var(--font-color);
-}
-
 .btn {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-    color: var(--font-color);
 }
-
-.btn-dark {
-    background-color: var(--menu-color);
-    border-color: var(--menu-color);
-    color: var(--font-color);
-}
-
 .btn-light:hover {
     background-color: var(--btn-hover-color);
     border-color: var(--btn-hover-color);
     color: var(--btn-hover-font);
-    border-radius: 6px;
 }
-
 .cust-img {
     border-radius: 6px;
     padding: 1%;
     width: 100%;
     height: auto;
 }
-
 /* Footer Styles */
-
 .footer {
-    color: var(--font-color);
     background-color: var(--menu-color);
     flex-grow: 0;
     flex-shrink: 0;
 }
-
 .footer .nav-link {
     display: inline-block;
 }
-
 .social-networks {
-    color: var(--font-color);
     text-decoration: none;
-}
-
-.social-networks i {
+    color: var(--font-color);
     font-size: 200%;
 }
-
+/* SendinBlue Email signup */
+.sib-form, .sib-form div, #sib-container {
+    padding: 0 !important;
+    border-radius: 6px;
+}
+.sib-form-block__button {
+    color: var(--font-color);
+}
+#sib-container form {
+    padding: 17px;
+}
+#sib-container input:-ms-input-placeholder {
+    text-align: left;
+    font-family: var(--bodytext);
+    color: #000;
+}
+#sib-container input::placeholder {
+    text-align: left;
+    font-family: var(--bodytext);
+    color: #000;
+}
 /* Header Styles */
 header {
     flex-grow: 0;
     flex-shrink: 0;
 }
-
 .navbar {
     background-color: var(--menu-color) !important;
 }
-
 .navbar-brand {
     border-radius: 6px;
     padding: 0;
     height: 40px;
 }
-
 .navbar-brand .nav-link, .nav-link img {
     height: inherit;
     width: inherit;
     border-radius: 6px;
 }
-
 .nav-link {
     color: var(--font-color) !important;
     text-decoration: underline 2px var(--font-color);
     border: 0;
 }
-
 #search input {
     border-radius: 6px 0 0 6px;
 }
-
 #search div button {
     border-radius: 0 6px 6px 0;
 }
-
 #search input::placeholder {
     color: #000;
 }
-
 .navbar-toggler-icon {
     background-image: var(--toggler)
 }
-
 .logo {
     font-size: 1rem!important;
     margin: 0 !important;
 }
-
 .navbar-toggler {
     font-size: 30px;
     padding: 0;
     margin: 0;
     background-color: var(--background-color);
 }
-
 .special-margin {
     margin-right: 0.5rem !important;
 }
-
 /* Theme Switch Styles */
 .switch {
     width: 76px;
@@ -214,51 +183,21 @@ header {
     text-indent: -200px;
     border-radius: 6px;
 }
-
 .slider {
     border-radius: 6px;
 }
-
-:root:not(.light) .switch span {
-    position: relative;
-    display: block;
-    width: 38px;
-    height: 38px;
-}
-
-:root:not(.light) .switch input, #theme {
-    display: none;
-}
-
-:root:not(.light) .slider {
-    transition: 0.4s;
-    height: 38px;
-    width: 38px;
-    display: inline;
-    position: relative;
-    background: var(--accent-color);
-}
-
-:root:not(.light) .slider {
-    transform: translateX(0px);
-}
-
-:root.light .slider {
-    transform: translateX(38px);
-}
-
+:root:not(.light) .switch span,
 :root.light .switch span {
     position: relative;
     display: block;
     width: 38px;
     height: 38px;
 }
-
+:root:not(.light) .switch input,
 :root.light .switch input, #theme {
     display: none;
 }
-
-:root.light .slider {
+:root:not(.light) .slider, :root.light .slider {
     transition: 0.4s;
     height: 38px;
     width: 38px;
@@ -266,52 +205,46 @@ header {
     position: relative;
     background: var(--accent-color);
 }
-
+:root:not(.light) .slider {
+    transform: translateX(0px);
+}
+:root.light .slider {
+    transform: translateX(38px);
+}
 /* Message/Toast Styles */
-
 .toast-container {
     position: fixed;
     top: 72px;
     right: 15px;
     z-index: 99999999999;
 }
-
 .toast-header button {
     float: right;
 }
-
 .toast-capper {
     height: 3px;
 }
-
 /* All-Auth Styles */
-
 .account-row {
     padding: 10% 25%;
 }
-
 .account-row input::placeholder {
     color: #000;
 }
-
 .account-row label:not([for='id_remember']) {
     display: none;
 }
-
 /* Media Queires */
 @media screen and (max-width: 1050px) {
     .logo, .nav-link, .nav-item {
         font-size: 90% !important;
     }
 }
-
 @media screen and (max-width: 800px) {
     .account-row {
         padding: 10% 10%;
     }
 }
-
-
 @media screen and (max-width: 500px) {
     .logo {
         display: none;
@@ -321,7 +254,6 @@ header {
         margin-right: 0 !important;
     }
 }
-
 @media all and (max-width: 1024px) {
     .home-image {
         height: calc(100vh - 63px);
