@@ -3,6 +3,7 @@ A module containing the views within the products app.
 """
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -162,13 +163,24 @@ class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = 'The review was successfully updated'
 
 
+@login_required
+def delete_review(request, review_id):
+    """
+    Delete user Reviews from the website
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'The review was deleted successfully')
+    return HttpResponseRedirect(reverse(
+        'product_detail', args=[review.product.id]))
+
+
 class ProductLike(View):
     """
     Adds or removes the like from a product
     """
     def post(self, request, product_id, *args, **kwargs):
         profile = get_object_or_404(UserAccount, user=request.user)
-        product = get_object_or_404(Product, pk=product_id)
         if product.likes.filter(id=profile.id).exists():
             product.likes.remove(profile)
         else:
