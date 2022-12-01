@@ -91,10 +91,3 @@ class Review(models.Model):
 
     class Meta:
         ordering = ["timestamp"]
-
-    def __str__(self):
-        return f"Comment {self.title} by {self.author}"
-
-    def get_absolute_url(self):
-        """Sets the slug"""
-        return reverse('product_detail', args=[self.product.slug])

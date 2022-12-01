@@ -32,4 +32,5 @@ urlpatterns = [
         '<int:pk>/delete_category/', views.CategoryDelete.as_view(),
         name='delete_category'
         ),
+    path('like/<product_id>/', views.ProductLike.as_view(), name='product_like'),
 ]
