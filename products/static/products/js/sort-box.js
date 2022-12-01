@@ -22,4 +22,4 @@ $('#sort-box').change(function() {
 
         window.location.replace(currentUrl);
     }
-})
+});

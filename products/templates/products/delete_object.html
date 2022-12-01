@@ -6,13 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
-{% block extra_title %}
-    {% if product %}
-        Delete Product
-    {% else %}
-        Delete Category
-    {% endif %}
-{% endblock %}
+{% block extra_title %}{% if product %}Delete Product{% else %}Delete Category{% endif %}{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -38,7 +32,7 @@
                     {% csrf_token %}
                     <p>Are you sure you want to delete {{ object.name }}?</p>
                     <p>
-                        <input class="btn btn-light" type='submit' value='Yes'/>
+                        <input class="btn btn-light" type='submit' value='Yes'>
                         <a class = "btn btn-light" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a>
                     </p>
                 </form>

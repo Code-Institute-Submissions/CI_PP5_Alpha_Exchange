@@ -3,7 +3,7 @@
     {% csrf_token %}
     <div class="input-group my-1 input-group-{{ item.item_id }}">
         <div class="col-12">
-            <label><span class="sr-only">Quantity: </span>
+            <label><span class="d-none">Quantity: </span>
             <input class="form-control select_input ps-2 pe-0 id_qty_{{ item.item_id }} 
                 {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
                 type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" 

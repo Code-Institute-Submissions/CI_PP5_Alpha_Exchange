@@ -53,6 +53,17 @@ label {
     display: block;
 }
 
+td p, th, td h2, td h3, td h4 {
+    color: var(--font-color);
+}
+
+.basket-product {
+    background: none;
+    border: none;
+    margin: 0;
+    text-decoration: underline 2px var(--font-color) !important;
+}
+
 /* Media queries */
 @media screen and (max-width: 800px) {
     p, h6, h4, a, span{

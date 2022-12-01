@@ -107,7 +107,9 @@ A regular user has been setup with the following details for testing the website
 
 ### Business Model
 This website is primarily aimed at selling to consumers, for this I have chosen a B2C business model. To make the website more consumer friendly I have made sure that all design decisions, pictures, navigation and ease of purchase is made with the end user in mind.
-The business model would be that this website is able to be used as a dropshipping website where the website owner does not need to handle inventory and the products can be sent straight from the supplier.
+
+The business model is that this website would able to be used as a dropshipping website where the website owner does not need to handle inventory and the products can be sent straight from the supplier to the customer.
+
 As an alternative the website owner could buy the product and arrange the shipping of orders themselves, this does mean any returns also get handled by the website owner.
 For This project I have chosen for the stock to be handled by a third party.
 
@@ -198,24 +200,62 @@ I am using Inter font with a backup of sans-serif across the website. This is us
 ### Structure
 The website has been built using a template engine so that all pages follow the same design to maintain the feel across the website.
 
+The project was also built using a variety of apps constructed using django framework, these apps allow for easy update to a small area of the site without effecting the performance of other apps.
+
+The Apps within the website are as follows:
+- About - The about app is used to give the customer information about the business and easily update the FAQ section.
+
+- Basket - The basket app is used to store the users current shopping basket, display the cost and calculate the sizes and quantity of each item.
+
+- Checkout - The checkout app is used to take the items in the current shopping basket and place the order on the website, this utilizes Stripe's checkout functionality.
+
+- Contact - The contact app is used to allow customers to send a message to the admin team, making use of the UserAccount if they are logged in to fill out some of the form.
+
+- Home - The home app creates the main landing page for the website and includes links to the rest of the website, this is used to entice users into exploring our products further.
+
+- Products - The products app is used to set up the categories, products and reviews that the user will see on the website. the categories and products are setup by the admin team and can be managed from both the admin panel or directly on the website when signed into an admin account. The reviews model provides a form for users to fill out if they want to tell everyone about how great a specific product is.
+
+- Users - The users app is used to extend the functionality of the base django User model, this allows me to store the users personal and shipping details so they can be used to fill out other forms when needed.
+
+In addition to these apps there are a number of files and directories used at the base level.
+- Template - The templates allow for us to write less code by creating one basic page that all other pages can then extend with their own content.
+
+- URL's - Each app has been given its own url file which is 'included' within the project level URLS's this helps with the modularity of the website and allows us to add or remove items when needed.
+
+- Settings - The settings file is stored in the project directory so that any items that rely upon specific settings can be updated from one place instead of each app.
+
+- static and media - there are a number of files stored at the base level, including the base CSS for the website, this contains most the code that is needed across the whole site or multiple apps, we also put some JS files in base folder so these will be available to all pages. We also have a number of media files that can be found at the root, these are best served from the root directory so that all pages can access teh information it needs.
+
+- Procfile - This is the file that will launch the website when using Heroku.
+
+- Requirements - The requirements.txt file stores all teh information about the packages needed for the website to function correctly.
+
 The Pages are structured in a Regularly used, user friendly and well-known format. This makes each page easy to navigate, coupled with a responsive navbar and footer this gives the user many options for navigating around the website.
 
-The website consists of 15 pages.
+The website consists of 22 pages and 4 error pages(400, 403, 404, 500).
 1. Home page
 2. All products
-3. Product details
-4. Product categories
-5. Log in
-6. Log out
-7. Register
-8. Profile page
-9. Basket
-10. Contact us
-11. About us
-12. Admin
-13. Add products page
-14. Edit products page
-15. Error page
+3. Search products
+4. Product details
+5. Product categories
+6. Categories page
+7. Log in
+8. Log out
+9. Register
+10. Profile page
+11. Order history
+12. Basket
+13. Checkout
+14. Checkout Success
+15. Contact us
+16. About us
+17. Add products page
+18. Edit products page
+19. Delete products page
+20. Add categories page
+21. Edit categories page
+22. Delete categories page
+23. Error page(s)
 
 ### Database
 The website was built using Python and the Django framework with a postgres database to store all of our information.
@@ -226,28 +266,38 @@ The website was built using Python and the Django framework with a postgres data
 The following models were created to represent the real database model structure within the website database.
 
 ### Faq
-- 
+- The Faq model is used to hold the information for the FAQ section on the about us page.
+- The Faq model is setup to hold a title, friendly title, question and answer to be displayed within the accordion.
 
 ### Order
-- 
+- The Order model is used to hold information relating to each order placed on the website.
+- The Order model holds information like, name, address, order details including the basket and stripe information and also a ForeignKey to the user's account.
 
 ### OrderLineItem
-- 
+- The OrderLineItem Model is used to calculate the details of each item on the order.
+- The OrderLineItem Model calculates teh number of items on an order, by size and quantity, then passing the details to the order model to update the total price.
 
 ### Contact
-- 
+- The Contact model is used to store messages from visitors to the website.
+- The Contact model takes basic information like the name, address and message for the admin's to read later.
 
 ### Category
-- 
+- The Category model sets up the categories available for visitors to browse through and split products into.
+- The Category model contains a name, friendly name and image field.
 
 ### Product
-- 
+- The product model contains information relating to the creation of new products.
+- The product model information for the product name, category, sku, description, price, rating, image, sizes, use, number of likes and a featured field.
+- The Product model is able to generate its sku number when a product is created if the user has not filled one in.
 
 ### Review
-- 
+- The Review model is setup for users to be able to leave a review of a product.
+- The Review model contains information author, message, time, title and approved status.
+- The Review model uses the approved boolean field so that if a user puts a review on the website that should be removed, we can prevent the review appearing to visitors.
 
 ### UserAccount
- - 
+ - The UserAccount model is used to extend the functionality of the base django User model
+ - The UserAccount model adds functionality so that allows us to store the delivery information so users do not have to enter it every time.
 
 ### Wireframes
 
@@ -536,6 +586,15 @@ Some pages share the same design and thus are not shown, these include, the erro
 </details>
 <br>
 
+### User Reviews
+- The User Reviews are featured on the Product Details page, underneath the product it relates to.
+- The User Reviews allow customers to share their experience and give other shoppers a true representation of the product and what to expect so they arent spending too much time looking at the wrong items.
+- User stories covered: 8, 26
+<details><summary>User Reviews</summary>
+<img src="documentation/features/user-reviews.jpg">
+</details>
+<br>
+
 ### Page Ordering
 - The product pages used to display all products that the website has available can be re-ordered by the user to help them find what they are looking for.
 - The product pages can be re-ordered from the dropdown box located on the products page.
@@ -611,8 +670,8 @@ Some pages share the same design and thus are not shown, these include, the erro
 <br>
 
 ### Profile Page
-- The profile page is used to view a users profile information and order history.
-- From the profile page a user is able to update their personal details.
+- The profile page is used to view a users profile information, liked products and order history.
+- From the profile page a user is able to update their personal details, navigate to their liked items and view a previous order details.
 - User stories covered: 16, 17
 <details><summary>Profile Page</summary>
 <img src="documentation/features/profile-page.jpg">
@@ -653,18 +712,25 @@ Some pages share the same design and thus are not shown, these include, the erro
 ## Validation
 ### HTML Validation
 I used the W3C Validation Service to validate the HTML of the website.
-All pages passed with no errors, these were run as web pages to combines the parts of the template into completed versions for the browser, with the exception of the error pages which would not be recognized by W3C.
+All pages passed with no errors, These were run by direct input after viewing the page source allowing django to combine the templates into the final version the browser will display.
+
 <details><summary>Home page</summary>
 <img src="documentation/validation/html/home-page.jpg">
 </details>
 <details><summary>All products</summary>
 <img src="documentation/validation/html/all-products.jpg">
 </details>
+<details><summary>Search products</summary>
+<img src="documentation/validation/html/search-products.jpg">
+</details>
 <details><summary>Product details</summary>
 <img src="documentation/validation/html/product-details.jpg">
 </details>
-<details><summary>Product categories</summary>
+<details><summary>Product categories list</summary>
 <img src="documentation/validation/html/product-categories.jpg">
+</details>
+<details><summary>Category pages</summary>
+<img src="documentation/validation/html/category-page.jpg">
 </details>
 <details><summary>Log in</summary>
 <img src="documentation/validation/html/log-in.jpg">
@@ -678,8 +744,17 @@ All pages passed with no errors, these were run as web pages to combines the par
 <details><summary>Profile page</summary>
 <img src="documentation/validation/html/profile-page.jpg">
 </details>
+<details><summary>Order history</summary>
+<img src="documentation/validation/html/order-history.jpg">
+</details>
 <details><summary>Basket</summary>
 <img src="documentation/validation/html/basket.jpg">
+</details>
+<details><summary>Checkout</summary>
+<img src="documentation/validation/html/checkout.jpg">
+</details>
+<details><summary>Checkout success</summary>
+<img src="documentation/validation/html/checkout-success.jpg">
 </details>
 <details><summary>Contact us</summary>
 <img src="documentation/validation/html/contact-us.jpg">
@@ -687,14 +762,23 @@ All pages passed with no errors, these were run as web pages to combines the par
 <details><summary>About us</summary>
 <img src="documentation/validation/html/about-us.jpg">
 </details>
-<details><summary>Admin</summary>
-<img src="documentation/validation/html/admin.jpg">
-</details>
 <details><summary>Add products page</summary>
-<img src="documentation/validation/html/add-products-page.jpg">
+<img src="documentation/validation/html/add-product-page.jpg">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/validation/html/edit-products-page.jpg">
+<img src="documentation/validation/html/edit-product-page.jpg">
+</details>
+<details><summary>Delete products page</summary>
+<img src="documentation/validation/html/delete-product-page.jpg">
+</details>
+<details><summary>Add categories page</summary>
+<img src="documentation/validation/html/add-categories-page.jpg">
+</details>
+<details><summary>Edit categories page</summary>
+<img src="documentation/validation/html/edit-categories-page.jpg">
+</details>
+<details><summary>Delete categories page</summary>
+<img src="documentation/validation/html/delete-categories-page.jpg">
 </details>
 <details><summary>Error page</summary>
 <img src="documentation/validation/html/error-page.jpg">
@@ -705,18 +789,53 @@ All pages passed with no errors, these were run as web pages to combines the par
 I used the W3C Jigsaw CSS Validation Service to validate the CSS of the website.
 My CSS passed with no errors and warnings to show.
 <details><summary>Base CSS</summary>
-<img src="documentation/validation/css/base.jpg">
+<img src="documentation/validation/css/base-css.jpg">
+</details>
+<details><summary>Basket CSS</summary>
+<img src="documentation/validation/css/basket-css.jpg">
+</details>
+<details><summary>Checkout CSS</summary>
+<img src="documentation/validation/css/checkout-css.jpg">
+</details>
+<details><summary>Contact CSS</summary>
+<img src="documentation/validation/css/contact-css.jpg">
 </details>
 <details><summary>Products CSS</summary>
-<img src="documentation/validation/css/products.jpg">
+<img src="documentation/validation/css/products-css.jpg">
+</details>
+<details><summary>Users CSS</summary>
+<img src="documentation/validation/css/users-css.jpg">
 </details>
 <br>
 
 ### JavaScript Validation
 JSHint Static Code Analysis Tool for JavaScript was used to validate the Javascript file.
-All files with no errors or warnings.
+All files with no errors.
+
+The warnings from the stripe.js toasts.js and sendinblue.js are caused by unused variables however these are called from outside of the script, on the html and so this is not an issue.
+
+Thw warnings from the qty-box.js are from teh if/else loops where teh code cycles and finds teh values already defined, this is nto a problem as it will overwrite any previous values and during testing this preformed well.
+
 <details><summary>Theme Switch</summary>
-<img src="documentation/validation/js/js-theme.jpg">
+<img src="documentation/validation/js/theme.jpg">
+</details>
+<details><summary>Toasts</summary>
+<img src="documentation/validation/js/toasts.jpg">
+</details>
+<details><summary>SendinBlue</summary>
+<img src="documentation/validation/js/sendinblue.jpg">
+</details>
+<details><summary>Qty Box</summary>
+<img src="documentation/validation/js/qty-box.jpg">
+</details>
+<details><summary>Sort Box</summary>
+<img src="documentation/validation/js/sort-box.jpg">
+</details>
+<details><summary>Stripe Elements</summary>
+<img src="documentation/validation/js/stripe-elements.jpg">
+</details>
+<details><summary>Basket Qty</summary>
+<img src="documentation/validation/js/basket-qty.jpg">
 </details>
 <br>
 
@@ -750,18 +869,28 @@ My code passed with no errors and warnings to show.
 <br>
 
 ### Accessibility
-I used WAVE WebAIM web accessibility evaluation tool to ensure the website met high accessibility standards. All pages passed with no errors, the profile page had to be run through the web extension as it would normally require a user to be logged in to an account and the standard API was not able to work around this.
+I used WAVE WebAIM web accessibility evaluation tool to ensure the website met high accessibility standards.
+
+All pages passed with no errors, I was using the WAVE web extension to run check all the pages as some of them would not verify due to the need to be logged in or require a session.
+
+I also ran the website through both color themes to make sure there were no conflicts between the contrast on either themes.
 <details><summary>Home page</summary>
 <img src="documentation/validation/accessibility/home-page.jpg">
 </details>
 <details><summary>All products</summary>
 <img src="documentation/validation/accessibility/all-products.jpg">
 </details>
+<details><summary>Search products</summary>
+<img src="documentation/validation/accessibility/search-products.jpg">
+</details>
 <details><summary>Product details</summary>
 <img src="documentation/validation/accessibility/product-details.jpg">
 </details>
-<details><summary>Product categories</summary>
+<details><summary>Product categories list</summary>
 <img src="documentation/validation/accessibility/product-categories.jpg">
+</details>
+<details><summary>Category pages</summary>
+<img src="documentation/validation/accessibility/category-page.jpg">
 </details>
 <details><summary>Log in</summary>
 <img src="documentation/validation/accessibility/log-in.jpg">
@@ -775,8 +904,17 @@ I used WAVE WebAIM web accessibility evaluation tool to ensure the website met h
 <details><summary>Profile page</summary>
 <img src="documentation/validation/accessibility/profile-page.jpg">
 </details>
+<details><summary>Order history</summary>
+<img src="documentation/validation/accessibility/order-history.jpg">
+</details>
 <details><summary>Basket</summary>
 <img src="documentation/validation/accessibility/basket.jpg">
+</details>
+<details><summary>Checkout</summary>
+<img src="documentation/validation/accessibility/checkout.jpg">
+</details>
+<details><summary>Checkout success</summary>
+<img src="documentation/validation/accessibility/checkout-success.jpg">
 </details>
 <details><summary>Contact us</summary>
 <img src="documentation/validation/accessibility/contact-us.jpg">
@@ -784,14 +922,23 @@ I used WAVE WebAIM web accessibility evaluation tool to ensure the website met h
 <details><summary>About us</summary>
 <img src="documentation/validation/accessibility/about-us.jpg">
 </details>
-<details><summary>Admin</summary>
-<img src="documentation/validation/accessibility/admin.jpg">
-</details>
 <details><summary>Add products page</summary>
-<img src="documentation/validation/accessibility/add-products-page.jpg">
+<img src="documentation/validation/accessibility/add-product-page.jpg">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/validation/accessibility/edit-products-page.jpg">
+<img src="documentation/validation/accessibility/edit-product-page.jpg">
+</details>
+<details><summary>Delete products page</summary>
+<img src="documentation/validation/accessibility/delete-product-page.jpg">
+</details>
+<details><summary>Add categories page</summary>
+<img src="documentation/validation/accessibility/add-categories-page.jpg">
+</details>
+<details><summary>Edit categories page</summary>
+<img src="documentation/validation/accessibility/edit-categories-page.jpg">
+</details>
+<details><summary>Delete categories page</summary>
+<img src="documentation/validation/accessibility/delete-categories-page.jpg">
 </details>
 <details><summary>Error page</summary>
 <img src="documentation/validation/accessibility/error-page.jpg">

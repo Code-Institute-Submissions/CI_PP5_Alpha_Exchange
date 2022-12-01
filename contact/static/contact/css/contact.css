@@ -2,6 +2,9 @@
     color: #000 !important;
 }
 
+.form-label {
+    color: #000;
+}
 
 @media screen and (max-width: 800px) {
     #form-row {

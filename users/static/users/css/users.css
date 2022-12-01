@@ -23,3 +23,12 @@
     color: var(--font-color) !important;
     text-decoration: underline 3px var(--font-color);
 }
+
+td p, th {
+    color: var(--font-color);
+}
+
+.list-group-item .nav-link {
+    color: #000 !important;
+    text-decoration: underline 2px #000 !important;
+}

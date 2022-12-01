@@ -1,7 +1,7 @@
 <!-- Product Information -->
-<a class="nav-link" href="{% url 'product_detail' item.product.id %}">
-    <p><strong>{{ item.product.name }}</strong></p>
-</a>
+<button class="basket-product" onclick="location.href='{% url 'product_detail' item.product.id %}'" type="button">
+    <span><strong>{{ item.product.name }}</strong></span>
+</button>
 <p class="my-0">
     <strong>Size: </strong>
     {% if item.product.has_sizes %}
