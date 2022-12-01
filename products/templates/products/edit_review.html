@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block extra_title %}Edit Review{% endblock %}
+
+{% block content %}
+    <!-- Edit review -->
+    <div class="container box-shadow">
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- Title and User -->
+                <h1 class="title">Edit Review</h1>
+                <p>Edit review as: {{ user.username | slice:":10" }}</p>
+                <!-- Edit review form -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form| crispy }}
+                    <button class="btn mb-3" type="submit" value="Save">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

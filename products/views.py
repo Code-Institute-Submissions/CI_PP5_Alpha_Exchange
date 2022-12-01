@@ -12,7 +12,7 @@ from django.views.generic import (
     ListView, CreateView, UpdateView, DeleteView, View)
 from users.models import UserAccount
 from .product_filters import ProductFilter, ProductOrderFilter
-from .models import Product, Category
+from .models import Product, Category, Review
 from .forms import ProductModelForm, CategoryModelForm, ReviewForm
 
 
@@ -150,6 +150,16 @@ class ProductDetail(View):
 
         return render(
             request, 'products/product_detail.html', context)
+
+
+class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+     Allow users to edit their reviews.
+    """
+    queryset = Review.objects.all()
+    template_name = 'products/edit_review.html'
+    form_class = ReviewForm
+    success_message = 'The review was successfully updated'
 
 
 class ProductLike(View):

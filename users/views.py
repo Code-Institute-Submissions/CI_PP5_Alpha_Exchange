@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
+from products.models import Product
 from .models import UserAccount
 from .forms import UserAccountForm
 
@@ -13,6 +14,7 @@ from .forms import UserAccountForm
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserAccount, user=request.user)
+    favorites = Product.objects.filter(likes=profile)
 
     if request.method == 'POST':
         form = UserAccountForm(request.POST, instance=profile)
@@ -27,6 +29,7 @@ def profile(request):
     context = {
         'profile': profile,
         'form': form,
+        'favorites': favorites,
         'orders': orders,
         'on_profile_page': True
     }

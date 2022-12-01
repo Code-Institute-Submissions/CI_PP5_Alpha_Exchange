@@ -168,7 +168,7 @@
                             <!-- Check if user is the same as author or is superuser -->
                             {% if user.is_authenticated and user.username == review.author or user.is_superuser %}
                             <!-- Edit review button -->
-                            <a href="" class="btn btn-light mb-3" aria-label="Go to the Edit Reviews Page">Edit</a>
+                            <a href="{% url 'edit_review' review.id %}" class="btn btn-light mb-3" aria-label="Go to the Edit Reviews Page">Edit</a>
                             <!-- Delete review button, opens modal -->
                             <button type="button" class="btn btn-light mb-3" data-bs-toggle="modal" data-bs-target="#delete-review">Delete</button>
                             <!-- Delete review bootstrap modal-->

@@ -66,5 +66,17 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <h2 class="title">Liked Products</h2>
+                <ul class="form-control">
+                    {% for favorite in favorites %}
+                        <li class="list-group-item nav-item p-1">
+                            <a class="nav-link" href="{% url 'product_detail' favorite.id %}">{{ favorite.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 {% endblock %}

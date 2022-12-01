@@ -91,3 +91,9 @@ class Review(models.Model):
 
     class Meta:
         ordering = ["timestamp"]
+
+    def get_absolute_url(self):
+        """
+        Get the absolute url
+        """
+        return reverse('product_detail', args=[self.product.id])
