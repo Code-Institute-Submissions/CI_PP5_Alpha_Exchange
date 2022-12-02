@@ -407,7 +407,31 @@ Some pages share the same design and thus are not shown, these include, the erro
 - [Amazon Web Services](https://aws.amazon.com/) - was used to host the static files.
 
 ### Libraries
-
+- asgiref==3.5.2
+- boto3==1.26.7
+- botocore==1.29.7
+- coverage==6.5.0
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- Django==3.2
+- django-allauth==0.51.0
+- django-countries==7.2.1
+- django-crispy-forms==1.14.0
+- django-filter==22.1
+- django-storages==1.13.1
+- gunicorn==20.1.0
+- jmespath==1.0.1
+- oauthlib==3.2.1
+- Pillow==9.2.0
+- psycopg2==2.9.5
+- PyJWT==2.5.0
+- python3-openid==3.2.0
+- pytz==2022.4
+- requests-oauthlib==1.3.1
+- s3transfer==0.6.0
+- sqlparse==0.4.3
+- stripe==5.0.0
+- types-cryptography==3.3.23
 
 [Back to Table Of Content](#table-of-content)
 
@@ -796,31 +820,127 @@ Thw warnings from the qty-box.js are from teh if/else loops where teh code cycle
 <br>
 
 ### Python Validation
-I used the PEP8 Validation Service to validate the python code for the website.
+I used the PEP8 Validation Service from CI to validate the python code for the website.
 My code passed with no errors and warnings to show.
 
-<details><summary>Recipe App</summary>
-
+<details><summary>About App</summary>
 <details><summary>admin.py</summary>
-<img src="documentation/validation/python-admin.jpg">
+<img src="documentation/validation/python/about-admin.jpg">
 </details>
-
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/about-views.jpg">
 </details>
-
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/about-urls.jpg">
+</details>
+<details><summary>models.py</summary>
+<img src="documentation/validation/python/about-models.jpg">
+</details>
+</details>
+<br>
+<details><summary>Basket App</summary>
+<details><summary>context_processor.py</summary>
+<img src="documentation/validation/python/basket-context-processor.jpg">
+</details>
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/basket-views.jpg">
+</details>
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/basket-urls.jpg">
+</details>
+</details>
+<br>
+<details><summary>Checkout App</summary>
+<details><summary>admin.py</summary>
+<img src="documentation/validation/python/checkout-admin.jpg">
+</details>
+<details><summary>forms.py</summary>
+<img src="documentation/validation/python/checkout-forms.jpg">
+</details>
+<details><summary>models.py</summary>
+<img src="documentation/validation/python/checkout-models.jpg">
+</details>
+<details><summary>signals.py</summary>
+<img src="documentation/validation/python/checkout-signals.jpg">
+</details>
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/checkout-views.jpg">
+</details>
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/checkout-urls.jpg">
+</details>
+<details><summary>webhook_handler.py</summary>
+<img src="documentation/validation/python/checkout-webhook-handler.jpg">
+</details>
+<details><summary>webhooks.py</summary>
+<img src="documentation/validation/python/checkout-webhooks.jpg">
+</details>
+</details>
+<br>
+<details><summary>Contact App</summary>
+<details><summary>admin.py</summary>
+<img src="documentation/validation/python/contact-admin.jpg">
+</details>
+<details><summary>forms.py</summary>
+<img src="documentation/validation/python/contact-forms.jpg">
+</details>
+<details><summary>models.py</summary>
+<img src="documentation/validation/python/contact-models.jpg">
+</details>
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/contact-views.jpg">
+</details>
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/contact-urls.jpg">
+</details>
+</details>
+<br>
 <details><summary>Home App</summary>
-
-<details><summary>admin.py</summary>
-<img src="documentation/validation/python-admin.jpg">
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/home-urls.jpg">
 </details>
-
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/home-views.jpg">
 </details>
-
+</details>
+<br>
 <details><summary>Products App</summary>
-
 <details><summary>admin.py</summary>
-<img src="documentation/validation/python-admin.jpg">
+<img src="documentation/validation/python/products-admin.jpg">
 </details>
-
+<details><summary>context_processor.py</summary>
+<img src="documentation/validation/python/products-context-processor.jpg">
+</details>
+<details><summary>forms.py</summary>
+<img src="documentation/validation/python/products-forms.jpg">
+</details>
+<details><summary>models.py</summary>
+<img src="documentation/validation/python/products-models.jpg">
+</details>
+<details><summary>product_filters.py</summary>
+<img src="documentation/validation/python/products-product-filters.jpg">
+</details>
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/products-urls.jpg">
+</details>
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/products-views.jpg">
+</details>
+</details>
+<br>
+<details><summary>Users App</summary>
+<details><summary>urls.py</summary>
+<img src="documentation/validation/python/users-urls.jpg">
+</details>
+<details><summary>views.py</summary>
+<img src="documentation/validation/python/users-views.jpg">
+</details>
+<details><summary>forms.py</summary>
+<img src="documentation/validation/python/users-forms.jpg">
+</details>
+<details><summary>models.py</summary>
+<img src="documentation/validation/python/users-models.jpg">
+</details>
 </details>
 <br>
 
