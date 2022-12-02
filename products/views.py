@@ -97,11 +97,12 @@ class ProductDetail(View):
         queryset = Product.objects.all()
         product = get_object_or_404(queryset, pk=product_id)
         reviews = product.review.filter(approved=True).order_by("timestamp")
-        profile = get_object_or_404(UserAccount, user=request.user)
         number_of_reviews = reviews.count
         liked = False
-        if product.likes.filter(id=profile.id).exists():
-            liked = True
+        if request.user.is_authenticated:
+            profile = get_object_or_404(UserAccount, user=request.user)
+            if product.likes.filter(id=profile.id).exists():
+                liked = True
 
         context = {
             'product': product,
@@ -121,11 +122,11 @@ class ProductDetail(View):
         queryset = Product.objects.all()
         product = get_object_or_404(queryset, pk=product_id)
         reviews = product.review.filter(approved=True).order_by("timestamp")
-        profile = get_object_or_404(UserAccount, user=request.user)
-
         liked = False
-        if product.likes.filter(id=profile.id).exists():
-            liked = True
+        if request.user.is_authenticated:
+            profile = get_object_or_404(UserAccount, user=request.user)
+            if product.likes.filter(id=profile.id).exists():
+                liked = True
 
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
@@ -180,6 +181,8 @@ class ProductLike(View):
     Adds or removes the like from a product
     """
     def post(self, request, product_id, *args, **kwargs):
+        queryset = Product.objects.all()
+        product = get_object_or_404(queryset, pk=product_id)
         profile = get_object_or_404(UserAccount, user=request.user)
         if product.likes.filter(id=profile.id).exists():
             product.likes.remove(profile)

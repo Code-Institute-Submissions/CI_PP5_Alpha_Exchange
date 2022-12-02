@@ -301,120 +301,76 @@ The following models were created to represent the real database model structure
 
 ### Wireframes
 
-Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same
+Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same and the category pages where teh layout is the same but the information changes.
 
-<details><summary>Mobile Design</summary>
 <details><summary>Home page</summary>
-<img src="documentation/wireframes/home-page-mobile.png">
+<img src="documentation/wireframes/home-page.jpg">
 </details>
 <details><summary>All products</summary>
-<img src="documentation/wireframes/all-products-mobile.png">
+<img src="documentation/wireframes/all-products.jpg">
+</details>
+<details><summary>Search products</summary>
+<img src="documentation/wireframes/search-products.jpg">
 </details>
 <details><summary>Product details</summary>
-<img src="documentation/wireframes/product-details-mobile.png">
+<img src="documentation/wireframes/product-details.jpg">
 </details>
-<details><summary>Product categories</summary>
-<img src="documentation/wireframes/product-categories-mobile.png">
+<details><summary>Product categories list</summary>
+<img src="documentation/wireframes/product-categories.jpg">
 </details>
-<details><summary>Log in</summary>
-<img src="documentation/wireframes/log-in-mobile.png">
-</details>
-<details><summary>Log out</summary>
-<img src="documentation/wireframes/log-out-mobile.png">
-</details>
-<details><summary>Register</summary>
-<img src="documentation/wireframes/register-mobile.png">
-</details>
-<details><summary>Profile page</summary>
-<img src="documentation/wireframes/profile-page-mobile.png">
-</details>
-<details><summary>Basket</summary>
-<img src="documentation/wireframes/basket-mobile.png">
-</details>
-<details><summary>Contact us</summary>
-<img src="documentation/wireframes/contact-us-mobile.png">
-</details>
-<details><summary>About us</summary>
-<img src="documentation/wireframes/about-us-mobile.png">
-</details>
-<details><summary>Add products page</summary>
-<img src="documentation/wireframes/add-products-page-mobile.png">
-</details>
-<details><summary>Edit products page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
-</details>
-<details><summary>Delete products page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
-</details>
-<details><summary>Add categories page</summary>
-<img src="documentation/wireframes/add-products-page-mobile.png">
-</details>
-<details><summary>Edit categories page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
-</details>
-<details><summary>Delete categories page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
-</details>
-<details><summary>Error page</summary>
-<img src="documentation/wireframes/error-page-mobile.png">
-</details>
-</details>
-
-<details><summary>Desktop Design</summary>
-<details><summary>Home page</summary>
-<img src="documentation/wireframes/home-page.png">
-</details>
-<details><summary>All products</summary>
-<img src="documentation/wireframes/all-products.png">
-</details>
-<details><summary>Product details</summary>
-<img src="documentation/wireframes/product-details.png">
-</details>
-<details><summary>Product categories</summary>
-<img src="documentation/wireframes/product-categories.png">
+<details><summary>Category pages</summary>
+<img src="documentation/wireframes/category-page.jpg">
 </details>
 <details><summary>Log in</summary>
-<img src="documentation/wireframes/log-in.png">
+<img src="documentation/wireframes/log-in.jpg">
 </details>
 <details><summary>Log out</summary>
-<img src="documentation/wireframes/log-out.png">
+<img src="documentation/wireframes/log-out.jpg">
 </details>
 <details><summary>Register</summary>
-<img src="documentation/wireframes/register.png">
+<img src="documentation/wireframes/register.jpg">
 </details>
 <details><summary>Profile page</summary>
-<img src="documentation/wireframes/profile-page.png">
+<img src="documentation/wireframes/profile-page.jpg">
+</details>
+<details><summary>Order history</summary>
+<img src="documentation/wireframes/order-history.jpg">
 </details>
 <details><summary>Basket</summary>
-<img src="documentation/wireframes/basket.png">
+<img src="documentation/wireframes/basket.jpg">
+</details>
+<details><summary>Checkout</summary>
+<img src="documentation/wireframes/checkout.jpg">
+</details>
+<details><summary>Checkout success</summary>
+<img src="documentation/wireframes/checkout-success.jpg">
 </details>
 <details><summary>Contact us</summary>
-<img src="documentation/wireframes/contact-us.png">	
+<img src="documentation/wireframes/contact-us.jpg">
 </details>
 <details><summary>About us</summary>
-<img src="documentation/wireframes/about-us.png">
+<img src="documentation/wireframes/about-us.jpg">
 </details>
 <details><summary>Add products page</summary>
-<img src="documentation/wireframes/add-products-page-mobile.png">
+<img src="documentation/wireframes/add-product-page.jpg">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
+<img src="documentation/wireframes/edit-product-page.jpg">
 </details>
 <details><summary>Delete products page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
+<img src="documentation/wireframes/delete-product-page.jpg">
 </details>
 <details><summary>Add categories page</summary>
-<img src="documentation/wireframes/add-products-page-mobile.png">
+<img src="documentation/wireframes/add-categories-page.jpg">
 </details>
 <details><summary>Edit categories page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
+<img src="documentation/wireframes/edit-categories-page.jpg">
 </details>
 <details><summary>Delete categories page</summary>
-<img src="documentation/wireframes/edit-products-page-mobile.png">
+<img src="documentation/wireframes/delete-categories-page.jpg">
 </details>
 <details><summary>Error page</summary>
-<img src="documentation/wireframes/error-page.png">
-</details>
+<img src="documentation/wireframes/error-page.jpg">
 </details>
 <br>
 
