@@ -304,73 +304,73 @@ The following models were created to represent the real database model structure
 Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same and the category pages where teh layout is the same but the information changes.
 
 <details><summary>Home page</summary>
-<img src="documentation/wireframes/home-page.jpg">
+<img src="documentation/wireframes/home-page.png">
 </details>
 <details><summary>All products</summary>
-<img src="documentation/wireframes/all-products.jpg">
+<img src="documentation/wireframes/all-products.png">
 </details>
 <details><summary>Search products</summary>
-<img src="documentation/wireframes/search-products.jpg">
+<img src="documentation/wireframes/search-products.png">
 </details>
 <details><summary>Product details</summary>
-<img src="documentation/wireframes/product-details.jpg">
+<img src="documentation/wireframes/product-details.png">
 </details>
 <details><summary>Product categories list</summary>
-<img src="documentation/wireframes/product-categories.jpg">
+<img src="documentation/wireframes/product-categories.png">
 </details>
 <details><summary>Category pages</summary>
-<img src="documentation/wireframes/category-page.jpg">
+<img src="documentation/wireframes/category-page.png">
 </details>
 <details><summary>Log in</summary>
-<img src="documentation/wireframes/log-in.jpg">
+<img src="documentation/wireframes/log-in.png">
 </details>
 <details><summary>Log out</summary>
-<img src="documentation/wireframes/log-out.jpg">
+<img src="documentation/wireframes/log-out.png">
 </details>
 <details><summary>Register</summary>
-<img src="documentation/wireframes/register.jpg">
+<img src="documentation/wireframes/register.png">
 </details>
 <details><summary>Profile page</summary>
-<img src="documentation/wireframes/profile-page.jpg">
+<img src="documentation/wireframes/profile-page.png">
 </details>
 <details><summary>Order history</summary>
-<img src="documentation/wireframes/order-history.jpg">
+<img src="documentation/wireframes/order-history.png">
 </details>
 <details><summary>Basket</summary>
-<img src="documentation/wireframes/basket.jpg">
+<img src="documentation/wireframes/basket.png">
 </details>
 <details><summary>Checkout</summary>
-<img src="documentation/wireframes/checkout.jpg">
+<img src="documentation/wireframes/checkout.png">
 </details>
 <details><summary>Checkout success</summary>
-<img src="documentation/wireframes/checkout-success.jpg">
+<img src="documentation/wireframes/checkout-success.png">
 </details>
 <details><summary>Contact us</summary>
-<img src="documentation/wireframes/contact-us.jpg">
+<img src="documentation/wireframes/contact-us.png">
 </details>
 <details><summary>About us</summary>
-<img src="documentation/wireframes/about-us.jpg">
+<img src="documentation/wireframes/about-us.png">
 </details>
 <details><summary>Add products page</summary>
-<img src="documentation/wireframes/add-product-page.jpg">
+<img src="documentation/wireframes/add-product-page.png">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/wireframes/edit-product-page.jpg">
+<img src="documentation/wireframes/edit-product-page.png">
 </details>
 <details><summary>Delete products page</summary>
-<img src="documentation/wireframes/delete-product-page.jpg">
+<img src="documentation/wireframes/delete-product-page.png">
 </details>
 <details><summary>Add categories page</summary>
-<img src="documentation/wireframes/add-categories-page.jpg">
+<img src="documentation/wireframes/add-categories-page.png">
 </details>
 <details><summary>Edit categories page</summary>
-<img src="documentation/wireframes/edit-categories-page.jpg">
+<img src="documentation/wireframes/edit-categories-page.png">
 </details>
 <details><summary>Delete categories page</summary>
-<img src="documentation/wireframes/delete-categories-page.jpg">
+<img src="documentation/wireframes/delete-categories-page.png">
 </details>
 <details><summary>Error page</summary>
-<img src="documentation/wireframes/error-page.jpg">
+<img src="documentation/wireframes/error-page.png">
 </details>
 <br>
 
