@@ -130,6 +130,8 @@ the Facebook page can be viewed [here](https://www.facebook.com/profile.php?id=1
 #### Newsletter Sign up
 The website includes a sign up form to a newsletter so the business can keep in touch with anyone who want more information. I used [SendinBlue](https://www.sendinblue.com) to create a form and preform the automation required to reply with an email to the given address.
 
+SendInBlue was used to make this form over any other service as i already had an account and i ran into issues during sign-up with other services at the time, hopefully these will be resolved in due course. SendInBlue has added a large performance hit seen later in Googles Lighthouse reports where the Newsletter form has a significant amount of JS that needs to load.
+
 ![Sign-up](/documentation/misc/email-signup.jpg)
 
 ![Email-success](/documentation/misc/email-success.jpg)
