@@ -33,7 +33,7 @@
                     <p>Are you sure you want to delete {{ object.name }}?</p>
                     <p>
                         <input class="btn btn-light" type='submit' value='Yes'>
-                        <a class = "btn btn-light" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a>
+                        <button class = "btn btn-light" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</button>
                     </p>
                 </form>
             </div>

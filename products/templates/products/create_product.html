@@ -32,7 +32,7 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     <button class="btn btn-light ms-auto me-3" type="submit">Save</button>
-                    <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-light">Cancel</a>
+                    <button href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-light">Cancel</button>
                 </form>
             </div>
             {% if product %}

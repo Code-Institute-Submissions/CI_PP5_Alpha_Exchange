@@ -1029,11 +1029,17 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <details><summary>All products</summary>
 <img src="documentation/validation/lighthouse/all-products.jpg">
 </details>
+<details><summary>Search products</summary>
+<img src="documentation/validation/lighthouse/search-products.jpg">
+</details>
 <details><summary>Product details</summary>
 <img src="documentation/validation/lighthouse/product-details.jpg">
 </details>
-<details><summary>Product categories</summary>
+<details><summary>Product categories list</summary>
 <img src="documentation/validation/lighthouse/product-categories.jpg">
+</details>
+<details><summary>Category pages</summary>
+<img src="documentation/validation/lighthouse/category-page.jpg">
 </details>
 <details><summary>Log in</summary>
 <img src="documentation/validation/lighthouse/log-in.jpg">
@@ -1047,8 +1053,17 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <details><summary>Profile page</summary>
 <img src="documentation/validation/lighthouse/profile-page.jpg">
 </details>
+<details><summary>Order history</summary>
+<img src="documentation/validation/lighthouse/order-history.jpg">
+</details>
 <details><summary>Basket</summary>
 <img src="documentation/validation/lighthouse/basket.jpg">
+</details>
+<details><summary>Checkout</summary>
+<img src="documentation/validation/lighthouse/checkout.jpg">
+</details>
+<details><summary>Checkout success</summary>
+<img src="documentation/validation/lighthouse/checkout-success.jpg">
 </details>
 <details><summary>Contact us</summary>
 <img src="documentation/validation/lighthouse/contact-us.jpg">
@@ -1056,14 +1071,23 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <details><summary>About us</summary>
 <img src="documentation/validation/lighthouse/about-us.jpg">
 </details>
-<details><summary>Admin</summary>
-<img src="documentation/validation/lighthouse/admin.jpg">
-</details>
 <details><summary>Add products page</summary>
-<img src="documentation/validation/lighthouse/add-products-page.jpg">
+<img src="documentation/validation/lighthouse/add-product-page.jpg">
 </details>
 <details><summary>Edit products page</summary>
-<img src="documentation/validation/lighthouse/edit-products-page.jpg">
+<img src="documentation/validation/lighthouse/edit-product-page.jpg">
+</details>
+<details><summary>Delete products page</summary>
+<img src="documentation/validation/lighthouse/delete-product-page.jpg">
+</details>
+<details><summary>Add categories page</summary>
+<img src="documentation/validation/lighthouse/add-categories-page.jpg">
+</details>
+<details><summary>Edit categories page</summary>
+<img src="documentation/validation/lighthouse/edit-categories-page.jpg">
+</details>
+<details><summary>Delete categories page</summary>
+<img src="documentation/validation/lighthouse/delete-categories-page.jpg">
 </details>
 <details><summary>Error page</summary>
 <img src="documentation/validation/lighthouse/error-page.jpg">

@@ -24,7 +24,7 @@
                     <br>
                     <div class="d-flex">
                         <button class="btn btn-light m-0" type="submit">Send message</button>
-                        <a class ="btn btn-light mx-auto" href="{{request.META.HTTP_REFERER|escape}}">Cancel</a>
+                        <button class ="btn btn-light mx-auto" href="{{request.META.HTTP_REFERER|escape}}">Cancel</button>
                         <!-- Link to shopping pages -->
                         <a href="{% url 'all_products' %}" class="btn btn-light m-0">Back to Shop</a>
                     </div>

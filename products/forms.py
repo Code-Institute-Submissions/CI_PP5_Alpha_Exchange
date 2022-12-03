@@ -38,13 +38,14 @@ class ProductModelForm(forms.ModelForm):
             'price': '£ - price',
             'rating': 'Product rating',
             'recommended_use': 'Recommended Use',
+            'image': 'Image',
         }
 
         # set the placeholders, autofocus and style class
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             exempt_placeholders = [
-                "has_sizes", "featured", "category", "image"]
+                "has_sizes", "featured", "category"]
             if field not in exempt_placeholders:
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
@@ -73,12 +74,13 @@ class CategoryModelForm(forms.ModelForm):
         placeholders = {
             'name': 'Category name',
             'friendly_name': 'Friendly Name',
+            'image': 'Image'
         }
 
         # set the placeholders, autofocus and style class
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'image':
+            if field:
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:

@@ -33,7 +33,7 @@
                     {{ form | crispy }}
                     <div class = "mt-3 d-flex w-100 justify-content-center">
                         <input class = "btn btn-light me-3" type='submit' value='Save'>
-                        <a class = "btn btn-light" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a>
+                        <button class = "btn btn-light" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</button>
                     </div>  
                 </form>
             </div>
