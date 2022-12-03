@@ -47,7 +47,11 @@
                                 <img class="cust-img p-0" width="600" height="800" src="{{ category.image.url }}" alt="{{ category.name }}">
                             </a>
                         {% else %}
-                            <img class="cust-img" width="600" height="800" src="/media/noimage.webp" alt="{{ category.name }}">
+                            <div class="d-flex text-center flex-fill">
+                                <div class="d-flex align-self-center mx-auto">
+                                    <p>AWAITING IMAGE</p>
+                                </div>
+                            </div>
                         {% endif %}
                     </div>
                 </div>

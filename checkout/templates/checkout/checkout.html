@@ -92,7 +92,11 @@
                                 {% if item.product.image %}
                                     <img class="w-100 rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
-                                    <img class="w-100 rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    <div class="d-flex text-center flex-fill">
+                                        <div class="d-flex align-self-center mx-auto">
+                                            <p>AWAITING IMAGE</p>
+                                        </div>
+                                    </div>
                                 {% endif %}
                             </a>
                         </div>
