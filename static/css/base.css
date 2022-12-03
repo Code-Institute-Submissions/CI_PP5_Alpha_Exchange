@@ -41,6 +41,7 @@ main {
     flex-grow: 1;
 }
 .home-image {
+    background-image: url('/static/img/shopping-cart.webp');
     background-size: cover;
     min-width: -webkit-fill-available;
     height: calc(100vh - 246px);
