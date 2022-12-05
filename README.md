@@ -226,11 +226,11 @@ In addition to these apps there are a number of files and directories used at th
 
 - Settings - The settings file is stored in the project directory so that any items that rely upon specific settings can be updated from one place instead of each app.
 
-- static and media - there are a number of files stored at the base level, including the base CSS for the website, this contains most the code that is needed across the whole site or multiple apps, we also put some JS files in base folder so these will be available to all pages. We also have a number of media files that can be found at the root, these are best served from the root directory so that all pages can access teh information it needs.
+- static and media - there are a number of files stored at the base level, including the base CSS for the website, this contains most the code that is needed across the whole site or multiple apps, we also put some JS files in base folder so these will be available to all pages. We also have a number of media files that can be found at the root, these are best served from the root directory so that all pages can access the information it needs.
 
 - Procfile - This is the file that will launch the website when using Heroku.
 
-- Requirements - The requirements.txt file stores all teh information about the packages needed for the website to function correctly.
+- Requirements - The requirements.txt file stores all the information about the packages needed for the website to function correctly.
 
 The Pages are structured in a Regularly used, user friendly and well-known format. This makes each page easy to navigate, coupled with a responsive navbar and footer this gives the user many options for navigating around the website.
 
@@ -277,7 +277,7 @@ The following models were created to represent the real database model structure
 
 ### OrderLineItem
 - The OrderLineItem Model is used to calculate the details of each item on the order.
-- The OrderLineItem Model calculates teh number of items on an order, by size and quantity, then passing the details to the order model to update the total price.
+- The OrderLineItem Model calculates the number of items on an order, by size and quantity, then passing the details to the order model to update the total price.
 
 ### Contact
 - The Contact model is used to store messages from visitors to the website.
@@ -303,7 +303,7 @@ The following models were created to represent the real database model structure
 
 ### Wireframes
 
-Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same and the category pages where teh layout is the same but the information changes.
+Some pages share the same design and thus are not shown, these include, the error pages where only the message changes, the product pages where the visible products change but the layout is the same and the category pages where the layout is the same but the information changes.
 
 <details><summary>Home page</summary>
 <img src="documentation/wireframes/home-page.png">
@@ -796,7 +796,7 @@ All files with no errors.
 
 The warnings from the stripe.js toasts.js and sendinblue.js are caused by unused variables however these are called from outside of the script, on the html and so this is not an issue.
 
-Thw warnings from the qty-box.js are from teh if/else loops where teh code cycles and finds teh values already defined, this is nto a problem as it will overwrite any previous values and during testing this preformed well.
+Thw warnings from the qty-box.js are from the if/else loops where the code cycles and finds the values already defined, this is nto a problem as it will overwrite any previous values and during testing this preformed well.
 
 <details><summary>Theme Switch</summary>
 <img src="documentation/validation/js/theme.jpg">
@@ -1024,7 +1024,7 @@ I also ran the website through both color themes to make sure there were no conf
 <br>
 
 ### Performance
-Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. 
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. As previously mentioned, the SendInBlue Newsletter sign-up JS is slowing down the page loading significantly and effecting the performance score.
 <details><summary>Home page</summary>
 <img src="documentation/validation/lighthouse/home-page.jpg">
 </details>
@@ -1091,9 +1091,6 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <details><summary>Delete categories page</summary>
 <img src="documentation/validation/lighthouse/delete-categories-page.jpg">
 </details>
-<details><summary>Error page</summary>
-<img src="documentation/validation/lighthouse/error-page.jpg">
-</details>
 <br>
 
 ### Device Testing
@@ -1115,12 +1112,18 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Navbar / Dropdown Menu | Use the Navbar to navigate to the contact us page | The contact us page loads correctly and the user can fill in the form | Works As Expected |
+| Navbar / Dropdown Menu | Use the Navbar to navigate to another page | The page selected from the Navbar loads | Works As Expected |
 | Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 | Error Pages | Edit the website URL from any page to form an invalid URL. On the error page use the built in navigation to navigate back to the main website. | The user is redirected to a custom error page and is able to navigate on their own back to the main website. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-1.jpg">
+<details><summary>Navbar / Dropdown Menu</summary>
+<img src="documentation/user-story-testing/user-story-1-1.jpg">
+</details>
+<details><summary>Product Search</summary>
+<img src="documentation/user-story-testing/user-story-1-2.jpg">
+</details>
+<details><summary>Error Pages</summary>
+<img src="documentation/user-story-testing/user-story-1-3.jpg">
 </details>
 <br>
 
@@ -1128,9 +1131,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| User Registration | Fill out the User Registration form to create an account | A user account is created for the user and redirected to the profile page | Works As Expected |
+| User Registration | Fill out the User Registration form to create an account | A user account is created for the user and they are sent an email to verify their email, after this they are redirected to the sign in page. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>User Registration</summary>
 <img src="documentation/user-story-testing/user-story-2.jpg">
 </details>
 <br>
@@ -1143,8 +1146,14 @@ The website was tested on the following browsers in both regular and incognito m
 | Product Details | From any product page or category page select a product on the store | The user is redirected to the product details page | Works As Expected |
 | Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>All Products</summary>
+<img src="documentation/user-story-testing/user-story-1-1.jpg">
+</details>
+<details><summary>Product Details</summary>
 <img src="documentation/user-story-testing/user-story-3.jpg">
+</details>
+<details><summary>Product Search</summary>
+<img src="documentation/user-story-testing/user-story-1-2.jpg">
 </details>
 <br>
 
@@ -1154,7 +1163,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Footer | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Footer</summary>
 <img src="documentation/user-story-testing/user-story-4.jpg">
 </details>
 <br>
@@ -1167,8 +1176,14 @@ The website was tested on the following browsers in both regular and incognito m
 | All Products | From any page of the website use the link in the header to navigate to the products page | The user is taken to the all products page | Works As Expected |
 | Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Categories</summary>
 <img src="documentation/user-story-testing/user-story-5.jpg">
+</details>
+<details><summary>All Products</summary>
+<img src="documentation/user-story-testing/user-story-1-1.jpg">
+</details>
+<details><summary>Product Search</summary>
+<img src="documentation/user-story-testing/user-story-1-2.jpg">
 </details>
 <br>
 
@@ -1181,8 +1196,17 @@ The website was tested on the following browsers in both regular and incognito m
 | Page Ordering | From any page containing a list of products use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
 | Product Search | Use the search bar within the header to search for the name, recommended use or a keyword of a product | The user is redirected to a page with the search results | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Categories</summary>
+<img src="documentation/user-story-testing/user-story-5.jpg">
+</details>
+<details><summary>All Products</summary>
+<img src="documentation/user-story-testing/user-story-1-1.jpg">
+</details>
+<details><summary>Page Ordering</summary>
 <img src="documentation/user-story-testing/user-story-6.jpg">
+</details>
+<details><summary>Product Search</summary>
+<img src="documentation/user-story-testing/user-story-1-2.jpg">
 </details>
 <br>
 
@@ -1194,7 +1218,13 @@ The website was tested on the following browsers in both regular and incognito m
 | Page Ordering | From any page containing a list of products use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
 | Product Search | From the search results page use the dropdown box to change how the page is ordered. | The products on the page are re-ordered by the new selection | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>All Products</summary>
+<img src="documentation/user-story-testing/user-story-6.jpg">
+</details>
+<details><summary>Page Ordering</summary>
+<img src="documentation/user-story-testing/user-story-6.jpg">
+</details>
+<details><summary>Product Search</summary>
 <img src="documentation/user-story-testing/user-story-7.jpg">
 </details>
 <br>
@@ -1205,8 +1235,8 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Product Details | From any page containing a list of products select a product to view | The user is redirected to a product details page containing all the product information | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-8.jpg">
+<details><summary>Product Details</summary>
+<img src="documentation/user-story-testing/user-story-3.jpg">
 </details>
 <br>
 
@@ -1217,8 +1247,11 @@ The website was tested on the following browsers in both regular and incognito m
 | Shopping Basket | From any page containing a list of products hover over any item you want to purchase and select the "Add To Basket" button | The item is added to the basket | Works As Expected |
 | Shopping Basket | From the products detail page select the "Add To Basket" button | The item is added to the basket | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-9.jpg">
+<details><summary>Shopping Basket 1</summary>
+<img src="documentation/user-story-testing/user-story-9-1.jpg">
+</details>
+<details><summary>Shopping Basket 2</summary>
+<img src="documentation/user-story-testing/user-story-9-2.jpg">
 </details>
 <br>
 
@@ -1228,7 +1261,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Shopping Basket | From any page, select the basket icon on the navbar to navigate to the shopping basket page | View the items in the shopping basket. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Shopping Basket</summary>
 <img src="documentation/user-story-testing/user-story-10.jpg">
 </details>
 <br>
@@ -1237,9 +1270,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Shopping Basket | From any page, select the basket icon on the navbar to navigate to the shopping basket page and select the increase or decrease buttons next to the product. | The quantity of the product in the basket is adjusted. | Works As Expected |
+| Shopping Basket | From any page, select the basket icon on the navbar to navigate to the shopping basket page and select the increase or decrease buttons next to the product then click the update to confirm the new quantity. | The quantity of the product in the basket is adjusted. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Shopping Basket</summary>
 <img src="documentation/user-story-testing/user-story-11.jpg">
 </details>
 <br>
@@ -1251,8 +1284,11 @@ The website was tested on the following browsers in both regular and incognito m
 | Shopping Basket | From the Shopping basket page, once the user is happy with their order, select the checkout option and filling their details | The user is redirected to the checkout page where they can fill out the checkout details and purchase their products. | Works As Expected |
 | Stripe Checkout | On the checkout page the user should fill out their details to finish the purchase of the items in the current basket | The user purchases the items they placed into the basket | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-12.jpg">
+<details><summary>Shopping Basket</summary>
+<img src="documentation/user-story-testing/user-story-12-1.jpg">
+</details>
+<details><summary>Stripe Checkout</summary>
+<img src="documentation/user-story-testing/user-story-12-2.jpg">
 </details>
 <br>
 
@@ -1262,7 +1298,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | User Login | From any page of the website use the login link within the accounts section on the navbar and fill out the login form. | The user is redirected to the login page and once the form is filled out they are logged into the website. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>User Login</summary>
 <img src="documentation/user-story-testing/user-story-13.jpg">
 </details>
 <br>
@@ -1271,10 +1307,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Footer | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
-| Contact Us | From any page on the website, use the navbar to navigate to the contact us page | The user is presented with a form to fill out that emails the admin team with their issues | Works As Expected |
+| Contact Us | From any page on the website, scroll to the bottom of the page, locate the contact us section | The user is presented with a form to fill out that sends the admin team a message with their issues | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Contact Us</summary>
 <img src="documentation/user-story-testing/user-story-14.jpg">
 </details>
 <br>
@@ -1284,10 +1319,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Footer | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
 | Newsletter E-mail List | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Newsletter E-mail List</summary>
 <img src="documentation/user-story-testing/user-story-15.jpg">
 </details>
 <br>
@@ -1297,10 +1331,13 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Stripe Checkout | When a user makes an order there is a checkbox to save the information for the next time, if this box is checked the details currently filled out will be saved to the user profile and appear on the profile page. | the details filled out on the checkout page appear on the profile page  | Works As Expected |
-| Profile Page | From the profile page, update the form with the new personal information and click the update button | the form saves and the page reloads with the new information saved in the database and displayed in teh form | Works As Expected |
+| Profile Page | From the profile page, update the form with the new personal information and click the update button | the form saves and the page reloads with the new information saved in the database and displayed in the form | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-16.jpg">
+<details><summary>Stripe Checkout</summary>
+<img src="documentation/user-story-testing/user-story-16-1.jpg">
+</details>
+<details><summary>Profile Page</summary>
+<img src="documentation/user-story-testing/user-story-16-2.jpg">
 </details>
 <br>
 
@@ -1311,8 +1348,11 @@ The website was tested on the following browsers in both regular and incognito m
 | Profile Page | From any page use the profile page link within the accounts section on the navbar to navigate to the profile page | On the profile page see a list of previous orders and the products ont he orders | Works As Expected |
 | Order History | On the profile page locate the order history, click on an order to open up a detailed view of the items, quantity and more information relating to the order. | The user is redirected to a new page with detailed information relating to the the order selected. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-17.jpg">
+<details><summary>Profile Page</summary>
+<img src="documentation/user-story-testing/user-story-17-1.jpg">
+</details>
+<details><summary>Order History</summary>
+<img src="documentation/user-story-testing/user-story-17-2.jpg">
 </details>
 <br>
 
@@ -1321,11 +1361,17 @@ The website was tested on the following browsers in both regular and incognito m
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Create Product | When logged in as website staff, use the accounts section on the navbar to navigate to the create a product page, from here fill out the details for the new product. | When the staff member clicks the link to create a new product the staff member is redirected to a new page with a form for creating products, once the form is filled out and submitted a new product is created | Works As Expected |
-| Edit Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to edit the product | the staff member is redirected to the edit product page where there is a form pre-populated with the current information for the staff member to update and resubmit | Works As Expected |
-| Delete Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to delete the product | The selected product is deleted from the database. | Works As Expected |
+| Edit Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to edit the product | The staff member is redirected to the edit product page where there is a form pre-populated with the current information for the staff member to update and resubmit | Works As Expected |
+| Delete Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to delete the product | The staff member is redirected to a page confirming if they want to deleted the product, when confirmed, the selected product is deleted from the database. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-18.jpg">
+<details><summary>Create Product</summary>
+<img src="documentation/user-story-testing/user-story-18-1.jpg">
+</details>
+<details><summary>Edit Product</summary>
+<img src="documentation/user-story-testing/user-story-18-2.jpg">
+</details>
+<details><summary>Delete Product</summary>
+<img src="documentation/user-story-testing/user-story-18-3.jpg">
 </details>
 <br>
 
@@ -1337,8 +1383,14 @@ The website was tested on the following browsers in both regular and incognito m
 | Edit Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to edit the product | the staff member is redirected to the edit product page where there is a form pre-populated with the current information for the staff member to update and resubmit | Works As Expected |
 | Delete Product | When signed in as a staff member and from any page containing a list of products select the link underneath any product to delete the product | The selected product is deleted from the database. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-19.jpg">
+<details><summary>Create Product</summary>
+<img src="documentation/user-story-testing/user-story-18-1.jpg">
+</details>
+<details><summary>Edit Product</summary>
+<img src="documentation/user-story-testing/user-story-18-2.jpg">
+</details>
+<details><summary>Delete Product</summary>
+<img src="documentation/user-story-testing/user-story-18-3.jpg">
 </details>
 <br>
 
@@ -1346,9 +1398,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here edit the details of the pre-populated with the current information for the staff member to update and resubmit. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, once the form is filled out and submitted the category selected is updated | Works As Expected |
+| Category Management | When logged in as website staff, use the Navbar to go to the categories page and select the edit button underneath the category to edit. | When the staff member clicks the edit link the staff member is redirected to a new page with a form for editing the current category, once the form is filled out and submitted the category selected is updated | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Category Management</summary>
 <img src="documentation/user-story-testing/user-story-20.jpg">
 </details>
 <br>
@@ -1359,7 +1411,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here you can choose to add a new category, fill out the form and select submit. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for creating categories, once the form is filled out and submitted the category selected is created | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Category Management</summary>
 <img src="documentation/user-story-testing/user-story-21.jpg">
 </details>
 <br>
@@ -1368,9 +1420,9 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here select the deleted category button. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, When the staff member clicks the delete category button teh staff member will be returned to the category management page and the category deleted. | Works As Expected |
+| Category Management | When logged in as website staff, use the accounts section on the navbar to navigate to the category management page, from here select the deleted category button. | When the staff member clicks the link to the category management page the staff member is redirected to a new page with a form for editing the current categories, When the staff member clicks the delete category button the staff member will be returned to the category management page and the category deleted. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Category Management</summary>
 <img src="documentation/user-story-testing/user-story-22.jpg">
 </details>
 <br>
@@ -1381,7 +1433,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Categories | From any page use the navbar to locate the categories page or the individual categories and select a category to go to. | The current user is taken to the category of choice. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Categories</summary>
 <img src="documentation/user-story-testing/user-story-23.jpg">
 </details>
 <br>
@@ -1393,8 +1445,11 @@ The website was tested on the following browsers in both regular and incognito m
 | Navbar / Dropdown Menu | Using google chrome, open the Developer tools and enable the device toolbar, to resize the window to smaller sizes | The Header is appropriately sized across all sizes of devices. | Works As Expected |
 | Footer | Using google chrome, open the Developer tools and enable the device toolbar, to resize the window to smaller sizes | The Footer is appropriately sized across all sizes of devices. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-24.jpg">
+<details><summary>Navbar / Dropdown Menu</summary>
+<img src="documentation/user-story-testing/user-story-24-1.jpg">
+</details>
+<details><summary>Footer</summary>
+<img src="documentation/user-story-testing/user-story-24-2.jpg">
 </details>
 <br>
 
@@ -1404,8 +1459,8 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Error Pages | From any page, edit the URL to form a invalid URL path within the domain. | The custom error page loads as appropriate. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-25.jpg">
+<details><summary>Error Pages</summary>
+<img src="documentation/user-story-testing/user-story-1-3.jpg">
 </details>
 <br>
 
@@ -1417,8 +1472,14 @@ The website was tested on the following browsers in both regular and incognito m
 | Categories | From any page use the navbar to locate the categories page or the individual categories and select a category to go to. | The current user is taken to the category of choice. | Works As Expected |
 | Error Pages | Edit the website URL from any page to form an invalid URL. On the error page use the built in navigation to navigate back to the main website. | The user is redirected to a custom error page and is able to navigate on their own back to the main website. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-26.jpg">
+<details><summary>Navbar / Dropdown Menu</summary>
+<img src="documentation/user-story-testing/user-story-1-1.jpg">
+</details>
+<details><summary>Categories</summary>
+<img src="documentation/user-story-testing/user-story-5.jpg">
+</details>
+<details><summary>Error Pages</summary>
+<img src="documentation/user-story-testing/user-story-1-3.jpg">
 </details>
 <br>
 
@@ -1426,11 +1487,10 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Footer | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
 | Newsletter E-mail List | From any page on the website, scroll to the bottom of the page, locate the newsletter sign up section. | The user is signed up for the email marketing and newsletters. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-27.jpg">
+<details><summary>Newsletter E-mail List</summary>
+<img src="documentation/user-story-testing/user-story-15.jpg">
 </details>
 <br>
 
@@ -1440,8 +1500,8 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Footer | From any page on the website, scroll to the bottom of the page, locate and use the social media handle within the website footer | The user is redirected to the website social media page, opening in a new tab. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-28.jpg">
+<details><summary>Footer</summary>
+<img src="documentation/user-story-testing/user-story-4.jpg">
 </details>
 <br>
 
@@ -1449,11 +1509,14 @@ The website was tested on the following browsers in both regular and incognito m
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Stripe Checkout | When a user finishes placing an order and all the details are correct a message will appear. | A message telling the user weather the order was placed successfully or not will appear when the user finishes placing teh order. | Works As Expected |
+| Stripe Checkout | When a user finishes placing an order and all the details are correct a message will appear. | A message telling the user weather the order was placed successfully or not will appear when the user finishes placing the order. | Works As Expected |
 | Message Popups | When a user finishes placing an order and all the details are correct a message will appear. | A message telling the user weather the order was placed successfully or not will appear when the user finishes placing the order. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-29.jpg">
+<details><summary>Stripe Checkout</summary>
+<img src="documentation/user-story-testing/user-story-29-1.jpg">
+</details>
+<details><summary>Message Popups</summary>
+<img src="documentation/user-story-testing/user-story-29-2.jpg">
 </details>
 <br>
 
@@ -1463,7 +1526,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Message Popups | When a user performs an action(placing an order, updating products, adding items to the cart) a message will appear to confirm weather it was successful or not. | A message telling the user weather the action was successful or not will appear when the user performs a task. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>Message Popups</summary>
 <img src="documentation/user-story-testing/user-story-30.jpg">
 </details>
 <br>
@@ -1474,8 +1537,8 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | Error Pages | Edit the website URL from any page to form an invalid URL. On the error page use the built in navigation to navigate back to the main website. | The user is redirected to a custom error page and is able to navigate on their own back to the main website. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
-<img src="documentation/user-story-testing/user-story-31.jpg">
+<details><summary>Error Pages</summary>
+<img src="documentation/user-story-testing/user-story-1-3.jpg">
 </details>
 <br>
 
@@ -1485,7 +1548,7 @@ The website was tested on the following browsers in both regular and incognito m
 |-------------|------------|---------------------|-------------------|
 | About Us | From any page on the website, scroll to the bottom of the page, locate the about us link within the footer | The user is redirected to a new page with a brief description about the business and to find out more is directed towards the social media handle, there is also a FAQ section to answer commonly asked questions. | Works As Expected |
 |  |  |  |  |
-<details><summary>Screenshots</summary>
+<details><summary>About Us</summary>
 <img src="documentation/user-story-testing/user-story-32.jpg">
 </details>
 <br>
