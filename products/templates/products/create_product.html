@@ -27,7 +27,7 @@
     <div class="col">
         <div class="row d-flex justify-content-around">
             <div class="col-12 col-lg-6 mb-5">
-                <form method="POST" class="p-1" enctype='multipart/form-data'>
+                <form method='POST' class="p-1" enctype='multipart/form-data'>
                     <!-- Product form -->
                     {% csrf_token %}
                     {{ form | crispy }}

@@ -1559,18 +1559,14 @@ As part of this project I have produced some automated tests Django's testing fr
 
 I have demonstrated some proficiency in using these tests but the code does not have full coverage due to time constraints. If there are future releases I could endeavor to increase the number of tests and coverage of the code.
 
-#### Home
+#### About
+1. Test if the About page loads
+2. Test is we can create a new Faq.
 
-- Testing Views
+#### Contact
+1. Test if the Contact page loads
+2. Test is we can create a new Faq.
 
-1. Test home page loads
-2. Test 404 returned if url error
-
-#### Products
-
-- Testing Models
-
-1. Test str method
 
 <br>![Auto test results](documentation/automated-testing/results.jpg)
 
