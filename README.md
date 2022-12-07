@@ -1567,6 +1567,36 @@ I have demonstrated some proficiency in using these tests but the code does not 
 1. Test if the Contact page loads
 2. Test is we can create a new Faq.
 
+#### Products
+1. Test if the Product Detail page loads
+2. Test if the Product List loads
+3. Test if the Search Results page loads with no search query
+4. Test if the Search Results page loads with a search query
+5. Test is the Categories Page loads
+6. Test if the Category Page loads
+7. Test if the Create Product Page loads with admin user
+8. Test if the Create Product Page loads without admin user
+9. Test if the Update Product Page loads with admin user
+10. Test if the Update Product Page loads without admin user
+11. Test if the Delete Product Page loads with admin user
+12. Test if the Delete Product Page loads without admin user
+13. Test if the Create Category Page loads with admin user
+14. Test if the Create Category Page loads without admin user
+15. Test if the Update Category Page loads with admin user
+16. Test if the Update Category Page loads without admin user
+17. Test if the Delete Category Page loads with admin user
+18. Test if the Delete Category Page loads without admin user
+
+#### Basket
+1. Test if the empty basket page will load
+2. Test adding an item with no size, followed by a second item
+3. Test adding an item with size, followed by an item of the same size and another of different size.
+4. Tests adjusting the quantity of an item in the basket from 2 down to 1 then again to 0 without a size
+5. Tests adjusting the quantity of an item in the basket from 2 down to 1 then again to 0 with a size
+6. Tests removing an item from the basket with size
+7. Tests removing an item from the basket without size
+8. Test removing an item that was removed from the website
+
 
 <br>![Auto test results](documentation/automated-testing/results.jpg)
 

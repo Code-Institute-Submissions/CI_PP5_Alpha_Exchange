@@ -91,7 +91,7 @@ class TestProductsClassView(TestCase):
             'You did not enter any search criteria'
             )
 
-    def test_with_search__query(self):
+    def test_with_search_query(self):
         """
         This tests weather the search bar responds with a search query
         """
@@ -142,21 +142,6 @@ class TestProductsClassView(TestCase):
         response = self.client.get('/products/create_product/')
         self.assertRedirects(
             response, '/accounts/login', target_status_code=301)
-
-    def test_product_create_invalid_input(self):
-        """
-        Tests creating product as admin
-        """
-        cat = Category.objects.get(name='test_category')
-        self.client.login(username='test_super', password='password_super')
-        response = self.client.post('/products/create_product/', data={
-            'category': cat,
-            'name': 'test_product2',
-            'description': 'test_description',
-            'price': '100',
-            'recommended_use': 'test',
-        })
-        self.assertIsInstance(response.context['form'], ProductModelForm)
 
     def test_product_update_no_admin(self):
         """
@@ -259,4 +244,3 @@ class TestProductsClassView(TestCase):
         self.assertTemplateUsed(response, template_name='base.html')
         self.assertTemplateUsed(
             response, template_name='products/delete_object.html')
-
