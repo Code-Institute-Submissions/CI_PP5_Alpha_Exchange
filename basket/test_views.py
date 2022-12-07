@@ -7,7 +7,7 @@ from products.models import Product, Category
 from django.contrib.messages import get_messages
 
 
-class TestBastViews(TestCase):
+class TestBasketViews(TestCase):
     """
     A Class for testing the basket views
     """
