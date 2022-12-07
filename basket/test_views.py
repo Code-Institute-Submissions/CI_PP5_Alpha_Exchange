@@ -50,6 +50,7 @@ class TestBasketViews(TestCase):
         Tear down the setup environment
         """
         Product.objects.all().delete()
+        Category.objects.all().delete()
 
     def test_basket_page(self):
         """

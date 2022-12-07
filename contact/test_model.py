@@ -34,6 +34,7 @@ class TestContactModel(TestCase):
         Tear down the setup environment
         """
         Contact.objects.all().delete()
+        User.objects.all().delete()
 
     def test_course_str_method(self):
         """

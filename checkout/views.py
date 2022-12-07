@@ -77,7 +77,7 @@ def checkout(request):
             order.save()
 
             for item_id, item_data in basket.items():
-                # try add the products to the bag by size if exists
+                # try add the products to the basket by size if exists
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -119,7 +119,7 @@ def checkout(request):
         if not basket:
             messages.error(
                 request, "There's nothing in your basket at the moment")
-            return redirect(reverse('products'))
+            return redirect(reverse('all_products'))
 
         current_basket = basket_contents(request)
         total = current_basket['grand_total']

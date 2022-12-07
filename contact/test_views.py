@@ -17,6 +17,12 @@ class TestContactViews(TestCase):
             email='test@email.com'
         )
 
+    def tearDown(self):
+        """
+        Tear down the setup environment
+        """
+        User.objects.all().delete()
+
     def test_contact_page(self):
         """
         Test the Contact page loading

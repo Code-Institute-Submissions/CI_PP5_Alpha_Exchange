@@ -34,7 +34,6 @@ class TestProductsClassView(TestCase):
             friendly_name='test category',
             image=tempfile.NamedTemporaryFile(suffix=".jpg").name
         )
-
         product = Product.objects.create(
             name='test_product',
             category=cat,
@@ -53,6 +52,8 @@ class TestProductsClassView(TestCase):
         Tear down the setup environment
         """
         Product.objects.all().delete()
+        User.objects.all().delete()
+        Category.objects.all().delete()
 
     def test_product_detail(self):
         """
