@@ -1557,7 +1557,7 @@ The website was tested on the following browsers in both regular and incognito m
 
 As part of this project I have produced some automated tests Django's testing framework which is based on python unittest.
 
-I have demonstrated some proficiency in using these tests but the code does not have full coverage due to time constraints. If there are future releases I could endeavor to increase the number of tests and coverage of the code.
+I have demonstrated some proficiency in using these tests but the code does not have full coverage due to the complex nature of some parts of the website. If there are future releases I could endeavor to increase the number of tests and coverage of the code.
 
 #### About
 1. Test if the About page loads
@@ -1565,7 +1565,11 @@ I have demonstrated some proficiency in using these tests but the code does not 
 
 #### Contact
 1. Test if the Contact page loads
-2. Test is we can create a new Faq.
+2. Test the contact form posts
+3. Test if we can create contact models
+
+#### Home
+1. Test if the Home page loads
 
 #### Products
 1. Test if the Product Detail page loads
@@ -1586,6 +1590,9 @@ I have demonstrated some proficiency in using these tests but the code does not 
 16. Test if the Update Category Page loads without admin user
 17. Test if the Delete Category Page loads with admin user
 18. Test if the Delete Category Page loads without admin user
+19. Test load all products page then navigate to page two
+20. Test load all products page every different way
+21. Test load search results products page every different way
 
 #### Basket
 1. Test if the empty basket page will load
@@ -1597,6 +1604,14 @@ I have demonstrated some proficiency in using these tests but the code does not 
 7. Tests removing an item from the basket without size
 8. Test removing an item that was removed from the website
 
+#### Checkout
+1. Test the checkout returning a user to the store if the basket is empty
+2. Test creating an anonymous order through the checkout
+3. Test the order details form validation
+
+#### Users
+1. Test profile page loading
+2. test profile page form post
 
 <br>![Auto test results](documentation/automated-testing/results.jpg)
 
@@ -1609,7 +1624,6 @@ To show code coverage a python test plugin called coverage was used to generate 
 <details><summary>Images</summary>
 <img src="documentation/automated-testing/coverage1.jpg"><br>
 <img src="documentation/automated-testing/coverage2.jpg"><br>
-<img src="documentation/automated-testing/coverage3.jpg">
 </details>
 
 [Back to Table Of Content](#table-of-content)

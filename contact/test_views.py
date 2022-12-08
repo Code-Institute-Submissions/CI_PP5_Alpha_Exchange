@@ -2,27 +2,13 @@
 A module to test the Views for the contact app
 """
 from django.test import TestCase
-from django.contrib.auth.models import User
-from contact.models import Contact
+from django.contrib.messages import get_messages
 
 
 class TestContactViews(TestCase):
     """
     A Class to test the Contact page view
     """
-    def setUp(self):
-        User.objects.create_user(
-            username='test',
-            password='password',
-            email='test@email.com'
-        )
-
-    def tearDown(self):
-        """
-        Tear down the setup environment
-        """
-        User.objects.all().delete()
-
     def test_contact_page(self):
         """
         Test the Contact page loading
@@ -35,11 +21,9 @@ class TestContactViews(TestCase):
         """
         Test the form filled out as a user and post
         """
-        contact = User.objects.get(username='test')
-
         response = self.client.post("/contact/", data={
-            'name': contact.username,
-            'email': contact.email,
+            'name': 'Test Name',
+            'email': 'test@email.com',
             'phone_number': '01234567890',
             'street_address1': '123 street',
             'street_address2': '',
@@ -49,3 +33,7 @@ class TestContactViews(TestCase):
             'country': 'GB',
             'message': 'Test Message',
             })
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(
+            str(messages[0]),
+            "Thank you for your message we will be in touch with you soon.")

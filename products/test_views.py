@@ -70,9 +70,10 @@ class TestProductsClassView(TestCase):
         Tests weather the product list page loads
         """
         product = Product.objects.get(name='test_product')
-        response = self.client.get(reverse("all_products"))
 
+        response = self.client.get(reverse("all_products"))
         self.assertEqual(response.status_code, 200)
+
         self.assertEqual(
             ListProducts.as_view().__name__,
             response.resolver_match.func.__name__)
@@ -245,3 +246,64 @@ class TestProductsClassView(TestCase):
         self.assertTemplateUsed(response, template_name='base.html')
         self.assertTemplateUsed(
             response, template_name='products/delete_object.html')
+
+    def test_load_page_two(self):
+        """
+        Tests if pages two of all products page will load
+        """
+        cat = Category.objects.get(name='test_category')
+        product1 = Product.objects.create(name=f'test_product1',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product2 = Product.objects.create(name=f'test_product2',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product3 = Product.objects.create(name=f'test_product3',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product4 = Product.objects.create(name=f'test_product4',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product5 = Product.objects.create(name=f'test_product5',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product6 = Product.objects.create(name=f'test_product6',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product7 = Product.objects.create(name=f'test_product7',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product8 = Product.objects.create(name=f'test_product8',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product9 = Product.objects.create(name=f'test_product9',
+                                          category=cat, description='test',
+                                          price='100', recommended_use='test')
+        product10 = Product.objects.create(name=f'test_product10',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+        product11 = Product.objects.create(name=f'test_product11',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+        product12 = Product.objects.create(name=f'test_product12',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+        product13 = Product.objects.create(name=f'test_product13',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+        product14 = Product.objects.create(name=f'test_product14',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+        product15 = Product.objects.create(name=f'test_product15',
+                                           category=cat, description='test',
+                                           price='100', recommended_use='test')
+
+        response = self.client.get(reverse('all_products'))
+        self.assertEqual(response.status_code, 200)
+
+        response = self.client.get('/products/?page=2')
+        self.assertEqual(response.status_code, 200)
+
+        self.assertTemplateUsed(response, template_name='base.html')
+        self.assertTemplateUsed(
+            response, template_name='products/product_list.html')

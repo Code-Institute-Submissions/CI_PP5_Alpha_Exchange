@@ -55,7 +55,7 @@ class SearchProduct(ListView):
         self.no_search_result = True
 
     def get_queryset(self, **kwargs):
-        search_results = ProductFilter(self.request.GET, self.queryset)
+        search_results = ProductOrderFilter(self.request.GET, self.queryset)
         queryset = search_results.qs.distinct()
         # get search criteria
         query = self.request.GET.get('q')

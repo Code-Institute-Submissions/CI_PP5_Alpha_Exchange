@@ -38,7 +38,7 @@ class TestContactModel(TestCase):
 
     def test_course_str_method(self):
         """
-        This test tests the categories str method and verifies
+        This test tests the contact models
         """
         contact = Contact.objects.get(name='test')
         self.assertEqual((contact.__str__()), contact.name)
