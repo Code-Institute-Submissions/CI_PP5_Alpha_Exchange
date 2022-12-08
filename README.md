@@ -1608,10 +1608,13 @@ I have demonstrated some proficiency in using these tests but the code does not 
 1. Test the checkout returning a user to the store if the basket is empty
 2. Test creating an anonymous order through the checkout
 3. Test the order details form validation
+4. Test updating the order with a new orderlineitem above the delivery threshold
+5. Test updating the order with a new orderlineitem below the delivery threshold
 
 #### Users
 1. Test profile page loading
-2. test profile page form post
+2. Test profile page form post
+3. Test order history page page loading
 
 <br>![Auto test results](documentation/automated-testing/results.jpg)
 

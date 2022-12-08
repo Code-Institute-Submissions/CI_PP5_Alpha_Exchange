@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from products.models import Category, Product
 from products.views import ListProducts, SearchProduct
 from products.forms import ProductModelForm
+from django.shortcuts import get_object_or_404
 
 
 class TestProductsClassView(TestCase):
@@ -60,8 +61,9 @@ class TestProductsClassView(TestCase):
         Tests weather the products details page loads
         """
         product = Product.objects.get(name='test_product')
-        response = self.client.get(f'/products/{product.id}',
-                                   {'product': product})
+        response = self.client.get(
+            f'/products/{product.id}', {'product': product})
+
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/product_detail.html')
 

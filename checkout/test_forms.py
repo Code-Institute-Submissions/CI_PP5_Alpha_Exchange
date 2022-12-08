@@ -12,7 +12,7 @@ class TestCheckoutForms(TestCase):
     """
     def test_add_order_form(self):
         """
-        Test the OrderForm 
+        Test the OrderForm
         """
         form = OrderForm({
             'full_name': 'Mr Banks',
